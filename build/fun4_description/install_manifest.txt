@@ -8,6 +8,16 @@
 /home/gun/FUN4/install/fun4_description/local/lib/python3.10/dist-packages/fun4_description/dummy_module.py
 /home/gun/FUN4/install/fun4_description/lib/fun4_description/dummy_script.py
 /home/gun/FUN4/install/fun4_description/lib/fun4_description/cpp_node_test
+/home/gun/FUN4/install/fun4_description/share/fun4_description/config/display.rviz
+/home/gun/FUN4/install/fun4_description/share/fun4_description/launch/fun.launch.py
+/home/gun/FUN4/install/fun4_description/share/fun4_description/launch/simple_display.launch.py
+/home/gun/FUN4/install/fun4_description/share/fun4_description/meshes/link_1.stl
+/home/gun/FUN4/install/fun4_description/share/fun4_description/meshes/link_3.stl
+/home/gun/FUN4/install/fun4_description/share/fun4_description/meshes/link_0.stl
+/home/gun/FUN4/install/fun4_description/share/fun4_description/meshes/end_effector.stl
+/home/gun/FUN4/install/fun4_description/share/fun4_description/meshes/link_2.stl
+/home/gun/FUN4/install/fun4_description/share/fun4_description/robot/my-robot.xacro
+/home/gun/FUN4/install/fun4_description/share/fun4_description/robot/01-myfirst.urdf
 /home/gun/FUN4/install/fun4_description/share/ament_index/resource_index/package_run_dependencies/fun4_description
 /home/gun/FUN4/install/fun4_description/share/ament_index/resource_index/parent_prefix_path/fun4_description
 /home/gun/FUN4/install/fun4_description/share/fun4_description/environment/ament_prefix_path.sh

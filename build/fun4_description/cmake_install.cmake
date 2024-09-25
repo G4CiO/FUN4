@@ -91,7 +91,12 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/fun4_description" TYPE DIRECTORY FILES "")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/fun4_description" TYPE DIRECTORY FILES
+    "/home/gun/FUN4/src/fun4_description/config"
+    "/home/gun/FUN4/src/fun4_description/launch"
+    "/home/gun/FUN4/src/fun4_description/meshes"
+    "/home/gun/FUN4/src/fun4_description/robot"
+    )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
