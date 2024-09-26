@@ -48,16 +48,16 @@ def generate_launch_description():
         parameters=parameters
     )
 
-    # joint_state_publisher_gui = Node(
-    #     package='joint_state_publisher_gui',
-    #     executable='joint_state_publisher_gui'
-    # )
+    joint_state_publisher_gui = Node(
+        package='joint_state_publisher_gui',
+        executable='joint_state_publisher_gui'
+    )
 
 
-    # random_node = Node(
-    #     package='random_target',
-    #     executable='random.py'
-    # )
+    random_node = Node(
+        package='fun4_description',
+        executable='random_target.py'
+    )
 
     joint_state_publisher = Node(
         package='fun4_description',
@@ -68,8 +68,9 @@ def generate_launch_description():
     launch_description = LaunchDescription()
     
     launch_description.add_action(rviz)
-    launch_description.add_action(joint_state_publisher)
     launch_description.add_action(robot_state_publisher)
-    # launch_description.add_action(joint_state_publisher_gui)
+    launch_description.add_action(random_node)
+    # launch_description.add_action(joint_state_publisher)
+    launch_description.add_action(joint_state_publisher_gui)
     
     return launch_description

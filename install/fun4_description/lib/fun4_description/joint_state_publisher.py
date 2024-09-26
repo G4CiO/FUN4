@@ -13,7 +13,7 @@ class JointStatePublisher(Node):
         self.joint_pub = self.create_publisher(JointState, "/joint_states", 10)
         self.dt = 0.01
         self.create_timer(self.dt, self.sim_loop)
-        self.q = [0.0, 0.5, 1.4]
+        self.q = [0.0, 0.0, 0.0]
         self.cmd_vel = [0.0, 0.0, 0.0]
         self.name = ["link_0_link_1", "link_1_link_2", "link_2_link_3"]
 

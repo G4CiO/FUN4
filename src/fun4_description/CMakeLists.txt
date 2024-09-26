@@ -29,6 +29,8 @@ ament_python_install_package(${PROJECT_NAME})
 install(PROGRAMS
   scripts/dummy_script.py
   scripts/joint_state_publisher.py
+  scripts/random_target.py
+  scripts/end_effector_pose.py
   DESTINATION lib/${PROJECT_NAME}
 )
 

@@ -1,0 +1,101 @@
+[0.012s] Invoking command in '/home/gun/FUN4/build/fun4_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/gun/ros2_ws/install/turtlesim_catch_them_all:/home/gun/ros2_ws/install/my_py_pkg:/home/gun/ros2_ws/install/actions_py:/opt/ros/humble /usr/bin/cmake /home/gun/FUN4/src/fun4_description -DCMAKE_INSTALL_PREFIX=/home/gun/FUN4/install/fun4_description
+[0.065s] -- The C compiler identification is GNU 11.4.0
+[0.118s] -- The CXX compiler identification is GNU 11.4.0
+[0.125s] -- Detecting C compiler ABI info
+[0.190s] -- Detecting C compiler ABI info - done
+[0.198s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.198s] -- Detecting C compile features
+[0.198s] -- Detecting C compile features - done
+[0.201s] -- Detecting CXX compiler ABI info
+[0.278s] -- Detecting CXX compiler ABI info - done
+[0.286s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.286s] -- Detecting CXX compile features
+[0.286s] -- Detecting CXX compile features - done
+[0.290s] -- Found ament_cmake: 1.3.10 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.699s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.819s] -- Found rclcpp: 16.0.10 (/opt/ros/humble/share/rclcpp/cmake)
+[0.875s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.882s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.893s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.908s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.928s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.984s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.988s] -- Found rmw_cyclonedds_cpp: 1.3.4 (/opt/ros/humble/share/rmw_cyclonedds_cpp/cmake)
+[1.016s] -- Using RMW implementation 'rmw_cyclonedds_cpp' as default
+[1.028s] -- Looking for pthread.h
+[1.095s] -- Looking for pthread.h - found
+[1.095s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[1.165s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[1.166s] -- Found Threads: TRUE  
+[1.227s] -- Found rclpy: 3.3.14 (/opt/ros/humble/share/rclpy/cmake)
+[1.390s] -- Configuring done
+[1.399s] -- Generating done
+[1.400s] -- Build files have been written to: /home/gun/FUN4/build/fun4_description
+[1.407s] Invoked command in '/home/gun/FUN4/build/fun4_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/gun/ros2_ws/install/turtlesim_catch_them_all:/home/gun/ros2_ws/install/my_py_pkg:/home/gun/ros2_ws/install/actions_py:/opt/ros/humble /usr/bin/cmake /home/gun/FUN4/src/fun4_description -DCMAKE_INSTALL_PREFIX=/home/gun/FUN4/install/fun4_description
+[1.409s] Invoking command in '/home/gun/FUN4/build/fun4_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/gun/ros2_ws/install/turtlesim_catch_them_all:/home/gun/ros2_ws/install/my_py_pkg:/home/gun/ros2_ws/install/actions_py:/opt/ros/humble /usr/bin/cmake --build /home/gun/FUN4/build/fun4_description -- -j8 -l8
+[1.457s] [ 50%] [32mBuilding CXX object CMakeFiles/cpp_node_test.dir/src/cpp_node.cpp.o[0m
+[1.466s] [ 50%] Built target ament_cmake_python_copy_fun4_description
+[1.719s] running egg_info
+[1.720s] creating fun4_description.egg-info
+[1.729s] [100%] [32m[1mLinking CXX executable cpp_node_test[0m
+[1.740s] writing fun4_description.egg-info/PKG-INFO
+[1.741s] writing dependency_links to fun4_description.egg-info/dependency_links.txt
+[1.741s] writing top-level names to fun4_description.egg-info/top_level.txt
+[1.741s] writing manifest file 'fun4_description.egg-info/SOURCES.txt'
+[1.804s] reading manifest file 'fun4_description.egg-info/SOURCES.txt'
+[1.804s] writing manifest file 'fun4_description.egg-info/SOURCES.txt'
+[1.837s] [100%] Built target cpp_node_test
+[1.842s] [100%] Built target ament_cmake_python_build_fun4_description_egg
+[1.854s] Invoked command in '/home/gun/FUN4/build/fun4_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/gun/ros2_ws/install/turtlesim_catch_them_all:/home/gun/ros2_ws/install/my_py_pkg:/home/gun/ros2_ws/install/actions_py:/opt/ros/humble /usr/bin/cmake --build /home/gun/FUN4/build/fun4_description -- -j8 -l8
+[1.888s] Invoking command in '/home/gun/FUN4/build/fun4_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/gun/ros2_ws/install/turtlesim_catch_them_all:/home/gun/ros2_ws/install/my_py_pkg:/home/gun/ros2_ws/install/actions_py:/opt/ros/humble /usr/bin/cmake --install /home/gun/FUN4/build/fun4_description
+[1.895s] -- Install configuration: ""
+[1.896s] -- Installing: /home/gun/FUN4/install/fun4_description/share/fun4_description/environment/pythonpath.sh
+[1.896s] -- Installing: /home/gun/FUN4/install/fun4_description/share/fun4_description/environment/pythonpath.dsv
+[1.896s] -- Installing: /home/gun/FUN4/install/fun4_description/local/lib/python3.10/dist-packages/fun4_description-0.0.0-py3.10.egg-info
+[1.896s] -- Installing: /home/gun/FUN4/install/fun4_description/local/lib/python3.10/dist-packages/fun4_description-0.0.0-py3.10.egg-info/top_level.txt
+[1.896s] -- Installing: /home/gun/FUN4/install/fun4_description/local/lib/python3.10/dist-packages/fun4_description-0.0.0-py3.10.egg-info/PKG-INFO
+[1.896s] -- Installing: /home/gun/FUN4/install/fun4_description/local/lib/python3.10/dist-packages/fun4_description-0.0.0-py3.10.egg-info/SOURCES.txt
+[1.896s] -- Installing: /home/gun/FUN4/install/fun4_description/local/lib/python3.10/dist-packages/fun4_description-0.0.0-py3.10.egg-info/dependency_links.txt
+[1.896s] -- Installing: /home/gun/FUN4/install/fun4_description/local/lib/python3.10/dist-packages/fun4_description
+[1.896s] -- Installing: /home/gun/FUN4/install/fun4_description/local/lib/python3.10/dist-packages/fun4_description/__init__.py
+[1.897s] -- Installing: /home/gun/FUN4/install/fun4_description/local/lib/python3.10/dist-packages/fun4_description/dummy_module.py
+[1.939s] Listing '/home/gun/FUN4/install/fun4_description/local/lib/python3.10/dist-packages/fun4_description'...
+[1.939s] Compiling '/home/gun/FUN4/install/fun4_description/local/lib/python3.10/dist-packages/fun4_description/__init__.py'...
+[1.939s] Compiling '/home/gun/FUN4/install/fun4_description/local/lib/python3.10/dist-packages/fun4_description/dummy_module.py'...
+[1.945s] -- Installing: /home/gun/FUN4/install/fun4_description/lib/fun4_description/dummy_script.py
+[1.945s] -- Installing: /home/gun/FUN4/install/fun4_description/lib/fun4_description/joint_state_publisher.py
+[1.945s] -- Installing: /home/gun/FUN4/install/fun4_description/lib/fun4_description/random_target.py
+[1.945s] -- Installing: /home/gun/FUN4/install/fun4_description/lib/fun4_description/end_effector_pose.py
+[1.945s] -- Installing: /home/gun/FUN4/install/fun4_description/lib/fun4_description/cpp_node_test
+[1.945s] -- Set runtime path of "/home/gun/FUN4/install/fun4_description/lib/fun4_description/cpp_node_test" to ""
+[1.945s] -- Installing: /home/gun/FUN4/install/fun4_description/share/fun4_description/config
+[1.945s] -- Installing: /home/gun/FUN4/install/fun4_description/share/fun4_description/config/display.rviz
+[1.945s] -- Installing: /home/gun/FUN4/install/fun4_description/share/fun4_description/launch
+[1.945s] -- Installing: /home/gun/FUN4/install/fun4_description/share/fun4_description/launch/fun.launch.py
+[1.945s] -- Installing: /home/gun/FUN4/install/fun4_description/share/fun4_description/launch/simple_display.launch.py
+[1.946s] -- Installing: /home/gun/FUN4/install/fun4_description/share/fun4_description/meshes
+[1.946s] -- Installing: /home/gun/FUN4/install/fun4_description/share/fun4_description/meshes/link_1.stl
+[1.946s] -- Installing: /home/gun/FUN4/install/fun4_description/share/fun4_description/meshes/link_3.stl
+[1.946s] -- Installing: /home/gun/FUN4/install/fun4_description/share/fun4_description/meshes/link_0.stl
+[1.946s] -- Installing: /home/gun/FUN4/install/fun4_description/share/fun4_description/meshes/end_effector.stl
+[1.946s] -- Installing: /home/gun/FUN4/install/fun4_description/share/fun4_description/meshes/link_2.stl
+[1.946s] -- Installing: /home/gun/FUN4/install/fun4_description/share/fun4_description/robot
+[1.946s] -- Installing: /home/gun/FUN4/install/fun4_description/share/fun4_description/robot/visual
+[1.946s] -- Installing: /home/gun/FUN4/install/fun4_description/share/fun4_description/robot/visual/my-robot.xacro
+[1.946s] -- Installing: /home/gun/FUN4/install/fun4_description/share/fun4_description/robot/visual/01-myfirst.urdf
+[1.946s] -- Installing: /home/gun/FUN4/install/fun4_description/share/ament_index/resource_index/package_run_dependencies/fun4_description
+[1.946s] -- Installing: /home/gun/FUN4/install/fun4_description/share/ament_index/resource_index/parent_prefix_path/fun4_description
+[1.947s] -- Installing: /home/gun/FUN4/install/fun4_description/share/fun4_description/environment/ament_prefix_path.sh
+[1.947s] -- Installing: /home/gun/FUN4/install/fun4_description/share/fun4_description/environment/ament_prefix_path.dsv
+[1.947s] -- Installing: /home/gun/FUN4/install/fun4_description/share/fun4_description/environment/path.sh
+[1.947s] -- Installing: /home/gun/FUN4/install/fun4_description/share/fun4_description/environment/path.dsv
+[1.947s] -- Installing: /home/gun/FUN4/install/fun4_description/share/fun4_description/local_setup.bash
+[1.947s] -- Installing: /home/gun/FUN4/install/fun4_description/share/fun4_description/local_setup.sh
+[1.947s] -- Installing: /home/gun/FUN4/install/fun4_description/share/fun4_description/local_setup.zsh
+[1.947s] -- Installing: /home/gun/FUN4/install/fun4_description/share/fun4_description/local_setup.dsv
+[1.947s] -- Installing: /home/gun/FUN4/install/fun4_description/share/fun4_description/package.dsv
+[1.948s] -- Installing: /home/gun/FUN4/install/fun4_description/share/ament_index/resource_index/packages/fun4_description
+[1.948s] -- Installing: /home/gun/FUN4/install/fun4_description/share/fun4_description/cmake/fun4_descriptionConfig.cmake
+[1.948s] -- Installing: /home/gun/FUN4/install/fun4_description/share/fun4_description/cmake/fun4_descriptionConfig-version.cmake
+[1.948s] -- Installing: /home/gun/FUN4/install/fun4_description/share/fun4_description/package.xml
+[1.950s] Invoked command in '/home/gun/FUN4/build/fun4_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/gun/ros2_ws/install/turtlesim_catch_them_all:/home/gun/ros2_ws/install/my_py_pkg:/home/gun/ros2_ws/install/actions_py:/opt/ros/humble /usr/bin/cmake --install /home/gun/FUN4/build/fun4_description
