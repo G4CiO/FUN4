@@ -7,6 +7,7 @@ Panels:
         - /Global Options1
         - /Status1
         - /RobotModel1
+        - /PointStamped1
       Splitter Ratio: 0.5
     Tree Height: 549
   - Class: rviz_common/Selection
@@ -66,6 +67,11 @@ Visualization Manager:
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
+        end_effector:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         link_0:
           Alpha: 1
           Show Axes: false
@@ -77,6 +83,11 @@ Visualization Manager:
           Show Trail: false
           Value: true
         link_2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        link_3:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -94,11 +105,15 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: true
+        end_effector:
+          Value: true
         link_0:
           Value: true
         link_1:
           Value: true
         link_2:
+          Value: true
+        link_3:
           Value: true
       Marker Scale: 1
       Name: TF
@@ -109,8 +124,25 @@ Visualization Manager:
         link_0:
           link_1:
             link_2:
-              {}
+              link_3:
+                end_effector:
+                  {}
       Update Interval: 0
+      Value: true
+    - Alpha: 1
+      Class: rviz_default_plugins/PointStamped
+      Color: 204; 41; 204
+      Enabled: true
+      History Length: 1
+      Name: PointStamped
+      Radius: 0.20000000298023224
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        Filter size: 10
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /clicked_point
       Value: true
   Enabled: true
   Global Options:
@@ -176,7 +208,7 @@ Visualization Manager:
       Pitch: 0.5153975486755371
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 2.695380449295044
+      Yaw: 2.68038010597229
     Saved: ~
 Window Geometry:
   Displays:

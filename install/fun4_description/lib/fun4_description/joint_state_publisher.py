@@ -4,18 +4,18 @@ import rclpy
 from rclpy.node import Node
 from sensor_msgs.msg import JointState
 from math import pi
-from spatialmath import *
+# from spatialmath import *
 import numpy as np
 
-class DummyNode(Node):
+class JointStatePublisher(Node):
     def __init__(self):
-        super().__init__('dummy_node')
+        super().__init__('joint_state_publisher')
         self.joint_pub = self.create_publisher(JointState, "/joint_states", 10)
         self.dt = 0.01
         self.create_timer(self.dt, self.sim_loop)
         self.q = [0.0, 0.5, 1.4]
         self.cmd_vel = [0.0, 0.0, 0.0]
-        self.name = ["joint_1", "joint_2", "joint_3"]
+        self.name = ["link_0_link_1", "link_1_link_2", "link_2_link_3"]
 
     def sim_loop(self):
         msg = JointState()
@@ -31,7 +31,7 @@ class DummyNode(Node):
         
 def main(args=None):
     rclpy.init(args=args)
-    node = DummyNode()
+    node = JointStatePublisher()
     rclpy.spin(node)
     node.destroy_node()
     rclpy.shutdown()

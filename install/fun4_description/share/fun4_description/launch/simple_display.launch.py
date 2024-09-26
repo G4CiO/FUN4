@@ -23,7 +23,7 @@ import xacro
     
 def generate_launch_description():
     
-    pkg = get_package_share_directory('example_description')
+    pkg = get_package_share_directory('fun4_description')
     rviz_path = os.path.join(pkg,'config','display.rviz')
     rviz = Node(
         package='rviz2',
@@ -38,10 +38,11 @@ def generate_launch_description():
     
     parameters = [{'robot_description':robot_desc_xml}]
     #parameters.append({'frame_prefix':namespace+'/'})
-    robot_state_publisher = Node(package='robot_state_publisher',
-                                  executable='robot_state_publisher',
-                                  output='screen',
-                                  parameters=parameters
+    robot_state_publisher = Node(
+        package='robot_state_publisher',
+        executable='robot_state_publisher',
+        output='screen',
+        parameters=parameters
     )
 
     joint_state_publisher_gui = Node(
