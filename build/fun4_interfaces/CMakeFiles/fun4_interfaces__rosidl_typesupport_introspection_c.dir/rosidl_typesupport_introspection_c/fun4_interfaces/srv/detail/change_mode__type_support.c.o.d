@@ -58,6 +58,13 @@ CMakeFiles/fun4_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesu
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
  /home/gun/FUN4/build/fun4_interfaces/rosidl_generator_c/fun4_interfaces/msg/rosidl_generator_c__visibility_control.h \
  /home/gun/FUN4/build/fun4_interfaces/rosidl_generator_c/fun4_interfaces/srv/detail/change_mode__struct.h \
+ /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/point__struct.h \
  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence.h \
+ /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/point.h \
+ /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/point__functions.h \
+ /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/rosidl_generator_c__visibility_control.h \
+ /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/point__type_support.h \
+ /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/point__rosidl_typesupport_introspection_c.h \
+ /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h \
  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence_functions.h \
  /opt/ros/humble/include/rosidl_typesupport_introspection_c/rosidl_typesupport_introspection_c/service_introspection.h

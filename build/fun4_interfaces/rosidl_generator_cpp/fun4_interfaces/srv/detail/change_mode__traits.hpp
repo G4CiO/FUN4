@@ -14,6 +14,10 @@
 #include "fun4_interfaces/srv/detail/change_mode__struct.hpp"
 #include "rosidl_runtime_cpp/traits.hpp"
 
+// Include directives for member types
+// Member 'pose'
+#include "geometry_msgs/msg/detail/point__traits.hpp"
+
 namespace fun4_interfaces
 {
 
@@ -29,6 +33,13 @@ inline void to_flow_style_yaml(
   {
     out << "mode: ";
     rosidl_generator_traits::value_to_yaml(msg.mode, out);
+    out << ", ";
+  }
+
+  // member: pose
+  {
+    out << "pose: ";
+    to_flow_style_yaml(msg.pose, out);
   }
   out << "}";
 }  // NOLINT(readability/fn_size)
@@ -45,6 +56,15 @@ inline void to_block_style_yaml(
     out << "mode: ";
     rosidl_generator_traits::value_to_yaml(msg.mode, out);
     out << "\n";
+  }
+
+  // member: pose
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "pose:\n";
+    to_block_style_yaml(msg.pose, out, indentation + 2);
   }
 }  // NOLINT(readability/fn_size)
 
@@ -94,11 +114,11 @@ inline const char * name<fun4_interfaces::srv::ChangeMode_Request>()
 
 template<>
 struct has_fixed_size<fun4_interfaces::srv::ChangeMode_Request>
-  : std::integral_constant<bool, true> {};
+  : std::integral_constant<bool, has_fixed_size<geometry_msgs::msg::Point>::value> {};
 
 template<>
 struct has_bounded_size<fun4_interfaces::srv::ChangeMode_Request>
-  : std::integral_constant<bool, true> {};
+  : std::integral_constant<bool, has_bounded_size<geometry_msgs::msg::Point>::value> {};
 
 template<>
 struct is_message<fun4_interfaces::srv::ChangeMode_Request>

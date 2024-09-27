@@ -16,6 +16,30 @@
 
 
 // forward declaration of message dependencies and their conversion functions
+namespace geometry_msgs
+{
+namespace msg
+{
+namespace typesupport_fastrtps_cpp
+{
+bool cdr_serialize(
+  const geometry_msgs::msg::Point &,
+  eprosima::fastcdr::Cdr &);
+bool cdr_deserialize(
+  eprosima::fastcdr::Cdr &,
+  geometry_msgs::msg::Point &);
+size_t get_serialized_size(
+  const geometry_msgs::msg::Point &,
+  size_t current_alignment);
+size_t
+max_serialized_size_Point(
+  bool & full_bounded,
+  bool & is_plain,
+  size_t current_alignment);
+}  // namespace typesupport_fastrtps_cpp
+}  // namespace msg
+}  // namespace geometry_msgs
+
 
 namespace fun4_interfaces
 {
@@ -34,6 +58,10 @@ cdr_serialize(
 {
   // Member: mode
   cdr << ros_message.mode;
+  // Member: pose
+  geometry_msgs::msg::typesupport_fastrtps_cpp::cdr_serialize(
+    ros_message.pose,
+    cdr);
   return true;
 }
 
@@ -45,6 +73,10 @@ cdr_deserialize(
 {
   // Member: mode
   cdr >> ros_message.mode;
+
+  // Member: pose
+  geometry_msgs::msg::typesupport_fastrtps_cpp::cdr_deserialize(
+    cdr, ros_message.pose);
 
   return true;
 }
@@ -68,6 +100,11 @@ get_serialized_size(
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
+  // Member: pose
+
+  current_alignment +=
+    geometry_msgs::msg::typesupport_fastrtps_cpp::get_serialized_size(
+    ros_message.pose, current_alignment);
 
   return current_alignment - initial_alignment;
 }
@@ -101,6 +138,25 @@ max_serialized_size_ChangeMode_Request(
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
   }
 
+  // Member: pose
+  {
+    size_t array_size = 1;
+
+
+    last_member_size = 0;
+    for (size_t index = 0; index < array_size; ++index) {
+      bool inner_full_bounded;
+      bool inner_is_plain;
+      size_t inner_size =
+        geometry_msgs::msg::typesupport_fastrtps_cpp::max_serialized_size_Point(
+        inner_full_bounded, inner_is_plain, current_alignment);
+      last_member_size += inner_size;
+      current_alignment += inner_size;
+      full_bounded &= inner_full_bounded;
+      is_plain &= inner_is_plain;
+    }
+  }
+
   size_t ret_val = current_alignment - initial_alignment;
   if (is_plain) {
     // All members are plain, and type is not empty.
@@ -109,7 +165,7 @@ max_serialized_size_ChangeMode_Request(
     using DataType = fun4_interfaces::srv::ChangeMode_Request;
     is_plain =
       (
-      offsetof(DataType, mode) +
+      offsetof(DataType, pose) +
       last_member_size
       ) == ret_val;
   }

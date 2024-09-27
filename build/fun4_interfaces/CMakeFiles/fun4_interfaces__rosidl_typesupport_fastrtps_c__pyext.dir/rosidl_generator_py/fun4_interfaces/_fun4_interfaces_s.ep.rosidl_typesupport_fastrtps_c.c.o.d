@@ -204,5 +204,6 @@ CMakeFiles/fun4_interfaces__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_gene
  /home/gun/FUN4/build/fun4_interfaces/rosidl_generator_c/fun4_interfaces/srv/detail/change_mode__type_support.h \
  /home/gun/FUN4/build/fun4_interfaces/rosidl_generator_c/fun4_interfaces/msg/rosidl_generator_c__visibility_control.h \
  /home/gun/FUN4/build/fun4_interfaces/rosidl_generator_c/fun4_interfaces/srv/detail/change_mode__struct.h \
+ /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/point__struct.h \
  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence.h \
  /home/gun/FUN4/build/fun4_interfaces/rosidl_generator_c/fun4_interfaces/srv/detail/change_mode__functions.h

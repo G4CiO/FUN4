@@ -21,16 +21,32 @@ namespace srv
 namespace builder
 {
 
+class Init_ChangeMode_Request_pose
+{
+public:
+  explicit Init_ChangeMode_Request_pose(::fun4_interfaces::srv::ChangeMode_Request & msg)
+  : msg_(msg)
+  {}
+  ::fun4_interfaces::srv::ChangeMode_Request pose(::fun4_interfaces::srv::ChangeMode_Request::_pose_type arg)
+  {
+    msg_.pose = std::move(arg);
+    return std::move(msg_);
+  }
+
+private:
+  ::fun4_interfaces::srv::ChangeMode_Request msg_;
+};
+
 class Init_ChangeMode_Request_mode
 {
 public:
   Init_ChangeMode_Request_mode()
   : msg_(::rosidl_runtime_cpp::MessageInitialization::SKIP)
   {}
-  ::fun4_interfaces::srv::ChangeMode_Request mode(::fun4_interfaces::srv::ChangeMode_Request::_mode_type arg)
+  Init_ChangeMode_Request_pose mode(::fun4_interfaces::srv::ChangeMode_Request::_mode_type arg)
   {
     msg_.mode = std::move(arg);
-    return std::move(msg_);
+    return Init_ChangeMode_Request_pose(msg_);
   }
 
 private:

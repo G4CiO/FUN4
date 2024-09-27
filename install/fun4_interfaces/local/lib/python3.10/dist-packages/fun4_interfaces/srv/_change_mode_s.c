@@ -16,6 +16,10 @@
 #include "fun4_interfaces/srv/detail/change_mode__struct.h"
 #include "fun4_interfaces/srv/detail/change_mode__functions.h"
 
+ROSIDL_GENERATOR_C_IMPORT
+bool geometry_msgs__msg__point__convert_from_py(PyObject * _pymsg, void * _ros_message);
+ROSIDL_GENERATOR_C_IMPORT
+PyObject * geometry_msgs__msg__point__convert_to_py(void * raw_ros_message);
 
 ROSIDL_GENERATOR_C_EXPORT
 bool fun4_interfaces__srv__change_mode__request__convert_from_py(PyObject * _pymsg, void * _ros_message)
@@ -59,6 +63,17 @@ bool fun4_interfaces__srv__change_mode__request__convert_from_py(PyObject * _pym
     ros_message->mode = PyLong_AsLongLong(field);
     Py_DECREF(field);
   }
+  {  // pose
+    PyObject * field = PyObject_GetAttrString(_pymsg, "pose");
+    if (!field) {
+      return false;
+    }
+    if (!geometry_msgs__msg__point__convert_from_py(field, &ros_message->pose)) {
+      Py_DECREF(field);
+      return false;
+    }
+    Py_DECREF(field);
+  }
 
   return true;
 }
@@ -86,6 +101,20 @@ PyObject * fun4_interfaces__srv__change_mode__request__convert_to_py(void * raw_
     field = PyLong_FromLongLong(ros_message->mode);
     {
       int rc = PyObject_SetAttrString(_pymessage, "mode", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // pose
+    PyObject * field = NULL;
+    field = geometry_msgs__msg__point__convert_to_py(&ros_message->pose);
+    if (!field) {
+      return NULL;
+    }
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "pose", field);
       Py_DECREF(field);
       if (rc) {
         return NULL;

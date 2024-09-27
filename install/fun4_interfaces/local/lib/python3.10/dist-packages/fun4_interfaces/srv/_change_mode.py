@@ -42,6 +42,10 @@ class Metaclass_ChangeMode_Request(type):
             cls._TYPE_SUPPORT = module.type_support_msg__srv__change_mode__request
             cls._DESTROY_ROS_MESSAGE = module.destroy_ros_message_msg__srv__change_mode__request
 
+            from geometry_msgs.msg import Point
+            if Point.__class__._TYPE_SUPPORT is None:
+                Point.__class__.__import_type_support__()
+
     @classmethod
     def __prepare__(cls, name, bases, **kwargs):
         # list constant names here so that they appear in the help text of
@@ -56,14 +60,17 @@ class ChangeMode_Request(metaclass=Metaclass_ChangeMode_Request):
 
     __slots__ = [
         '_mode',
+        '_pose',
     ]
 
     _fields_and_field_types = {
         'mode': 'int64',
+        'pose': 'geometry_msgs/Point',
     }
 
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('int64'),  # noqa: E501
+        rosidl_parser.definition.NamespacedType(['geometry_msgs', 'msg'], 'Point'),  # noqa: E501
     )
 
     def __init__(self, **kwargs):
@@ -71,6 +78,8 @@ class ChangeMode_Request(metaclass=Metaclass_ChangeMode_Request):
             'Invalid arguments passed to constructor: %s' % \
             ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.mode = kwargs.get('mode', int())
+        from geometry_msgs.msg import Point
+        self.pose = kwargs.get('pose', Point())
 
     def __repr__(self):
         typename = self.__class__.__module__.split('.')
@@ -103,6 +112,8 @@ class ChangeMode_Request(metaclass=Metaclass_ChangeMode_Request):
             return False
         if self.mode != other.mode:
             return False
+        if self.pose != other.pose:
+            return False
         return True
 
     @classmethod
@@ -124,6 +135,20 @@ class ChangeMode_Request(metaclass=Metaclass_ChangeMode_Request):
             assert value >= -9223372036854775808 and value < 9223372036854775808, \
                 "The 'mode' field must be an integer in [-9223372036854775808, 9223372036854775807]"
         self._mode = value
+
+    @builtins.property
+    def pose(self):
+        """Message field 'pose'."""
+        return self._pose
+
+    @pose.setter
+    def pose(self, value):
+        if __debug__:
+            from geometry_msgs.msg import Point
+            assert \
+                isinstance(value, Point), \
+                "The 'pose' field must be a sub message of type 'Point'"
+        self._pose = value
 
 
 # Import statements for member types

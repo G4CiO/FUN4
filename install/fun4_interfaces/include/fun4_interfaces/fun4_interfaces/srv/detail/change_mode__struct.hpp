@@ -15,6 +15,10 @@
 #include "rosidl_runtime_cpp/message_initialization.hpp"
 
 
+// Include directives for member types
+// Member 'pose'
+#include "geometry_msgs/msg/detail/point__struct.hpp"
+
 #ifndef _WIN32
 # define DEPRECATED__fun4_interfaces__srv__ChangeMode_Request __attribute__((deprecated))
 #else
@@ -34,6 +38,7 @@ struct ChangeMode_Request_
   using Type = ChangeMode_Request_<ContainerAllocator>;
 
   explicit ChangeMode_Request_(rosidl_runtime_cpp::MessageInitialization _init = rosidl_runtime_cpp::MessageInitialization::ALL)
+  : pose(_init)
   {
     if (rosidl_runtime_cpp::MessageInitialization::ALL == _init ||
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
@@ -43,8 +48,8 @@ struct ChangeMode_Request_
   }
 
   explicit ChangeMode_Request_(const ContainerAllocator & _alloc, rosidl_runtime_cpp::MessageInitialization _init = rosidl_runtime_cpp::MessageInitialization::ALL)
+  : pose(_alloc, _init)
   {
-    (void)_alloc;
     if (rosidl_runtime_cpp::MessageInitialization::ALL == _init ||
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
@@ -56,12 +61,21 @@ struct ChangeMode_Request_
   using _mode_type =
     int64_t;
   _mode_type mode;
+  using _pose_type =
+    geometry_msgs::msg::Point_<ContainerAllocator>;
+  _pose_type pose;
 
   // setters for named parameter idiom
   Type & set__mode(
     const int64_t & _arg)
   {
     this->mode = _arg;
+    return *this;
+  }
+  Type & set__pose(
+    const geometry_msgs::msg::Point_<ContainerAllocator> & _arg)
+  {
+    this->pose = _arg;
     return *this;
   }
 
@@ -108,6 +122,9 @@ struct ChangeMode_Request_
   bool operator==(const ChangeMode_Request_ & other) const
   {
     if (this->mode != other.mode) {
+      return false;
+    }
+    if (this->pose != other.pose) {
       return false;
     }
     return true;

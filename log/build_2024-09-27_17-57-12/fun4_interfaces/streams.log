@@ -1,0 +1,56 @@
+[0.016s] Invoking command in '/home/gun/FUN4/build/fun4_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/gun/ros2_ws/install/turtlesim_catch_them_all:/home/gun/ros2_ws/install/my_py_pkg:/home/gun/ros2_ws/install/actions_py:/opt/ros/humble /usr/bin/cmake --build /home/gun/FUN4/build/fun4_interfaces -- -j8 -l8
+[0.064s] -- Found ament_cmake: 1.3.10 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.228s] -- Found geometry_msgs: 4.2.4 (/opt/ros/humble/share/geometry_msgs/cmake)
+[0.277s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.280s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.290s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.305s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.322s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.368s] -- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[0.567s] [31mCMake Error at /opt/ros/humble/share/rosidl_adapter/cmake/rosidl_adapt_interfaces.cmake:59 (message):
+[0.567s]   execute_process(/usr/bin/python3 -m rosidl_adapter --package-name
+[0.567s]   fun4_interfaces --arguments-file
+[0.567s]   /home/gun/FUN4/build/fun4_interfaces/rosidl_adapter__arguments__fun4_interfaces.json
+[0.567s]   --output-dir
+[0.567s]   /home/gun/FUN4/build/fun4_interfaces/rosidl_adapter/fun4_interfaces
+[0.567s]   --output-file
+[0.567s]   /home/gun/FUN4/build/fun4_interfaces/rosidl_adapter/fun4_interfaces.idls)
+[0.567s]   returned error code 1:
+[0.567s] 
+[0.567s]   Error processing 'geometry_msgs/Pose Pose' of
+[0.568s]   'fun4_interfaces/ChangeMode_Request': ''Pose' is an invalid field name.  It
+[0.568s]   should have the pattern '^(?!.*__)(?!.*_$)[a-z][a-z0-9_]*$''
+[0.568s] 
+[0.568s]   Traceback (most recent call last):
+[0.568s] 
+[0.568s]     File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+[0.568s]       return _run_code(code, main_globals, None,
+[0.568s]     File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+[0.568s]       exec(code, run_globals)
+[0.568s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/__main__.py", line 19, in <module>
+[0.568s]       sys.exit(main())
+[0.568s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/main.py", line 53, in main
+[0.568s]       abs_idl_file = convert_to_idl(
+[0.568s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/__init__.py", line 24, in convert_to_idl
+[0.568s]       return convert_srv_to_idl(
+[0.568s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/srv/__init__.py", line 28, in convert_srv_to_idl
+[0.568s]       srv = parse_service_string(package_name, input_file.stem, content)
+[0.568s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/parser.py", line 859, in parse_service_string
+[0.569s]       request_message = parse_message_string(
+[0.569s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/parser.py", line 519, in parse_message_string
+[0.569s]       fields.append(Field(
+[0.569s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/parser.py", line 354, in __init__
+[0.569s]       raise NameError(
+[0.569s] 
+[0.569s]   NameError: 'Pose' is an invalid field name.  It should have the pattern
+[0.569s]   '^(?!.*__)(?!.*_$)[a-z][a-z0-9_]*$'
+[0.569s] 
+[0.569s] Call Stack (most recent call first):
+[0.569s]   /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:130 (rosidl_adapt_interfaces)
+[0.569s]   CMakeLists.txt:16 (rosidl_generate_interfaces)
+[0.569s] 
+[0.569s] [0m
+[0.569s] -- Configuring incomplete, errors occurred!
+[0.569s] See also "/home/gun/FUN4/build/fun4_interfaces/CMakeFiles/CMakeOutput.log".
+[0.571s] gmake: *** [Makefile:747: cmake_check_build_system] Error 1
+[0.590s] Invoked command in '/home/gun/FUN4/build/fun4_interfaces' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/gun/ros2_ws/install/turtlesim_catch_them_all:/home/gun/ros2_ws/install/my_py_pkg:/home/gun/ros2_ws/install/actions_py:/opt/ros/humble /usr/bin/cmake --build /home/gun/FUN4/build/fun4_interfaces -- -j8 -l8

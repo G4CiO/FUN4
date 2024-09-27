@@ -12,6 +12,12 @@
 #include "fun4_interfaces/srv/detail/change_mode__struct.h"
 
 
+// Include directives for member types
+// Member `pose`
+#include "geometry_msgs/msg/point.h"
+// Member `pose`
+#include "geometry_msgs/msg/detail/point__rosidl_typesupport_introspection_c.h"
+
 #ifdef __cplusplus
 extern "C"
 {
@@ -31,7 +37,7 @@ void fun4_interfaces__srv__ChangeMode_Request__rosidl_typesupport_introspection_
   fun4_interfaces__srv__ChangeMode_Request__fini(message_memory);
 }
 
-static rosidl_typesupport_introspection_c__MessageMember fun4_interfaces__srv__ChangeMode_Request__rosidl_typesupport_introspection_c__ChangeMode_Request_message_member_array[1] = {
+static rosidl_typesupport_introspection_c__MessageMember fun4_interfaces__srv__ChangeMode_Request__rosidl_typesupport_introspection_c__ChangeMode_Request_message_member_array[2] = {
   {
     "mode",  // name
     rosidl_typesupport_introspection_c__ROS_TYPE_INT64,  // type
@@ -48,13 +54,30 @@ static rosidl_typesupport_introspection_c__MessageMember fun4_interfaces__srv__C
     NULL,  // fetch(index, &value) function pointer
     NULL,  // assign(index, value) function pointer
     NULL  // resize(index) function pointer
+  },
+  {
+    "pose",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_MESSAGE,  // type
+    0,  // upper bound of string
+    NULL,  // members of sub message (initialized later)
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(fun4_interfaces__srv__ChangeMode_Request, pose),  // bytes offset in struct
+    NULL,  // default value
+    NULL,  // size() function pointer
+    NULL,  // get_const(index) function pointer
+    NULL,  // get(index) function pointer
+    NULL,  // fetch(index, &value) function pointer
+    NULL,  // assign(index, value) function pointer
+    NULL  // resize(index) function pointer
   }
 };
 
 static const rosidl_typesupport_introspection_c__MessageMembers fun4_interfaces__srv__ChangeMode_Request__rosidl_typesupport_introspection_c__ChangeMode_Request_message_members = {
   "fun4_interfaces__srv",  // message namespace
   "ChangeMode_Request",  // message name
-  1,  // number of fields
+  2,  // number of fields
   sizeof(fun4_interfaces__srv__ChangeMode_Request),
   fun4_interfaces__srv__ChangeMode_Request__rosidl_typesupport_introspection_c__ChangeMode_Request_message_member_array,  // message members
   fun4_interfaces__srv__ChangeMode_Request__rosidl_typesupport_introspection_c__ChangeMode_Request_init_function,  // function to initialize message memory (memory has to be allocated)
@@ -72,6 +95,8 @@ static rosidl_message_type_support_t fun4_interfaces__srv__ChangeMode_Request__r
 ROSIDL_TYPESUPPORT_INTROSPECTION_C_EXPORT_fun4_interfaces
 const rosidl_message_type_support_t *
 ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(rosidl_typesupport_introspection_c, fun4_interfaces, srv, ChangeMode_Request)() {
+  fun4_interfaces__srv__ChangeMode_Request__rosidl_typesupport_introspection_c__ChangeMode_Request_message_member_array[1].members_ =
+    ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(rosidl_typesupport_introspection_c, geometry_msgs, msg, Point)();
   if (!fun4_interfaces__srv__ChangeMode_Request__rosidl_typesupport_introspection_c__ChangeMode_Request_message_type_support_handle.typesupport_identifier) {
     fun4_interfaces__srv__ChangeMode_Request__rosidl_typesupport_introspection_c__ChangeMode_Request_message_type_support_handle.typesupport_identifier =
       rosidl_typesupport_introspection_c__identifier;

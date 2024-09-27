@@ -2,11 +2,14 @@
 // with input from fun4_interfaces/srv/ChangeMode.srv
 // generated code does not contain a copyright notice
 
+#include "geometry_msgs/msg/Point.idl"
 
 module fun4_interfaces {
   module srv {
     struct ChangeMode_Request {
       int64 mode;
+
+      geometry_msgs::msg::Point pose;
     };
     struct ChangeMode_Response {
       boolean success;

@@ -23,7 +23,7 @@ class RandomTarget(Node):
             z = np.random.uniform(-r_max, r_max)
 
             # Check if the generated point is within the spherical range
-            distance_squared = x**2 + y**2 + (z+0.2)**2
+            distance_squared = x**2 + y**2 + (z-0.2)**2
             
             if r_min**2 <= distance_squared <= r_max**2:
                 # Create a PoseStamped message and fill in the values

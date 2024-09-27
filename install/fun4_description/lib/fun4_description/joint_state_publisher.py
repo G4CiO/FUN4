@@ -15,7 +15,7 @@ class JointStatePublisher(Node):
         self.create_timer(self.dt, self.sim_loop)
         self.q = [0.0, 0.0, 0.0]
         self.cmd_vel = [0.0, 0.0, 0.0]
-        self.name = ["link_0_link_1", "link_1_link_2", "link_2_link_3"]
+        self.name = ["joint_1", "joint_2", "joint_3"]
 
     def sim_loop(self):
         msg = JointState()

@@ -17,10 +17,15 @@ extern "C"
 
 // Constants defined in the message
 
+// Include directives for member types
+// Member 'pose'
+#include "geometry_msgs/msg/detail/point__struct.h"
+
 /// Struct defined in srv/ChangeMode in the package fun4_interfaces.
 typedef struct fun4_interfaces__srv__ChangeMode_Request
 {
   int64_t mode;
+  geometry_msgs__msg__Point pose;
 } fun4_interfaces__srv__ChangeMode_Request;
 
 // Struct for a sequence of fun4_interfaces__srv__ChangeMode_Request.

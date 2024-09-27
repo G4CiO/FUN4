@@ -10,6 +10,10 @@
 
 #include "rcutils/allocator.h"
 
+// Include directives for member types
+// Member `pose`
+#include "geometry_msgs/msg/detail/point__functions.h"
+
 bool
 fun4_interfaces__srv__ChangeMode_Request__init(fun4_interfaces__srv__ChangeMode_Request * msg)
 {
@@ -17,6 +21,11 @@ fun4_interfaces__srv__ChangeMode_Request__init(fun4_interfaces__srv__ChangeMode_
     return false;
   }
   // mode
+  // pose
+  if (!geometry_msgs__msg__Point__init(&msg->pose)) {
+    fun4_interfaces__srv__ChangeMode_Request__fini(msg);
+    return false;
+  }
   return true;
 }
 
@@ -27,6 +36,8 @@ fun4_interfaces__srv__ChangeMode_Request__fini(fun4_interfaces__srv__ChangeMode_
     return;
   }
   // mode
+  // pose
+  geometry_msgs__msg__Point__fini(&msg->pose);
 }
 
 bool
@@ -37,6 +48,12 @@ fun4_interfaces__srv__ChangeMode_Request__are_equal(const fun4_interfaces__srv__
   }
   // mode
   if (lhs->mode != rhs->mode) {
+    return false;
+  }
+  // pose
+  if (!geometry_msgs__msg__Point__are_equal(
+      &(lhs->pose), &(rhs->pose)))
+  {
     return false;
   }
   return true;
@@ -52,6 +69,12 @@ fun4_interfaces__srv__ChangeMode_Request__copy(
   }
   // mode
   output->mode = input->mode;
+  // pose
+  if (!geometry_msgs__msg__Point__copy(
+      &(input->pose), &(output->pose)))
+  {
+    return false;
+  }
   return true;
 }
 
