@@ -1,0 +1,17 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from fun4_interfaces/srv/ChangeMode.srv
+// generated code does not contain a copyright notice
+
+
+module fun4_interfaces {
+  module srv {
+    struct ChangeMode_Request {
+      int64 mode;
+    };
+    struct ChangeMode_Response {
+      boolean success;
+
+      sequence<double> config;
+    };
+  };
+};
