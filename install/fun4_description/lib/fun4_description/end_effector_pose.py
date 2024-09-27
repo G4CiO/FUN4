@@ -27,22 +27,12 @@ class EndEffectorPose(Node):
 
         # Create a publisher for the PoseStamped message
         self.pose_pub = self.create_publisher(PoseStamped, '/end_effector', 10)
-        # Create a Subscriber tf
-        # self.joint_sub = self.create_subscription(JointState, '/joint_states', self.callback_joint_state, 10)
-        # Set the source and target frames (replace with your frames)
+
         self.source_frame = 'link_0'
         self.target_frame = 'end_effector'
 
         self.tf_buffer = Buffer()
         self.tf_listener = TransformListener(self.tf_buffer, self)
-
-        # Create publisher(s)  
-        # This node publishes the 2d pose.
-        # Maximum queue size of 1. 
-        # self.publisher_2d_pose = self.create_publisher(
-        # Float64MultiArray, 
-        # '/map_to_base_link_pose2d', 
-        # 1)
 
         # Call on_timer function on a set interval
         timer_period = 0.1
