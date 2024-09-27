@@ -31,6 +31,7 @@ install(PROGRAMS
   scripts/joint_state_publisher.py
   scripts/random_target.py
   scripts/end_effector_pose.py
+  scripts/inverse_pose_kinematics.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
