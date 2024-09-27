@@ -71,6 +71,11 @@ def generate_launch_description():
         package='fun4_description',
         executable='end_effector_pose.py'
     )
+
+    inverse_pose_kinematics = Node(
+        package='fun4_description',
+        executable='inverse_pose_kinematics.py'
+    )
     
     launch_description.add_action(rviz)
     launch_description.add_action(robot_state_publisher)
@@ -78,5 +83,6 @@ def generate_launch_description():
     launch_description.add_action(end_effector_pose)
     # launch_description.add_action(joint_state_publisher)
     launch_description.add_action(joint_state_publisher_gui)
+    launch_description.add_action(inverse_pose_kinematics)
     
     return launch_description

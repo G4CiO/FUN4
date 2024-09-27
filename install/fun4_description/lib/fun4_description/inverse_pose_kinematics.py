@@ -41,11 +41,9 @@ class InversePoseKinematics(Node):
 
         # Innitial
         self.mode = 0
-        self.x ,self.y, self.z = 0.0, 0.0, 0.0
         self.finish = None
         self.r_min = 0.03
         self.r_max = 0.535
-        self.answer = []
         self.current_joint_positions = [0.0, 0.0, 0.0]
         self.target_joint_positions = [0.0, 0.0, 0.0]
 
@@ -53,12 +51,6 @@ class InversePoseKinematics(Node):
         self.pid_controllers = [PIDController(1.0),  # For joint 1
                                 PIDController(1.0),  # For joint 2
                                 PIDController(1.0)]  # For joint 3
-        
-        # Indicate whether a new target position is set
-        self.new_target = False
-
-        # Tolerance for considering joint to have reached the target
-        self.tolerance = 0.01  # Adjust this tolerance based on your system's requirements
 
     def callback_user(self,request:ChangeMode.Request, response:ChangeMode.Response): # รับ
         mode = request.mode
@@ -89,15 +81,15 @@ class InversePoseKinematics(Node):
 
             # Desired end effector pose
             T_Position = SE3(x, y, z)
-            q_sol_ik_LM, *_ = robot.ikine_LM(T_Position,mask=[1,1,1,0,0,0],joint_limits=False,q0=[0,0,0])
+            q_sol_ik_LM, *_ = robot.ikine_LM(T_Position,mask=[1,1,1,0,0,0],q0=[0,0,0])
             self.target_joint_positions = [q_sol_ik_LM[0], q_sol_ik_LM[1], q_sol_ik_LM[2]]
             self.finish = True
-            self.get_logger().info('call finish')
+            self.get_logger().info('Taskspace is in workspace')
             return self.target_joint_positions
         else:
             self.finish = False
-            self.get_logger().info('call not finish')
-            return None
+            self.get_logger().warn("Taskspace isn't in workspace. Please key again.")
+            return self.target_joint_positions
         
     def update_joint_states(self):
         """Smoothly update joint positions using proportional control"""
@@ -105,7 +97,7 @@ class InversePoseKinematics(Node):
         joint_msg.name = ['joint_1', 'joint_2', 'joint_3']
         joint_msg.header.stamp = self.get_clock().now().to_msg()
 
-        # PID (Proportional only) control to move towards target joint positions
+        # PID
         smoothed_positions = []
         for i in range(3):
             current_pos = self.current_joint_positions[i]
@@ -114,11 +106,11 @@ class InversePoseKinematics(Node):
             new_position = current_pos + smoothed_pos * self.dt
             smoothed_positions.append(new_position)
 
-        # Update current positions to smoothed positions for next iteration
+        # Update positions
         self.current_joint_positions = smoothed_positions
         joint_msg.position = smoothed_positions
 
-        # Publish the updated joint states
+        # Publish joint state
         self.joint_state_pub.publish(joint_msg)
     
 

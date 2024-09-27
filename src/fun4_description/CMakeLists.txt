@@ -32,6 +32,7 @@ install(PROGRAMS
   scripts/random_target.py
   scripts/end_effector_pose.py
   scripts/inverse_pose_kinematics.py
+  scripts/teleoperation.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
