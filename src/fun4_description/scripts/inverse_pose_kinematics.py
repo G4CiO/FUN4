@@ -21,19 +21,18 @@ class InversePoseKinematics(Node):
         self.get_logger().info('inverse pose kinematics node has start')
         # Pub
         self.joint_state_pub = self.create_publisher(JointState, '/joint_states', 10)
+        # Sub
+        # self.target_sub = self.create_subscription(PoseStamped, '/target', self.callback_target, 10)
 
         # Service Server (รับ mode เข้ามา)
         self.take_mode = self.create_service(ChangeMode, '/mode_pose', self.callback_user)
-
-        # Variables to track joint states
-        self.current_joint_positions = [0.0, 0.0, 0.0]
 
         # Innitial
         self.mode = 0
         self.x ,self.y, self.z = 0.0, 0.0, 0.0
         self.finish = None
         self.r_min = 0.03
-        self.r_max = 0.530
+        self.r_max = 0.535
         self.answer = []
 
     def callback_user(self,request:ChangeMode.Request, response:ChangeMode.Response): # รับ
@@ -83,7 +82,6 @@ class InversePoseKinematics(Node):
             self.answer = [q_sol_ik_LM[0], q_sol_ik_LM[1], q_sol_ik_LM[2]]
 
             self.get_logger().info('call finish')
-
 
             return self.answer
         else:

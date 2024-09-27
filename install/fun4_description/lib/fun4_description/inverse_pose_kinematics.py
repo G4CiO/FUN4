@@ -25,59 +25,21 @@ class InversePoseKinematics(Node):
         # self.target_sub = self.create_subscription(PoseStamped, '/target', self.callback_target, 10)
         self.joint_state_sub = self.create_subscription(JointState, '/joint_states', self.joint_state_callback, 10)
 
-        # Service
-        # Client Server (ส่ง request ออกไป,เรียกใช้ server)
-        # self.mode_client = self.create_client(ChangeMode, '/config_')
-
         # Service Server (รับ mode เข้ามา)
         self.take_mode = self.create_service(ChangeMode, '/mode_pose', self.callback_user)
-
-        # Variables to track joint states
-        self.current_joint_positions = [0.0, 0.0, 0.0]
 
         # Innitial
         self.mode = 0
         self.x ,self.y, self.z = 0.0, 0.0, 0.0
         self.finish = None
         self.r_min = 0.03
-        self.r_max = 0.530
+        self.r_max = 0.535
         self.answer = []
 
-    # def call_mode(self, q):
-    #     while not self.mode_client.wait_for_service(1.0):
-    #         self.get_logger().warn("Waiting for Server Turtlesim Plus in 4...")   
-    #     request = ChangeMode.Request()
-    #     response = ChangeMode.Response()
-
-    #     request.mode = q
-    #     self.mode_client.call_async(request)
     def joint_state_callback(self, msg):
         """Callback to track current joint positions"""
         self.current_joint_positions = list(msg.position)
         self.get_logger().info(f'Current joint positions: {self.current_joint_positions}')
-
-
-    def custom_ikine(self, robot, T_desired, initial_guess):
-        """
-        Custom function to compute inverse kinematics using optimization.
-        
-        Parameters:
-        - robot: The robot object
-        - T_desired: Desired end-effector pose
-        - initial_guess: Initial guess for joint angles
-        
-        Returns:
-        - q: Computed joint angles
-        """
-        # Define the objective function
-        def objective(q):
-            T_actual = robot.fkine(q)
-            return np.linalg.norm(T_actual.A - T_desired.A)
-        
-        # Run the optimization
-        result = minimize(objective, initial_guess, bounds=[(-pi, pi) for _ in initial_guess])
-        
-        return result.x
 
     def callback_user(self,request:ChangeMode.Request, response:ChangeMode.Response): # รับ
         mode = request.mode
@@ -94,16 +56,6 @@ class InversePoseKinematics(Node):
     def inverse_kinematic(self, x, y, z, mode):
         distance_squared = x**2 + y**2 + (z-0.2)**2
         if mode == 1 and self.r_min**2 <= distance_squared <= self.r_max**2:
-            # robot = rtb.DHRobot(
-            #     [
-            #         rtb.RevoluteMDH(d=0.2), # Joint1
-            #         rtb.RevoluteMDH(alpha=-pi/2,d=-0.12), # Joint2
-            #         rtb.RevoluteMDH(alpha=pi/2,d=0.25), # JointN
-            #         rtb.RevoluteMDH(alpha=-pi/2,d=0.1), # Joint3
-            #         rtb.RevoluteMDH(alpha=pi/2,d=0.28), # e
-            #     ],
-            #     name = "RRR_Robot" # เขียนชื่อหุ่นยนต์ 
-            # )
 
             robot = rtb.DHRobot(
                 [
@@ -117,15 +69,6 @@ class InversePoseKinematics(Node):
 
             # Desired end effector pose
             T_Position = SE3(x, y, z)
-            # T_Orentation = SE3.RPY([radians(30),radians(45),radians(60)], order='zyx')
-            
-
-            # Use the custom IK function
-            # initial_guess = [0, 0, 0 ,0 ,0]
-            temp = [self.current_joint_positions[0],self.current_joint_positions[1],0,self.current_joint_positions[2],0]
-            initial_guess = temp
-            # q_sol_ik_LM = self.custom_ikine(robot, T_Position, initial_guess)
-            # Use default IK
             q_sol_ik_LM, *_ = robot.ikine_LM(T_Position,mask=[1,1,1,0,0,0],joint_limits=False,q0=[0,0,0])
 
             Te = robot.fkine(q_sol_ik_LM)
@@ -145,7 +88,6 @@ class InversePoseKinematics(Node):
             self.answer = [q_sol_ik_LM[0], q_sol_ik_LM[1], q_sol_ik_LM[2]]
 
             self.get_logger().info('call finish')
-
 
             return self.answer
         else:
