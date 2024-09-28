@@ -67,8 +67,6 @@ def generate_launch_description():
         output='screen'
     )
 
-    launch_description = LaunchDescription()
-
     end_effector_pose = Node(
         package='fun4_description',
         executable='end_effector_pose.py',
@@ -87,8 +85,7 @@ def generate_launch_description():
         output='screen'
     )
 
-
-    
+    launch_description = LaunchDescription()    
     launch_description.add_action(rviz)
     launch_description.add_action(robot_state_publisher)
     launch_description.add_action(random_node)

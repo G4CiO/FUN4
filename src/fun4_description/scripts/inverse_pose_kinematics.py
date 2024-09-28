@@ -31,11 +31,12 @@ class InversePoseKinematics(Node):
         self.get_logger().info('inverse pose kinematics node has start')
         # Pub
         self.joint_state_pub = self.create_publisher(JointState, '/joint_states', 10)
+        # Sub
+        # self.end_pose_sub = self.create_subscription(PoseStamped, '/end_effector', self.callback_end_pose, 10)
+        self.joint_state_sub = self.create_subscription(JointState, '/joint_states', self.joint_state_callback, 10)
+        # timer
         self.dt = 0.01
         self.timer = self.create_timer(self.dt, self.update_joint_states)
-        # Sub
-        self.end_pose_sub = self.create_subscription(PoseStamped, '/end_effector', self.callback_end_pose, 10)
-
         # Service Server (รับ mode เข้ามา)
         self.take_mode = self.create_service(ChangeMode, '/mode_pose', self.callback_user)
 
@@ -50,6 +51,10 @@ class InversePoseKinematics(Node):
         self.pid_controllers = [PIDController(1.0),  # For joint 1
                                 PIDController(1.0),  # For joint 2
                                 PIDController(1.0)]  # For joint 3
+        
+    def joint_state_callback(self, msg: JointState):
+        if len(msg.position) >= 3:
+            self.current_joint_positions = list(msg.position[:3])  # Update the current positions
         
     def callback_end_pose(self, msg:PoseStamped):
         self.x = msg.pose.position.x
@@ -80,8 +85,8 @@ class InversePoseKinematics(Node):
             robot = rtb.DHRobot(
                 [
                     rtb.RevoluteMDH(alpha = 0.0,a = 0.0,d = 0.2,offset = 0.0),
-                    rtb.RevoluteMDH(alpha = pi/2,a = 0.0,d = 0.02,offset = 0.0),
-                    rtb.RevoluteMDH(alpha = 0,a = 0.25,d = 0.0,offset = 0.0),
+                    rtb.RevoluteMDH(alpha = pi/2,a = 0.0,d = 0.12,offset = pi/2),
+                    rtb.RevoluteMDH(alpha = 0,a = 0.25,d = -0.1,offset = pi/2),
 
                 ],tool = SE3.Tx(0.28),
                 name = "RRR_Robot"
