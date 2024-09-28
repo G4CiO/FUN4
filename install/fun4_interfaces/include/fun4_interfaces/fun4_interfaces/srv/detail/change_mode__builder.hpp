@@ -37,16 +37,32 @@ private:
   ::fun4_interfaces::srv::ChangeMode_Request msg_;
 };
 
+class Init_ChangeMode_Request_teleop_mode
+{
+public:
+  explicit Init_ChangeMode_Request_teleop_mode(::fun4_interfaces::srv::ChangeMode_Request & msg)
+  : msg_(msg)
+  {}
+  Init_ChangeMode_Request_pose teleop_mode(::fun4_interfaces::srv::ChangeMode_Request::_teleop_mode_type arg)
+  {
+    msg_.teleop_mode = std::move(arg);
+    return Init_ChangeMode_Request_pose(msg_);
+  }
+
+private:
+  ::fun4_interfaces::srv::ChangeMode_Request msg_;
+};
+
 class Init_ChangeMode_Request_mode
 {
 public:
   Init_ChangeMode_Request_mode()
   : msg_(::rosidl_runtime_cpp::MessageInitialization::SKIP)
   {}
-  Init_ChangeMode_Request_pose mode(::fun4_interfaces::srv::ChangeMode_Request::_mode_type arg)
+  Init_ChangeMode_Request_teleop_mode mode(::fun4_interfaces::srv::ChangeMode_Request::_mode_type arg)
   {
     msg_.mode = std::move(arg);
-    return Init_ChangeMode_Request_pose(msg_);
+    return Init_ChangeMode_Request_teleop_mode(msg_);
   }
 
 private:

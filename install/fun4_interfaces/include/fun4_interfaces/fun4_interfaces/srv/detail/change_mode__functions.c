@@ -21,6 +21,7 @@ fun4_interfaces__srv__ChangeMode_Request__init(fun4_interfaces__srv__ChangeMode_
     return false;
   }
   // mode
+  // teleop_mode
   // pose
   if (!geometry_msgs__msg__Point__init(&msg->pose)) {
     fun4_interfaces__srv__ChangeMode_Request__fini(msg);
@@ -36,6 +37,7 @@ fun4_interfaces__srv__ChangeMode_Request__fini(fun4_interfaces__srv__ChangeMode_
     return;
   }
   // mode
+  // teleop_mode
   // pose
   geometry_msgs__msg__Point__fini(&msg->pose);
 }
@@ -48,6 +50,10 @@ fun4_interfaces__srv__ChangeMode_Request__are_equal(const fun4_interfaces__srv__
   }
   // mode
   if (lhs->mode != rhs->mode) {
+    return false;
+  }
+  // teleop_mode
+  if (lhs->teleop_mode != rhs->teleop_mode) {
     return false;
   }
   // pose
@@ -69,6 +75,8 @@ fun4_interfaces__srv__ChangeMode_Request__copy(
   }
   // mode
   output->mode = input->mode;
+  // teleop_mode
+  output->teleop_mode = input->teleop_mode;
   // pose
   if (!geometry_msgs__msg__Point__copy(
       &(input->pose), &(output->pose)))

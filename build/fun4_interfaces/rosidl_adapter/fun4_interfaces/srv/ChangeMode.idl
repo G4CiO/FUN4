@@ -9,6 +9,8 @@ module fun4_interfaces {
     struct ChangeMode_Request {
       int64 mode;
 
+      int64 teleop_mode;
+
       geometry_msgs::msg::Point pose;
     };
     struct ChangeMode_Response {

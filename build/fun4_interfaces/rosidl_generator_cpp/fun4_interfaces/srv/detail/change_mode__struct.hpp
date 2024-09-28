@@ -44,6 +44,7 @@ struct ChangeMode_Request_
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
       this->mode = 0ll;
+      this->teleop_mode = 0ll;
     }
   }
 
@@ -54,6 +55,7 @@ struct ChangeMode_Request_
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
       this->mode = 0ll;
+      this->teleop_mode = 0ll;
     }
   }
 
@@ -61,6 +63,9 @@ struct ChangeMode_Request_
   using _mode_type =
     int64_t;
   _mode_type mode;
+  using _teleop_mode_type =
+    int64_t;
+  _teleop_mode_type teleop_mode;
   using _pose_type =
     geometry_msgs::msg::Point_<ContainerAllocator>;
   _pose_type pose;
@@ -70,6 +75,12 @@ struct ChangeMode_Request_
     const int64_t & _arg)
   {
     this->mode = _arg;
+    return *this;
+  }
+  Type & set__teleop_mode(
+    const int64_t & _arg)
+  {
+    this->teleop_mode = _arg;
     return *this;
   }
   Type & set__pose(
@@ -122,6 +133,9 @@ struct ChangeMode_Request_
   bool operator==(const ChangeMode_Request_ & other) const
   {
     if (this->mode != other.mode) {
+      return false;
+    }
+    if (this->teleop_mode != other.teleop_mode) {
       return false;
     }
     if (this->pose != other.pose) {

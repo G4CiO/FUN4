@@ -25,6 +25,8 @@ import xacro
     
 def generate_launch_description():
     
+
+
     pkg = get_package_share_directory('fun4_description')
     rviz_path = os.path.join(pkg,'config','display.rviz')
     rviz = Node(
@@ -69,20 +71,31 @@ def generate_launch_description():
 
     end_effector_pose = Node(
         package='fun4_description',
-        executable='end_effector_pose.py'
+        executable='end_effector_pose.py',
+        output='screen'
     )
 
     inverse_pose_kinematics = Node(
         package='fun4_description',
-        executable='inverse_pose_kinematics.py'
+        executable='inverse_pose_kinematics.py',
+        output='screen'
     )
+
+    teleoperation = Node(
+        package='fun4_description',
+        executable='teleoperation.py',
+        output='screen'
+    )
+
+
     
     launch_description.add_action(rviz)
     launch_description.add_action(robot_state_publisher)
     launch_description.add_action(random_node)
     launch_description.add_action(end_effector_pose)
     # launch_description.add_action(joint_state_publisher)
-    launch_description.add_action(joint_state_publisher_gui)
+    # launch_description.add_action(joint_state_publisher_gui)
     launch_description.add_action(inverse_pose_kinematics)
+    launch_description.add_action(teleoperation)
     
     return launch_description

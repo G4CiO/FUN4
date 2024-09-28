@@ -63,6 +63,15 @@ bool fun4_interfaces__srv__change_mode__request__convert_from_py(PyObject * _pym
     ros_message->mode = PyLong_AsLongLong(field);
     Py_DECREF(field);
   }
+  {  // teleop_mode
+    PyObject * field = PyObject_GetAttrString(_pymsg, "teleop_mode");
+    if (!field) {
+      return false;
+    }
+    assert(PyLong_Check(field));
+    ros_message->teleop_mode = PyLong_AsLongLong(field);
+    Py_DECREF(field);
+  }
   {  // pose
     PyObject * field = PyObject_GetAttrString(_pymsg, "pose");
     if (!field) {
@@ -101,6 +110,17 @@ PyObject * fun4_interfaces__srv__change_mode__request__convert_to_py(void * raw_
     field = PyLong_FromLongLong(ros_message->mode);
     {
       int rc = PyObject_SetAttrString(_pymessage, "mode", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // teleop_mode
+    PyObject * field = NULL;
+    field = PyLong_FromLongLong(ros_message->teleop_mode);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "teleop_mode", field);
       Py_DECREF(field);
       if (rc) {
         return NULL;

@@ -10,7 +10,7 @@ from math import radians
 import rclpy
 from rclpy.node import Node
 from scipy.optimize import minimize
-# from geometry_msgs.msg import TransformStamped, PoseStamped
+from geometry_msgs.msg import PoseStamped
 from fun4_interfaces.srv import ChangeMode
 # from tf_transformations import euler_from_quaternion
 
@@ -34,7 +34,7 @@ class InversePoseKinematics(Node):
         self.dt = 0.01
         self.timer = self.create_timer(self.dt, self.update_joint_states)
         # Sub
-        # self.target_sub = self.create_subscription(PoseStamped, '/target', self.callback_target, 10)
+        self.end_pose_sub = self.create_subscription(PoseStamped, '/end_effector', self.callback_end_pose, 10)
 
         # Service Server (รับ mode เข้ามา)
         self.take_mode = self.create_service(ChangeMode, '/mode_pose', self.callback_user)
@@ -46,22 +46,30 @@ class InversePoseKinematics(Node):
         self.r_max = 0.535
         self.current_joint_positions = [0.0, 0.0, 0.0]
         self.target_joint_positions = [0.0, 0.0, 0.0]
-
         # Initialize PID controllers with kp only
         self.pid_controllers = [PIDController(1.0),  # For joint 1
                                 PIDController(1.0),  # For joint 2
                                 PIDController(1.0)]  # For joint 3
+        
+    def callback_end_pose(self, msg:PoseStamped):
+        self.x = msg.pose.position.x
+        self.y = msg.pose.position.y
+        self.z = msg.pose.position.z
+
 
     def callback_user(self,request:ChangeMode.Request, response:ChangeMode.Response): # รับ
-        mode = request.mode
+        self.mode = request.mode
         x = request.pose.x
         y = request.pose.y
         z = request.pose.z
 
-        q_sol = self.inverse_kinematic(x, y, z, mode)
+        q_sol = self.inverse_kinematic(x, y, z, self.mode)
         
         response.success = self.finish
         response.config = q_sol
+        if self.mode == 1:
+            self.get_logger().info(f'Change to mode {self.mode} IPK ')
+            self.get_logger().info(f'Config from Mode1 {response.config} ')
 
         return response
 
@@ -92,10 +100,12 @@ class InversePoseKinematics(Node):
             return self.target_joint_positions
         
     def update_joint_states(self):
-        """Smoothly update joint positions using proportional control"""
-        joint_msg = JointState()
-        joint_msg.name = ['joint_1', 'joint_2', 'joint_3']
-        joint_msg.header.stamp = self.get_clock().now().to_msg()
+        if self.mode != 1:
+            return  # Do not publish anything if the mode is not 1"
+        
+        self.joint_msg = JointState()
+        self.joint_msg.name = ['joint_1', 'joint_2', 'joint_3']
+        self.joint_msg.header.stamp = self.get_clock().now().to_msg()
 
         # PID
         smoothed_positions = []
@@ -108,10 +118,10 @@ class InversePoseKinematics(Node):
 
         # Update positions
         self.current_joint_positions = smoothed_positions
-        joint_msg.position = smoothed_positions
-
+        self.joint_msg.position = smoothed_positions
         # Publish joint state
-        self.joint_state_pub.publish(joint_msg)
+        self.joint_state_pub.publish(self.joint_msg)
+        
     
 
 

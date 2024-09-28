@@ -60,15 +60,18 @@ class ChangeMode_Request(metaclass=Metaclass_ChangeMode_Request):
 
     __slots__ = [
         '_mode',
+        '_teleop_mode',
         '_pose',
     ]
 
     _fields_and_field_types = {
         'mode': 'int64',
+        'teleop_mode': 'int64',
         'pose': 'geometry_msgs/Point',
     }
 
     SLOT_TYPES = (
+        rosidl_parser.definition.BasicType('int64'),  # noqa: E501
         rosidl_parser.definition.BasicType('int64'),  # noqa: E501
         rosidl_parser.definition.NamespacedType(['geometry_msgs', 'msg'], 'Point'),  # noqa: E501
     )
@@ -78,6 +81,7 @@ class ChangeMode_Request(metaclass=Metaclass_ChangeMode_Request):
             'Invalid arguments passed to constructor: %s' % \
             ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.mode = kwargs.get('mode', int())
+        self.teleop_mode = kwargs.get('teleop_mode', int())
         from geometry_msgs.msg import Point
         self.pose = kwargs.get('pose', Point())
 
@@ -112,6 +116,8 @@ class ChangeMode_Request(metaclass=Metaclass_ChangeMode_Request):
             return False
         if self.mode != other.mode:
             return False
+        if self.teleop_mode != other.teleop_mode:
+            return False
         if self.pose != other.pose:
             return False
         return True
@@ -135,6 +141,21 @@ class ChangeMode_Request(metaclass=Metaclass_ChangeMode_Request):
             assert value >= -9223372036854775808 and value < 9223372036854775808, \
                 "The 'mode' field must be an integer in [-9223372036854775808, 9223372036854775807]"
         self._mode = value
+
+    @builtins.property
+    def teleop_mode(self):
+        """Message field 'teleop_mode'."""
+        return self._teleop_mode
+
+    @teleop_mode.setter
+    def teleop_mode(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, int), \
+                "The 'teleop_mode' field must be of type 'int'"
+            assert value >= -9223372036854775808 and value < 9223372036854775808, \
+                "The 'teleop_mode' field must be an integer in [-9223372036854775808, 9223372036854775807]"
+        self._teleop_mode = value
 
     @builtins.property
     def pose(self):

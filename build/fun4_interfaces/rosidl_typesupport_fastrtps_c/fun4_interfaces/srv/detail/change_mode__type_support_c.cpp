@@ -69,6 +69,11 @@ static bool _ChangeMode_Request__cdr_serialize(
     cdr << ros_message->mode;
   }
 
+  // Field name: teleop_mode
+  {
+    cdr << ros_message->teleop_mode;
+  }
+
   // Field name: pose
   {
     const message_type_support_callbacks_t * callbacks =
@@ -98,6 +103,11 @@ static bool _ChangeMode_Request__cdr_deserialize(
   // Field name: mode
   {
     cdr >> ros_message->mode;
+  }
+
+  // Field name: teleop_mode
+  {
+    cdr >> ros_message->teleop_mode;
   }
 
   // Field name: pose
@@ -137,6 +147,12 @@ size_t get_serialized_size_fun4_interfaces__srv__ChangeMode_Request(
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
+  // field.name teleop_mode
+  {
+    size_t item_size = sizeof(ros_message->teleop_mode);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
   // field.name pose
 
   current_alignment += get_serialized_size_geometry_msgs__msg__Point(
@@ -171,6 +187,14 @@ size_t max_serialized_size_fun4_interfaces__srv__ChangeMode_Request(
   is_plain = true;
 
   // member: mode
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+  // member: teleop_mode
   {
     size_t array_size = 1;
 

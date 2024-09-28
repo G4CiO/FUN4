@@ -58,6 +58,8 @@ cdr_serialize(
 {
   // Member: mode
   cdr << ros_message.mode;
+  // Member: teleop_mode
+  cdr << ros_message.teleop_mode;
   // Member: pose
   geometry_msgs::msg::typesupport_fastrtps_cpp::cdr_serialize(
     ros_message.pose,
@@ -73,6 +75,9 @@ cdr_deserialize(
 {
   // Member: mode
   cdr >> ros_message.mode;
+
+  // Member: teleop_mode
+  cdr >> ros_message.teleop_mode;
 
   // Member: pose
   geometry_msgs::msg::typesupport_fastrtps_cpp::cdr_deserialize(
@@ -97,6 +102,12 @@ get_serialized_size(
   // Member: mode
   {
     size_t item_size = sizeof(ros_message.mode);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // Member: teleop_mode
+  {
+    size_t item_size = sizeof(ros_message.teleop_mode);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -130,6 +141,15 @@ max_serialized_size_ChangeMode_Request(
 
 
   // Member: mode
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+
+  // Member: teleop_mode
   {
     size_t array_size = 1;
 

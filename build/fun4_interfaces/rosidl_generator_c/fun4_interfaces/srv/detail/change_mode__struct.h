@@ -25,6 +25,7 @@ extern "C"
 typedef struct fun4_interfaces__srv__ChangeMode_Request
 {
   int64_t mode;
+  int64_t teleop_mode;
   geometry_msgs__msg__Point pose;
 } fun4_interfaces__srv__ChangeMode_Request;
 
