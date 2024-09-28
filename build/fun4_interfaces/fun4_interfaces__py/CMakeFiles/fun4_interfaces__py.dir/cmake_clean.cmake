@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "../rosidl_generator_py/fun4_interfaces/srv/__init__.py"
   "../rosidl_generator_py/fun4_interfaces/srv/_change_mode.py"
   "../rosidl_generator_py/fun4_interfaces/srv/_change_mode_s.c"
+  "../rosidl_generator_py/fun4_interfaces/srv/_run_auto.py"
+  "../rosidl_generator_py/fun4_interfaces/srv/_run_auto_s.c"
   "CMakeFiles/fun4_interfaces__py"
 )
 

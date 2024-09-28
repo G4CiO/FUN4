@@ -4,6 +4,8 @@ import rclpy
 from rclpy.node import Node
 from geometry_msgs.msg import PoseStamped
 import numpy as np
+from fun4_interfaces.srv import RunAuto
+from functools import partial
 
 class RandomTarget(Node):
     def __init__(self):
@@ -11,10 +13,40 @@ class RandomTarget(Node):
         self.pose_end_pub = self.create_publisher(PoseStamped, "/target", 10)
         self.dt = 0.01
         self.create_timer(self.dt, self.random_target)
+        self.send_target = self.create_client(RunAuto, '/target_')
+        self.finish = True
+
+    def call_auto(self, x, y, z):
+        while not self.send_target.wait_for_service(1.0):
+            self.get_logger().warn("Waiting for Server Auto Node...")   
+        request_position = RunAuto.Request()
+        request_position.target.x = x
+        request_position.target.y = y
+        request_position.target.z = z
+
+        # Call the service asynchronously
+        future = self.send_target.call_async(request_position)
+        
+        # Add a callback for when the response is received
+        # future.add_done_callback(self.callback_auto_response)
+        future.add_done_callback(partial(self.callback_auto_response, x=x, y=y, z=z))
+        
+
+    def callback_auto_response(self, future):
+        try:
+            response = future.result()
+            self.finish = response.reach_target
+            if self.finish:
+                self.get_logger().info('Target reached successfully.')
+            else:
+                self.get_logger().warn('Target not reached.')
+        except Exception as e:
+            self.get_logger().error(f"Service call failed: {str(e)}")
+
 
     def random_target(self):
         r_min = 0.03
-        r_max = 0.530
+        r_max = 0.535
         
         while True:
             # Generate random values for x, y, z
@@ -43,6 +75,9 @@ class RandomTarget(Node):
                 msg.pose.orientation.w = 1.0
 
                 self.pose_end_pub.publish(msg)
+
+                self.call_auto(x, y, z)
+
                 break  # Exit the loop after successfully publishing
 
 def main(args=None):

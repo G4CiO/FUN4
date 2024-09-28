@@ -74,6 +74,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
     "/home/gun/FUN4/src/fun4_description/scripts/end_effector_pose.py"
     "/home/gun/FUN4/src/fun4_description/scripts/inverse_pose_kinematics.py"
     "/home/gun/FUN4/src/fun4_description/scripts/teleoperation.py"
+    "/home/gun/FUN4/src/fun4_description/scripts/auto.py"
     )
 endif()
 

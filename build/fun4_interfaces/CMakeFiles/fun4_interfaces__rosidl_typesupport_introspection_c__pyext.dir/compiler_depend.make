@@ -247,8 +247,15 @@ CMakeFiles/fun4_interfaces__rosidl_typesupport_introspection_c__pyext.dir/rosidl
   rosidl_generator_c/fun4_interfaces/srv/detail/change_mode__struct.h \
   /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/point__struct.h \
   /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence.h \
-  rosidl_generator_c/fun4_interfaces/srv/detail/change_mode__functions.h
+  rosidl_generator_c/fun4_interfaces/srv/detail/change_mode__functions.h \
+  rosidl_generator_c/fun4_interfaces/srv/detail/run_auto__type_support.h \
+  rosidl_generator_c/fun4_interfaces/srv/detail/run_auto__struct.h \
+  rosidl_generator_c/fun4_interfaces/srv/detail/run_auto__functions.h
 
+
+rosidl_generator_c/fun4_interfaces/srv/detail/run_auto__functions.h:
+
+rosidl_generator_c/fun4_interfaces/srv/detail/run_auto__struct.h:
 
 /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/point__struct.h:
 
@@ -547,6 +554,8 @@ rosidl_generator_py/fun4_interfaces/_fun4_interfaces_s.ep.rosidl_typesupport_int
 /usr/include/x86_64-linux-gnu/bits/xopen_lim.h:
 
 /usr/include/x86_64-linux-gnu/bits/stat.h:
+
+rosidl_generator_c/fun4_interfaces/srv/detail/run_auto__type_support.h:
 
 /usr/include/x86_64-linux-gnu/bits/endian.h:
 

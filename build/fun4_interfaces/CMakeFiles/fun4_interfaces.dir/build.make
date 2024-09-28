@@ -69,6 +69,9 @@ include CMakeFiles/fun4_interfaces.dir/progress.make
 CMakeFiles/fun4_interfaces: /home/gun/FUN4/src/fun4_interfaces/srv/ChangeMode.srv
 CMakeFiles/fun4_interfaces: rosidl_cmake/srv/ChangeMode_Request.msg
 CMakeFiles/fun4_interfaces: rosidl_cmake/srv/ChangeMode_Response.msg
+CMakeFiles/fun4_interfaces: /home/gun/FUN4/src/fun4_interfaces/srv/RunAuto.srv
+CMakeFiles/fun4_interfaces: rosidl_cmake/srv/RunAuto_Request.msg
+CMakeFiles/fun4_interfaces: rosidl_cmake/srv/RunAuto_Response.msg
 CMakeFiles/fun4_interfaces: /opt/ros/humble/share/geometry_msgs/msg/Accel.idl
 CMakeFiles/fun4_interfaces: /opt/ros/humble/share/geometry_msgs/msg/AccelStamped.idl
 CMakeFiles/fun4_interfaces: /opt/ros/humble/share/geometry_msgs/msg/AccelWithCovariance.idl

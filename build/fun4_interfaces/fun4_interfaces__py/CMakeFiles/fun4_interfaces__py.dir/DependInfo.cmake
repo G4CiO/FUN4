@@ -17,6 +17,8 @@ set(CMAKE_MULTIPLE_OUTPUT_PAIRS
   "/home/gun/FUN4/build/fun4_interfaces/rosidl_generator_py/fun4_interfaces/srv/__init__.py" "/home/gun/FUN4/build/fun4_interfaces/rosidl_generator_py/fun4_interfaces/_fun4_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c"
   "/home/gun/FUN4/build/fun4_interfaces/rosidl_generator_py/fun4_interfaces/srv/_change_mode.py" "/home/gun/FUN4/build/fun4_interfaces/rosidl_generator_py/fun4_interfaces/_fun4_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c"
   "/home/gun/FUN4/build/fun4_interfaces/rosidl_generator_py/fun4_interfaces/srv/_change_mode_s.c" "/home/gun/FUN4/build/fun4_interfaces/rosidl_generator_py/fun4_interfaces/_fun4_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c"
+  "/home/gun/FUN4/build/fun4_interfaces/rosidl_generator_py/fun4_interfaces/srv/_run_auto.py" "/home/gun/FUN4/build/fun4_interfaces/rosidl_generator_py/fun4_interfaces/_fun4_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c"
+  "/home/gun/FUN4/build/fun4_interfaces/rosidl_generator_py/fun4_interfaces/srv/_run_auto_s.c" "/home/gun/FUN4/build/fun4_interfaces/rosidl_generator_py/fun4_interfaces/_fun4_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c"
   )
 
 

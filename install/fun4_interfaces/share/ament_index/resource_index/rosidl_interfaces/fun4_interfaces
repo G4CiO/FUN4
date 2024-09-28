@@ -2,3 +2,7 @@ srv/ChangeMode.idl
 srv/ChangeMode.srv
 srv/ChangeMode_Request.msg
 srv/ChangeMode_Response.msg
+srv/RunAuto.idl
+srv/RunAuto.srv
+srv/RunAuto_Request.msg
+srv/RunAuto_Response.msg

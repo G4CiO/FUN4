@@ -12,6 +12,7 @@
 /home/gun/FUN4/install/fun4_description/lib/fun4_description/end_effector_pose.py
 /home/gun/FUN4/install/fun4_description/lib/fun4_description/inverse_pose_kinematics.py
 /home/gun/FUN4/install/fun4_description/lib/fun4_description/teleoperation.py
+/home/gun/FUN4/install/fun4_description/lib/fun4_description/auto.py
 /home/gun/FUN4/install/fun4_description/lib/fun4_description/cpp_node_test
 /home/gun/FUN4/install/fun4_description/share/fun4_description/config/display.rviz
 /home/gun/FUN4/install/fun4_description/share/fun4_description/launch/fun.launch.py

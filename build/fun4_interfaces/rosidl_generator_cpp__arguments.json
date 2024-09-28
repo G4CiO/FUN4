@@ -3,7 +3,8 @@
   "output_dir": "/home/gun/FUN4/build/fun4_interfaces/rosidl_generator_cpp/fun4_interfaces",
   "template_dir": "/opt/ros/humble/share/rosidl_generator_cpp/cmake/../resource",
   "idl_tuples": [
-    "/home/gun/FUN4/build/fun4_interfaces/rosidl_adapter/fun4_interfaces:srv/ChangeMode.idl"
+    "/home/gun/FUN4/build/fun4_interfaces/rosidl_adapter/fun4_interfaces:srv/ChangeMode.idl",
+    "/home/gun/FUN4/build/fun4_interfaces/rosidl_adapter/fun4_interfaces:srv/RunAuto.idl"
   ],
   "ros_interface_dependencies": [
     "geometry_msgs:/opt/ros/humble/share/geometry_msgs/msg/Accel.idl",
@@ -84,6 +85,7 @@
     "/opt/ros/humble/share/rosidl_generator_cpp/cmake/../resource/srv__struct.hpp.em",
     "/opt/ros/humble/share/rosidl_generator_cpp/cmake/../resource/srv__traits.hpp.em",
     "/home/gun/FUN4/build/fun4_interfaces/rosidl_adapter/fun4_interfaces/srv/ChangeMode.idl",
+    "/home/gun/FUN4/build/fun4_interfaces/rosidl_adapter/fun4_interfaces/srv/RunAuto.idl",
     "/opt/ros/humble/share/geometry_msgs/msg/Accel.idl",
     "/opt/ros/humble/share/geometry_msgs/msg/AccelStamped.idl",
     "/opt/ros/humble/share/geometry_msgs/msg/AccelWithCovariance.idl",

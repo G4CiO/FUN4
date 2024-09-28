@@ -78,6 +78,7 @@ rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/dds_fastrtps/change_m
 rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/dds_fastrtps/change_mode__type_support.cpp: /opt/ros/humble/share/rosidl_typesupport_fastrtps_cpp/resource/srv__rosidl_typesupport_fastrtps_cpp.hpp.em
 rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/dds_fastrtps/change_mode__type_support.cpp: /opt/ros/humble/share/rosidl_typesupport_fastrtps_cpp/resource/srv__type_support.cpp.em
 rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/dds_fastrtps/change_mode__type_support.cpp: rosidl_adapter/fun4_interfaces/srv/ChangeMode.idl
+rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/dds_fastrtps/change_mode__type_support.cpp: rosidl_adapter/fun4_interfaces/srv/RunAuto.idl
 rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/dds_fastrtps/change_mode__type_support.cpp: /opt/ros/humble/share/geometry_msgs/msg/Accel.idl
 rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/dds_fastrtps/change_mode__type_support.cpp: /opt/ros/humble/share/geometry_msgs/msg/AccelStamped.idl
 rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/dds_fastrtps/change_mode__type_support.cpp: /opt/ros/humble/share/geometry_msgs/msg/AccelWithCovariance.idl
@@ -144,6 +145,12 @@ rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/dds_fastrtps/change_m
 rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/change_mode__rosidl_typesupport_fastrtps_cpp.hpp: rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/dds_fastrtps/change_mode__type_support.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/change_mode__rosidl_typesupport_fastrtps_cpp.hpp
 
+rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/dds_fastrtps/run_auto__type_support.cpp: rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/dds_fastrtps/change_mode__type_support.cpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/dds_fastrtps/run_auto__type_support.cpp
+
+rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/run_auto__rosidl_typesupport_fastrtps_cpp.hpp: rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/dds_fastrtps/change_mode__type_support.cpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/run_auto__rosidl_typesupport_fastrtps_cpp.hpp
+
 CMakeFiles/fun4_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/dds_fastrtps/change_mode__type_support.cpp.o: CMakeFiles/fun4_interfaces__rosidl_typesupport_fastrtps_cpp.dir/flags.make
 CMakeFiles/fun4_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/dds_fastrtps/change_mode__type_support.cpp.o: rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/dds_fastrtps/change_mode__type_support.cpp
 CMakeFiles/fun4_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/dds_fastrtps/change_mode__type_support.cpp.o: CMakeFiles/fun4_interfaces__rosidl_typesupport_fastrtps_cpp.dir/compiler_depend.ts
@@ -158,14 +165,30 @@ CMakeFiles/fun4_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesuppo
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fun4_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/dds_fastrtps/change_mode__type_support.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gun/FUN4/build/fun4_interfaces/rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/dds_fastrtps/change_mode__type_support.cpp -o CMakeFiles/fun4_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/dds_fastrtps/change_mode__type_support.cpp.s
 
+CMakeFiles/fun4_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/dds_fastrtps/run_auto__type_support.cpp.o: CMakeFiles/fun4_interfaces__rosidl_typesupport_fastrtps_cpp.dir/flags.make
+CMakeFiles/fun4_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/dds_fastrtps/run_auto__type_support.cpp.o: rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/dds_fastrtps/run_auto__type_support.cpp
+CMakeFiles/fun4_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/dds_fastrtps/run_auto__type_support.cpp.o: CMakeFiles/fun4_interfaces__rosidl_typesupport_fastrtps_cpp.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gun/FUN4/build/fun4_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/fun4_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/dds_fastrtps/run_auto__type_support.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/fun4_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/dds_fastrtps/run_auto__type_support.cpp.o -MF CMakeFiles/fun4_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/dds_fastrtps/run_auto__type_support.cpp.o.d -o CMakeFiles/fun4_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/dds_fastrtps/run_auto__type_support.cpp.o -c /home/gun/FUN4/build/fun4_interfaces/rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/dds_fastrtps/run_auto__type_support.cpp
+
+CMakeFiles/fun4_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/dds_fastrtps/run_auto__type_support.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fun4_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/dds_fastrtps/run_auto__type_support.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gun/FUN4/build/fun4_interfaces/rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/dds_fastrtps/run_auto__type_support.cpp > CMakeFiles/fun4_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/dds_fastrtps/run_auto__type_support.cpp.i
+
+CMakeFiles/fun4_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/dds_fastrtps/run_auto__type_support.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fun4_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/dds_fastrtps/run_auto__type_support.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gun/FUN4/build/fun4_interfaces/rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/dds_fastrtps/run_auto__type_support.cpp -o CMakeFiles/fun4_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/dds_fastrtps/run_auto__type_support.cpp.s
+
 # Object files for target fun4_interfaces__rosidl_typesupport_fastrtps_cpp
 fun4_interfaces__rosidl_typesupport_fastrtps_cpp_OBJECTS = \
-"CMakeFiles/fun4_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/dds_fastrtps/change_mode__type_support.cpp.o"
+"CMakeFiles/fun4_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/dds_fastrtps/change_mode__type_support.cpp.o" \
+"CMakeFiles/fun4_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/dds_fastrtps/run_auto__type_support.cpp.o"
 
 # External object files for target fun4_interfaces__rosidl_typesupport_fastrtps_cpp
 fun4_interfaces__rosidl_typesupport_fastrtps_cpp_EXTERNAL_OBJECTS =
 
 libfun4_interfaces__rosidl_typesupport_fastrtps_cpp.so: CMakeFiles/fun4_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/dds_fastrtps/change_mode__type_support.cpp.o
+libfun4_interfaces__rosidl_typesupport_fastrtps_cpp.so: CMakeFiles/fun4_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/dds_fastrtps/run_auto__type_support.cpp.o
 libfun4_interfaces__rosidl_typesupport_fastrtps_cpp.so: CMakeFiles/fun4_interfaces__rosidl_typesupport_fastrtps_cpp.dir/build.make
 libfun4_interfaces__rosidl_typesupport_fastrtps_cpp.so: /opt/ros/humble/lib/libgeometry_msgs__rosidl_typesupport_fastrtps_cpp.so
 libfun4_interfaces__rosidl_typesupport_fastrtps_cpp.so: /opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_fastrtps_cpp.so
@@ -176,7 +199,7 @@ libfun4_interfaces__rosidl_typesupport_fastrtps_cpp.so: /opt/ros/humble/lib/libr
 libfun4_interfaces__rosidl_typesupport_fastrtps_cpp.so: /opt/ros/humble/lib/librosidl_runtime_c.so
 libfun4_interfaces__rosidl_typesupport_fastrtps_cpp.so: /opt/ros/humble/lib/librcutils.so
 libfun4_interfaces__rosidl_typesupport_fastrtps_cpp.so: CMakeFiles/fun4_interfaces__rosidl_typesupport_fastrtps_cpp.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/gun/FUN4/build/fun4_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX shared library libfun4_interfaces__rosidl_typesupport_fastrtps_cpp.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/gun/FUN4/build/fun4_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX shared library libfun4_interfaces__rosidl_typesupport_fastrtps_cpp.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/fun4_interfaces__rosidl_typesupport_fastrtps_cpp.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -189,6 +212,8 @@ CMakeFiles/fun4_interfaces__rosidl_typesupport_fastrtps_cpp.dir/clean:
 
 CMakeFiles/fun4_interfaces__rosidl_typesupport_fastrtps_cpp.dir/depend: rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/change_mode__rosidl_typesupport_fastrtps_cpp.hpp
 CMakeFiles/fun4_interfaces__rosidl_typesupport_fastrtps_cpp.dir/depend: rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/dds_fastrtps/change_mode__type_support.cpp
+CMakeFiles/fun4_interfaces__rosidl_typesupport_fastrtps_cpp.dir/depend: rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/dds_fastrtps/run_auto__type_support.cpp
+CMakeFiles/fun4_interfaces__rosidl_typesupport_fastrtps_cpp.dir/depend: rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/run_auto__rosidl_typesupport_fastrtps_cpp.hpp
 	cd /home/gun/FUN4/build/fun4_interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/gun/FUN4/src/fun4_interfaces /home/gun/FUN4/src/fun4_interfaces /home/gun/FUN4/build/fun4_interfaces /home/gun/FUN4/build/fun4_interfaces /home/gun/FUN4/build/fun4_interfaces/CMakeFiles/fun4_interfaces__rosidl_typesupport_fastrtps_cpp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/fun4_interfaces__rosidl_typesupport_fastrtps_cpp.dir/depend
 

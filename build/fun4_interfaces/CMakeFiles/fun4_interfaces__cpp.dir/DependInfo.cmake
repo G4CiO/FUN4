@@ -15,6 +15,10 @@ set(CMAKE_MULTIPLE_OUTPUT_PAIRS
   "/home/gun/FUN4/build/fun4_interfaces/rosidl_generator_cpp/fun4_interfaces/srv/detail/change_mode__builder.hpp" "/home/gun/FUN4/build/fun4_interfaces/rosidl_generator_cpp/fun4_interfaces/srv/change_mode.hpp"
   "/home/gun/FUN4/build/fun4_interfaces/rosidl_generator_cpp/fun4_interfaces/srv/detail/change_mode__struct.hpp" "/home/gun/FUN4/build/fun4_interfaces/rosidl_generator_cpp/fun4_interfaces/srv/change_mode.hpp"
   "/home/gun/FUN4/build/fun4_interfaces/rosidl_generator_cpp/fun4_interfaces/srv/detail/change_mode__traits.hpp" "/home/gun/FUN4/build/fun4_interfaces/rosidl_generator_cpp/fun4_interfaces/srv/change_mode.hpp"
+  "/home/gun/FUN4/build/fun4_interfaces/rosidl_generator_cpp/fun4_interfaces/srv/detail/run_auto__builder.hpp" "/home/gun/FUN4/build/fun4_interfaces/rosidl_generator_cpp/fun4_interfaces/srv/change_mode.hpp"
+  "/home/gun/FUN4/build/fun4_interfaces/rosidl_generator_cpp/fun4_interfaces/srv/detail/run_auto__struct.hpp" "/home/gun/FUN4/build/fun4_interfaces/rosidl_generator_cpp/fun4_interfaces/srv/change_mode.hpp"
+  "/home/gun/FUN4/build/fun4_interfaces/rosidl_generator_cpp/fun4_interfaces/srv/detail/run_auto__traits.hpp" "/home/gun/FUN4/build/fun4_interfaces/rosidl_generator_cpp/fun4_interfaces/srv/change_mode.hpp"
+  "/home/gun/FUN4/build/fun4_interfaces/rosidl_generator_cpp/fun4_interfaces/srv/run_auto.hpp" "/home/gun/FUN4/build/fun4_interfaces/rosidl_generator_cpp/fun4_interfaces/srv/change_mode.hpp"
   )
 
 

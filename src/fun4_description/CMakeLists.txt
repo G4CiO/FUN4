@@ -33,6 +33,7 @@ install(PROGRAMS
   scripts/end_effector_pose.py
   scripts/inverse_pose_kinematics.py
   scripts/teleoperation.py
+  scripts/auto.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
