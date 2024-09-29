@@ -17,6 +17,7 @@ class RandomTarget(Node):
         self.send_target = self.create_client(RunAuto, '/target_')
         self.finish_target = True
         self.xt,self.yt,self.zt = 0.0,0.0,0.0
+        
 
     def call_auto(self):
         while not self.send_target.wait_for_service(1.0):
@@ -27,7 +28,7 @@ class RandomTarget(Node):
         request_position.target.x = self.xt
         request_position.target.y = self.yt
         request_position.target.z = self.zt
-
+        # self.get_logger().info(f'Random target x = {self.xt}, y = {self.yt}, z = {self.zt}')
         future = self.send_target.call_async(request_position)
         future.add_done_callback(self.callback_auto_response)        
 
@@ -35,6 +36,7 @@ class RandomTarget(Node):
         try:
             response = future.result()
             self.finish_target = response.reach_target
+            
             if self.finish_target:
                 r_min = 0.03
                 r_max = 0.535
@@ -62,19 +64,9 @@ class RandomTarget(Node):
                         self.xt = x
                         self.yt = y
                         self.zt = z
-                        
-                        # Set orientation to default (no rotation)
-                        msg.pose.orientation.x = 0.0
-                        msg.pose.orientation.y = 0.0
-                        msg.pose.orientation.z = 0.0
-                        msg.pose.orientation.w = 1.0
 
                         self.pose_end_pub.publish(msg)
-
-                        # Send the new target to the auto node
-                        
-
-                        break  # Exit the loop after successfully publishing
+                        break
             else:
                 pass
 
@@ -83,6 +75,8 @@ class RandomTarget(Node):
 
     def random_target(self):
         self.call_auto()
+
+    
 
 def main(args=None):
     rclpy.init(args=args)

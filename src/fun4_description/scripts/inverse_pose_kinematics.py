@@ -6,13 +6,10 @@ import numpy as np
 from sensor_msgs.msg import JointState
 from spatialmath import SE3
 from math import pi
-from math import radians
 import rclpy
 from rclpy.node import Node
-from scipy.optimize import minimize
 from geometry_msgs.msg import PoseStamped
 from fun4_interfaces.srv import ChangeMode
-# from tf_transformations import euler_from_quaternion
 
 class PIDController:
     def __init__(self, kp):

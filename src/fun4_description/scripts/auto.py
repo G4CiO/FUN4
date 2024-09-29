@@ -4,13 +4,10 @@ import numpy as np
 from sensor_msgs.msg import JointState
 from spatialmath import SE3
 from math import pi
-from math import radians
 import rclpy
 from rclpy.node import Node
-from scipy.optimize import minimize
 from geometry_msgs.msg import PoseStamped
 from fun4_interfaces.srv import RunAuto,ChangeMode
-# from tf_transformations import euler_from_quaternion
 
 class PIDController:
     def __init__(self, kp):
@@ -45,7 +42,6 @@ class Auto(Node):
         self.r_min = 0.03
         self.r_max = 0.535
         self.current_joint_positions = [0.0, 0.0, 0.0]
-        self.target_joint_positions = [0.0, 0.0, 0.0]
         self.xe, self.ye, self.ze = 0.0, 0.0, 0.0  # Initialize end-effector position
         self.tolerance = 0.01  # Tolerance 
         self.flag = True
@@ -68,20 +64,22 @@ class Auto(Node):
         return response
 
     def callback_target(self,request:RunAuto.Request, response:RunAuto.Response): # รับ
-        xt = request.target.x
-        yt = request.target.y
-        zt = request.target.z
+        if self.mode == 3:
+            if self.flag:
+                response.reach_target = True
+            else:    
+                xt = request.target.x
+                yt = request.target.y
+                zt = request.target.z
 
-        # if self.mode == 3:
-        #     self.get_logger().info(f'Random target x = {xt}, y = {yt}, z = {zt}')
-        #     self.get_logger().info(f'Current position end-effector x = {self.xe}, y = {self.ye}, z = {self.ze}')
+                q_target = self.inverse_kinematic(xt, yt, zt, self.mode)
+                self.update_joint_states(q_target)
+                
+                self.finish = self.check_if_reached(xt,yt,zt)
 
-        q_target = self.inverse_kinematic(xt, yt, zt, self.mode)
-        self.update_joint_states(q_target)
-
-        self.finish = self.check_if_reached(xt,yt,zt)
-        
-        response.reach_target = self.finish
+                response.reach_target = self.finish
+                # self.get_logger().info(f'finish in auto: {response.reach_target}')
+            self.flag = False
         return response
 
     def inverse_kinematic(self, x, y, z, mode):
@@ -109,8 +107,6 @@ class Auto(Node):
     def update_joint_states(self,q_target):
         if self.mode != 3:
             return 
-
-        
         if q_target is None:
             self.get_logger().warn("Invalid target joint positions. Aborting update.")
             return
@@ -134,10 +130,12 @@ class Auto(Node):
         self.joint_state_pub.publish(self.joint_msg)
     
     def check_if_reached(self,xt,yt,zt):
-        distance = np.sqrt((xt - self.xe) ** 2 +
-                           (yt - self.ye) ** 2 +
-                           (zt - self.ze) ** 2)
-        if distance <= self.tolerance:
+        c1 = xt - self.xe
+        c2 = yt - self.ye
+        c3 = zt - self.ze
+        
+        # if distance <= self.tolerance:
+        if c1<=self.tolerance and c2<=self.tolerance and c3<=self.tolerance:
             finish = True
             # if self.mode == 3:
             # self.get_logger().info(f'Target reached.')
