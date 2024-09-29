@@ -97,11 +97,11 @@ class InversePoseKinematics(Node):
             q_sol_ik_LM, *_ = robot.ikine_LM(T_Position,mask=[1,1,1,0,0,0],q0=[0,0,0])
             self.target_joint_positions = [q_sol_ik_LM[0], q_sol_ik_LM[1], q_sol_ik_LM[2]]
             self.finish = True
-            self.get_logger().info('Taskspace is in workspace')
+            # self.get_logger().info('Taskspace is in workspace')
             return self.target_joint_positions
         else:
             self.finish = False
-            self.get_logger().warn("Taskspace isn't in workspace. Please key again.")
+            # self.get_logger().warn("Taskspace isn't in workspace. Please key again.")
             return self.target_joint_positions
         
     def update_joint_states(self):

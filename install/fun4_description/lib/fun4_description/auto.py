@@ -28,7 +28,7 @@ class Auto(Node):
 
     def __init__(self):
         super().__init__('auto')
-        self.get_logger().info('Auto node has start')
+        self.get_logger().info('Auto node has started')
         # Pub
         self.joint_state_pub = self.create_publisher(JointState, '/joint_states', 10)
         # Sub
@@ -49,7 +49,7 @@ class Auto(Node):
         self.current_joint_positions = [0.0, 0.0, 0.0]
         self.target_joint_positions = [0.0, 0.0, 0.0]
         self.xe, self.ye, self.ze = 0.0, 0.0, 0.0  # Initialize end-effector position
-        self.x, self.y, self.z = 0.0, 0.0, 0.0  # Initialize target position
+        self.xt, self.yt, self.zt = 0.0, 0.0, 0.0  # Initialize target position
         self.tolerance = 0.01  # Tolerance 
 
         self.pid_controllers = [PIDController(1.0),  # For joint 1
@@ -64,8 +64,12 @@ class Auto(Node):
         self.xe = msg.pose.position.x
         self.ye = msg.pose.position.y
         self.ze = msg.pose.position.z
+
+        self.inverse_kinematic(self.xt, self.yt, self.zt, self.mode)
         # Check if the end-effector is close to the target position
         self.check_target_reached()
+        self.check_if_reached()
+        
 
     def callback_user(self,request:ChangeMode.Request, response:ChangeMode.Response): # รับ
         self.mode = request.mode
@@ -73,18 +77,23 @@ class Auto(Node):
         return response
 
     def callback_target(self,request:RunAuto.Request, response:RunAuto.Response): # รับ
-        self.x = request.target.x
-        self.y = request.target.y
-        self.z = request.target.z
+        self.xt = request.target.x
+        self.yt = request.target.y
+        self.zt = request.target.z
+        self.get_logger().info(f'Take Target. Current finish status = {self.finish}')
+
+        # self.inverse_kinematic(self.xt, self.yt, self.zt, self.mode)
+
+        self.get_logger().info(f'Current mode = {self.mode}')
+        # self.check_if_reached()
+        
         response.reach_target = self.finish
-        self.get_logger().info(f'Target x = {self.x},Target y = {self.y},Target z = {self.z}')
-        self.inverse_kinematic(self.x, self.y, self.z, self.mode)
         return response
 
     def inverse_kinematic(self, x, y, z, mode):
         distance_squared = x**2 + y**2 + (z-0.2)**2
         if mode == 3 and self.r_min**2 <= distance_squared <= self.r_max**2:
-
+            # self.get_logger().info(f'Target x = {x},Target y = {y},Target z = {z}')
             robot = rtb.DHRobot(
                 [
                     rtb.RevoluteMDH(alpha = 0.0,a = 0.0,d = 0.2,offset = 0.0),
@@ -103,16 +112,12 @@ class Auto(Node):
             return self.target_joint_positions
         else:
             self.get_logger().warn("Taskspace isn't in workspace. Please key again.")
-            self.finish = True
+            # self.finish = True
             return self.target_joint_positions
         
     def update_joint_states(self):
         if self.mode != 3:
-            return  # Do not publish anything if the mode is not 1"
-        
-        self.joint_msg = JointState()
-        self.joint_msg.name = ['joint_1', 'joint_2', 'joint_3']
-        self.joint_msg.header.stamp = self.get_clock().now().to_msg()
+            return 
 
         # PID
         smoothed_positions = []
@@ -125,19 +130,29 @@ class Auto(Node):
 
         # Update positions
         self.current_joint_positions = smoothed_positions
+
+        self.joint_msg = JointState()
+        self.joint_msg.name = ['joint_1', 'joint_2', 'joint_3']
+        self.joint_msg.header.stamp = self.get_clock().now().to_msg()
         self.joint_msg.position = smoothed_positions
-        
-        # Publish joint state
+        # self.get_logger().info(f'target joint position = {self.target_joint_positions}')
+
         self.joint_state_pub.publish(self.joint_msg)
 
     def check_target_reached(self):
-        # Check if the current end-effector position is close to the target position.
-        distance = np.sqrt((self.x - self.xe)**2 + (self.y - self.ye)**2 + (self.z - self.ze)**2)
-        if distance <= self.tolerance:
+        distance = np.sqrt((self.xt - self.xe) ** 2 +
+                           (self.yt - self.ye) ** 2 +
+                           (self.zt - self.ze) ** 2)
+        # self.get_logger().info(f'distance = {distance}, tolerance = {self.tolerance}, logic = {distance <= self.tolerance}')
+        return distance <= self.tolerance
+    
+    def check_if_reached(self):
+        if self.check_target_reached():
             self.finish = True
-            self.get_logger().info(f'Target reached: {distance} meters away')
+            self.get_logger().info(f'Target reached. finish = {self.finish}')
         else:
             self.finish = False
+            self.get_logger().info(f'Target not reached. finish = {self.finish}.')
         
     
 
