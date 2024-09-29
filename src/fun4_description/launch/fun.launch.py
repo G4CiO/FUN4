@@ -85,14 +85,21 @@ def generate_launch_description():
         output='screen'
     )
 
+    auto = Node(
+        package='fun4_description',
+        executable='auto.py',
+        output='screen'
+    )
+
     launch_description = LaunchDescription()    
     launch_description.add_action(rviz)
     launch_description.add_action(robot_state_publisher)
-    # launch_description.add_action(random_node)
+    launch_description.add_action(random_node)
     launch_description.add_action(end_effector_pose)
     # launch_description.add_action(joint_state_publisher)
     # launch_description.add_action(joint_state_publisher_gui)
     launch_description.add_action(inverse_pose_kinematics)
     launch_description.add_action(teleoperation)
+    launch_description.add_action(auto)
     
     return launch_description

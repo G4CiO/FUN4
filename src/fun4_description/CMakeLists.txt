@@ -34,7 +34,6 @@ install(PROGRAMS
   scripts/inverse_pose_kinematics.py
   scripts/teleoperation.py
   scripts/auto.py
-  scripts/main_executor.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
