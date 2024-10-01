@@ -154,14 +154,14 @@ inline void to_flow_style_yaml(
   std::ostream & out)
 {
   out << "{";
-  // member: config
+  // member: config_mode1
   {
-    if (msg.config.size() == 0) {
-      out << "config: []";
+    if (msg.config_mode1.size() == 0) {
+      out << "config_mode1: []";
     } else {
-      out << "config: [";
-      size_t pending_items = msg.config.size();
-      for (auto item : msg.config) {
+      out << "config_mode1: [";
+      size_t pending_items = msg.config_mode1.size();
+      for (auto item : msg.config_mode1) {
         rosidl_generator_traits::value_to_yaml(item, out);
         if (--pending_items > 0) {
           out << ", ";
@@ -172,10 +172,17 @@ inline void to_flow_style_yaml(
     out << ", ";
   }
 
-  // member: success
+  // member: change_mode_success
   {
-    out << "success: ";
-    rosidl_generator_traits::value_to_yaml(msg.success, out);
+    out << "change_mode_success: ";
+    rosidl_generator_traits::value_to_yaml(msg.change_mode_success, out);
+    out << ", ";
+  }
+
+  // member: config_check_mode1
+  {
+    out << "config_check_mode1: ";
+    rosidl_generator_traits::value_to_yaml(msg.config_check_mode1, out);
   }
   out << "}";
 }  // NOLINT(readability/fn_size)
@@ -184,16 +191,16 @@ inline void to_block_style_yaml(
   const ChangeMode_Response & msg,
   std::ostream & out, size_t indentation = 0)
 {
-  // member: config
+  // member: config_mode1
   {
     if (indentation > 0) {
       out << std::string(indentation, ' ');
     }
-    if (msg.config.size() == 0) {
-      out << "config: []\n";
+    if (msg.config_mode1.size() == 0) {
+      out << "config_mode1: []\n";
     } else {
-      out << "config:\n";
-      for (auto item : msg.config) {
+      out << "config_mode1:\n";
+      for (auto item : msg.config_mode1) {
         if (indentation > 0) {
           out << std::string(indentation, ' ');
         }
@@ -204,13 +211,23 @@ inline void to_block_style_yaml(
     }
   }
 
-  // member: success
+  // member: change_mode_success
   {
     if (indentation > 0) {
       out << std::string(indentation, ' ');
     }
-    out << "success: ";
-    rosidl_generator_traits::value_to_yaml(msg.success, out);
+    out << "change_mode_success: ";
+    rosidl_generator_traits::value_to_yaml(msg.change_mode_success, out);
+    out << "\n";
+  }
+
+  // member: config_check_mode1
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "config_check_mode1: ";
+    rosidl_generator_traits::value_to_yaml(msg.config_check_mode1, out);
     out << "\n";
   }
 }  // NOLINT(readability/fn_size)

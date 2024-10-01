@@ -43,14 +43,15 @@ typedef struct fun4_interfaces__srv__ChangeMode_Request__Sequence
 // Constants defined in the message
 
 // Include directives for member types
-// Member 'config'
+// Member 'config_mode1'
 #include "rosidl_runtime_c/primitives_sequence.h"
 
 /// Struct defined in srv/ChangeMode in the package fun4_interfaces.
 typedef struct fun4_interfaces__srv__ChangeMode_Response
 {
-  rosidl_runtime_c__double__Sequence config;
-  bool success;
+  rosidl_runtime_c__double__Sequence config_mode1;
+  bool change_mode_success;
+  bool config_check_mode1;
 } fun4_interfaces__srv__ChangeMode_Response;
 
 // Struct for a sequence of fun4_interfaces__srv__ChangeMode_Response.

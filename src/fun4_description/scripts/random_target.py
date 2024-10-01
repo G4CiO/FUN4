@@ -5,7 +5,6 @@ from rclpy.node import Node
 from geometry_msgs.msg import PoseStamped
 import numpy as np
 from fun4_interfaces.srv import RunAuto
-from functools import partial
 
 class RandomTarget(Node):
     def __init__(self):
@@ -54,7 +53,7 @@ class RandomTarget(Node):
                         # Create a PoseStamped message and fill in the values
                         msg = PoseStamped()
                         msg.header.stamp = self.get_clock().now().to_msg()
-                        msg.header.frame_id = "end_effector"  # Set your desired frame id
+                        msg.header.frame_id = "link_0"  # Set your desired frame id
 
                         # Set position
                         msg.pose.position.x = x

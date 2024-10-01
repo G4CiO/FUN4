@@ -321,12 +321,14 @@ cdr_serialize(
   const fun4_interfaces::srv::ChangeMode_Response & ros_message,
   eprosima::fastcdr::Cdr & cdr)
 {
-  // Member: config
+  // Member: config_mode1
   {
-    cdr << ros_message.config;
+    cdr << ros_message.config_mode1;
   }
-  // Member: success
-  cdr << (ros_message.success ? true : false);
+  // Member: change_mode_success
+  cdr << (ros_message.change_mode_success ? true : false);
+  // Member: config_check_mode1
+  cdr << (ros_message.config_check_mode1 ? true : false);
   return true;
 }
 
@@ -336,16 +338,23 @@ cdr_deserialize(
   eprosima::fastcdr::Cdr & cdr,
   fun4_interfaces::srv::ChangeMode_Response & ros_message)
 {
-  // Member: config
+  // Member: config_mode1
   {
-    cdr >> ros_message.config;
+    cdr >> ros_message.config_mode1;
   }
 
-  // Member: success
+  // Member: change_mode_success
   {
     uint8_t tmp;
     cdr >> tmp;
-    ros_message.success = tmp ? true : false;
+    ros_message.change_mode_success = tmp ? true : false;
+  }
+
+  // Member: config_check_mode1
+  {
+    uint8_t tmp;
+    cdr >> tmp;
+    ros_message.config_check_mode1 = tmp ? true : false;
   }
 
   return true;
@@ -364,19 +373,25 @@ get_serialized_size(
   (void)padding;
   (void)wchar_size;
 
-  // Member: config
+  // Member: config_mode1
   {
-    size_t array_size = ros_message.config.size();
+    size_t array_size = ros_message.config_mode1.size();
 
     current_alignment += padding +
       eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
-    size_t item_size = sizeof(ros_message.config[0]);
+    size_t item_size = sizeof(ros_message.config_mode1[0]);
     current_alignment += array_size * item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
-  // Member: success
+  // Member: change_mode_success
   {
-    size_t item_size = sizeof(ros_message.success);
+    size_t item_size = sizeof(ros_message.change_mode_success);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // Member: config_check_mode1
+  {
+    size_t item_size = sizeof(ros_message.config_check_mode1);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -404,7 +419,7 @@ max_serialized_size_ChangeMode_Response(
   is_plain = true;
 
 
-  // Member: config
+  // Member: config_mode1
   {
     size_t array_size = 0;
     full_bounded = false;
@@ -417,7 +432,15 @@ max_serialized_size_ChangeMode_Response(
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
   }
 
-  // Member: success
+  // Member: change_mode_success
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint8_t);
+    current_alignment += array_size * sizeof(uint8_t);
+  }
+
+  // Member: config_check_mode1
   {
     size_t array_size = 1;
 
@@ -433,7 +456,7 @@ max_serialized_size_ChangeMode_Response(
     using DataType = fun4_interfaces::srv::ChangeMode_Response;
     is_plain =
       (
-      offsetof(DataType, success) +
+      offsetof(DataType, config_check_mode1) +
       last_member_size
       ) == ret_val;
   }

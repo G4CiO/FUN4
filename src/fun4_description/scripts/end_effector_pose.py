@@ -1,7 +1,4 @@
 #!/usr/bin/python3
-import roboticstoolbox as rtb
-import numpy as np
-
 from sensor_msgs.msg import JointState
 from spatialmath import SE3
 import math
@@ -13,9 +10,7 @@ from tf2_ros import TransformException
 from tf2_ros.buffer import Buffer
 from sensor_msgs.msg import JointState
 from tf2_ros.transform_listener import TransformListener 
-from geometry_msgs.msg import TransformStamped, PoseStamped
-from std_msgs.msg import Float64MultiArray
-from tf_transformations import quaternion_from_matrix
+from geometry_msgs.msg import PoseStamped
 
 class EndEffectorPose(Node):
 
@@ -87,7 +82,7 @@ class EndEffectorPose(Node):
 
         # Fill in the PoseStamped message based on the TransformStamped data
         pose_msg.header.stamp = self.get_clock().now().to_msg()
-        pose_msg.header.frame_id = self.target_frame
+        pose_msg.header.frame_id = 'link_0'
         
         # Set the position (translation)
         pose_msg.pose.position.x = current_x

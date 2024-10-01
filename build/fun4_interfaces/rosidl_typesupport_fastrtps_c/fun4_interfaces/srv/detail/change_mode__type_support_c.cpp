@@ -318,8 +318,8 @@ extern "C"
 {
 #endif
 
-#include "rosidl_runtime_c/primitives_sequence.h"  // config
-#include "rosidl_runtime_c/primitives_sequence_functions.h"  // config
+#include "rosidl_runtime_c/primitives_sequence.h"  // config_mode1
+#include "rosidl_runtime_c/primitives_sequence_functions.h"  // config_mode1
 
 // forward declare type support functions
 
@@ -335,17 +335,22 @@ static bool _ChangeMode_Response__cdr_serialize(
     return false;
   }
   const _ChangeMode_Response__ros_msg_type * ros_message = static_cast<const _ChangeMode_Response__ros_msg_type *>(untyped_ros_message);
-  // Field name: config
+  // Field name: config_mode1
   {
-    size_t size = ros_message->config.size;
-    auto array_ptr = ros_message->config.data;
+    size_t size = ros_message->config_mode1.size;
+    auto array_ptr = ros_message->config_mode1.data;
     cdr << static_cast<uint32_t>(size);
     cdr.serializeArray(array_ptr, size);
   }
 
-  // Field name: success
+  // Field name: change_mode_success
   {
-    cdr << (ros_message->success ? true : false);
+    cdr << (ros_message->change_mode_success ? true : false);
+  }
+
+  // Field name: config_check_mode1
+  {
+    cdr << (ros_message->config_check_mode1 ? true : false);
   }
 
   return true;
@@ -360,27 +365,34 @@ static bool _ChangeMode_Response__cdr_deserialize(
     return false;
   }
   _ChangeMode_Response__ros_msg_type * ros_message = static_cast<_ChangeMode_Response__ros_msg_type *>(untyped_ros_message);
-  // Field name: config
+  // Field name: config_mode1
   {
     uint32_t cdrSize;
     cdr >> cdrSize;
     size_t size = static_cast<size_t>(cdrSize);
-    if (ros_message->config.data) {
-      rosidl_runtime_c__double__Sequence__fini(&ros_message->config);
+    if (ros_message->config_mode1.data) {
+      rosidl_runtime_c__double__Sequence__fini(&ros_message->config_mode1);
     }
-    if (!rosidl_runtime_c__double__Sequence__init(&ros_message->config, size)) {
-      fprintf(stderr, "failed to create array for field 'config'");
+    if (!rosidl_runtime_c__double__Sequence__init(&ros_message->config_mode1, size)) {
+      fprintf(stderr, "failed to create array for field 'config_mode1'");
       return false;
     }
-    auto array_ptr = ros_message->config.data;
+    auto array_ptr = ros_message->config_mode1.data;
     cdr.deserializeArray(array_ptr, size);
   }
 
-  // Field name: success
+  // Field name: change_mode_success
   {
     uint8_t tmp;
     cdr >> tmp;
-    ros_message->success = tmp ? true : false;
+    ros_message->change_mode_success = tmp ? true : false;
+  }
+
+  // Field name: config_check_mode1
+  {
+    uint8_t tmp;
+    cdr >> tmp;
+    ros_message->config_check_mode1 = tmp ? true : false;
   }
 
   return true;
@@ -400,10 +412,10 @@ size_t get_serialized_size_fun4_interfaces__srv__ChangeMode_Response(
   (void)padding;
   (void)wchar_size;
 
-  // field.name config
+  // field.name config_mode1
   {
-    size_t array_size = ros_message->config.size;
-    auto array_ptr = ros_message->config.data;
+    size_t array_size = ros_message->config_mode1.size;
+    auto array_ptr = ros_message->config_mode1.data;
     current_alignment += padding +
       eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
     (void)array_ptr;
@@ -411,9 +423,15 @@ size_t get_serialized_size_fun4_interfaces__srv__ChangeMode_Response(
     current_alignment += array_size * item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
-  // field.name success
+  // field.name change_mode_success
   {
-    size_t item_size = sizeof(ros_message->success);
+    size_t item_size = sizeof(ros_message->change_mode_success);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name config_check_mode1
+  {
+    size_t item_size = sizeof(ros_message->config_check_mode1);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -446,7 +464,7 @@ size_t max_serialized_size_fun4_interfaces__srv__ChangeMode_Response(
   full_bounded = true;
   is_plain = true;
 
-  // member: config
+  // member: config_mode1
   {
     size_t array_size = 0;
     full_bounded = false;
@@ -458,7 +476,14 @@ size_t max_serialized_size_fun4_interfaces__srv__ChangeMode_Response(
     current_alignment += array_size * sizeof(uint64_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
   }
-  // member: success
+  // member: change_mode_success
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint8_t);
+    current_alignment += array_size * sizeof(uint8_t);
+  }
+  // member: config_check_mode1
   {
     size_t array_size = 1;
 
@@ -474,7 +499,7 @@ size_t max_serialized_size_fun4_interfaces__srv__ChangeMode_Response(
     using DataType = fun4_interfaces__srv__ChangeMode_Response;
     is_plain =
       (
-      offsetof(DataType, success) +
+      offsetof(DataType, config_check_mode1) +
       last_member_size
       ) == ret_val;
   }

@@ -174,7 +174,7 @@ class ChangeMode_Request(metaclass=Metaclass_ChangeMode_Request):
 
 # Import statements for member types
 
-# Member 'config'
+# Member 'config_mode1'
 import array  # noqa: E402, I100
 
 # already imported above
@@ -231,17 +231,20 @@ class ChangeMode_Response(metaclass=Metaclass_ChangeMode_Response):
     """Message class 'ChangeMode_Response'."""
 
     __slots__ = [
-        '_config',
-        '_success',
+        '_config_mode1',
+        '_change_mode_success',
+        '_config_check_mode1',
     ]
 
     _fields_and_field_types = {
-        'config': 'sequence<double>',
-        'success': 'boolean',
+        'config_mode1': 'sequence<double>',
+        'change_mode_success': 'boolean',
+        'config_check_mode1': 'boolean',
     }
 
     SLOT_TYPES = (
         rosidl_parser.definition.UnboundedSequence(rosidl_parser.definition.BasicType('double')),  # noqa: E501
+        rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
     )
 
@@ -249,8 +252,9 @@ class ChangeMode_Response(metaclass=Metaclass_ChangeMode_Response):
         assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
             'Invalid arguments passed to constructor: %s' % \
             ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
-        self.config = array.array('d', kwargs.get('config', []))
-        self.success = kwargs.get('success', bool())
+        self.config_mode1 = array.array('d', kwargs.get('config_mode1', []))
+        self.change_mode_success = kwargs.get('change_mode_success', bool())
+        self.config_check_mode1 = kwargs.get('config_check_mode1', bool())
 
     def __repr__(self):
         typename = self.__class__.__module__.split('.')
@@ -281,9 +285,11 @@ class ChangeMode_Response(metaclass=Metaclass_ChangeMode_Response):
     def __eq__(self, other):
         if not isinstance(other, self.__class__):
             return False
-        if self.config != other.config:
+        if self.config_mode1 != other.config_mode1:
             return False
-        if self.success != other.success:
+        if self.change_mode_success != other.change_mode_success:
+            return False
+        if self.config_check_mode1 != other.config_check_mode1:
             return False
         return True
 
@@ -293,16 +299,16 @@ class ChangeMode_Response(metaclass=Metaclass_ChangeMode_Response):
         return copy(cls._fields_and_field_types)
 
     @builtins.property
-    def config(self):
-        """Message field 'config'."""
-        return self._config
+    def config_mode1(self):
+        """Message field 'config_mode1'."""
+        return self._config_mode1
 
-    @config.setter
-    def config(self, value):
+    @config_mode1.setter
+    def config_mode1(self, value):
         if isinstance(value, array.array):
             assert value.typecode == 'd', \
-                "The 'config' array.array() must have the type code of 'd'"
-            self._config = value
+                "The 'config_mode1' array.array() must have the type code of 'd'"
+            self._config_mode1 = value
             return
         if __debug__:
             from collections.abc import Sequence
@@ -317,21 +323,34 @@ class ChangeMode_Response(metaclass=Metaclass_ChangeMode_Response):
                  not isinstance(value, UserString) and
                  all(isinstance(v, float) for v in value) and
                  all(not (val < -1.7976931348623157e+308 or val > 1.7976931348623157e+308) or math.isinf(val) for val in value)), \
-                "The 'config' field must be a set or sequence and each value of type 'float' and each double in [-179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368.000000, 179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368.000000]"
-        self._config = array.array('d', value)
+                "The 'config_mode1' field must be a set or sequence and each value of type 'float' and each double in [-179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368.000000, 179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368.000000]"
+        self._config_mode1 = array.array('d', value)
 
     @builtins.property
-    def success(self):
-        """Message field 'success'."""
-        return self._success
+    def change_mode_success(self):
+        """Message field 'change_mode_success'."""
+        return self._change_mode_success
 
-    @success.setter
-    def success(self, value):
+    @change_mode_success.setter
+    def change_mode_success(self, value):
         if __debug__:
             assert \
                 isinstance(value, bool), \
-                "The 'success' field must be of type 'bool'"
-        self._success = value
+                "The 'change_mode_success' field must be of type 'bool'"
+        self._change_mode_success = value
+
+    @builtins.property
+    def config_check_mode1(self):
+        """Message field 'config_check_mode1'."""
+        return self._config_check_mode1
+
+    @config_check_mode1.setter
+    def config_check_mode1(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, bool), \
+                "The 'config_check_mode1' field must be of type 'bool'"
+        self._config_check_mode1 = value
 
 
 class Metaclass_ChangeMode(type):

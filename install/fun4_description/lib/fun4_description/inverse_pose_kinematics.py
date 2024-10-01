@@ -8,9 +8,7 @@ from spatialmath import SE3
 from math import pi
 import rclpy
 from rclpy.node import Node
-from geometry_msgs.msg import PoseStamped
 from fun4_interfaces.srv import ChangeMode
-from fun4_interfaces.msg import Jointsol
 
 class PIDController:
     def __init__(self, kp):
@@ -29,9 +27,7 @@ class InversePoseKinematics(Node):
         self.get_logger().info('inverse pose kinematics node has start')
         # Pub
         self.joint_state_pub = self.create_publisher(JointState, '/joint_states', 10)
-        self.q_sol_pub = self.create_publisher(Jointsol,'/q_sol', 10)
         # Sub
-        # self.end_pose_sub = self.create_subscription(PoseStamped, '/end_effector', self.callback_end_pose, 10)
         self.joint_state_sub = self.create_subscription(JointState, '/joint_states', self.joint_state_callback, 10)
         # timer
         self.dt = 0.01
@@ -55,12 +51,6 @@ class InversePoseKinematics(Node):
     def joint_state_callback(self, msg: JointState):
         if len(msg.position) >= 3:
             self.current_joint_positions = list(msg.position[:3])  # Update the current positions
-        
-    # def callback_end_pose(self, msg:PoseStamped):
-    #     self.x = msg.pose.position.x
-    #     self.y = msg.pose.position.y
-    #     self.z = msg.pose.position.z
-
 
     def callback_user(self,request:ChangeMode.Request, response:ChangeMode.Response): # รับ
         self.mode = request.mode
@@ -69,19 +59,19 @@ class InversePoseKinematics(Node):
         z = request.pose.z
 
         self.q_sol = self.inverse_kinematic(x, y, z, self.mode)
-        response.success = self.finish
+        response.config_check_mode1 = self.finish
     
         if self.mode == 1:
-            response.success = True
-            response.config = self.q_sol
+            response.change_mode_success = True
+            response.config_mode1 = self.q_sol
             self.get_logger().info(f'Change to mode {self.mode} IPK ')
-            self.get_logger().info(f'Config from Mode1 {response.config} ')
+            self.get_logger().info(f'Config from Mode1 {response.config_mode1} ')
         if self.mode == 2:
-            response.success = True
-            response.config = self.q_sol
+            response.change_mode_success = True
+            response.config_mode1 = []
         if self.mode == 3:
-            response.success = True
-            response.config = self.q_sol
+            response.change_mode_success = True
+            response.config_mode1 = []
         return response
 
     def inverse_kinematic(self, x, y, z, mode):
@@ -106,16 +96,13 @@ class InversePoseKinematics(Node):
             # self.get_logger().info('Taskspace is in workspace')
             return self.target_joint_positions
         else:
-            # self.finish = False
+            self.finish = False
             # self.get_logger().warn("Taskspace isn't in workspace. Please key again.")
             return self.target_joint_positions
         
     def update_joint_states(self):
         if self.mode != 1:
             return  # Do not publish anything if the mode is not 1"
-        joint_sol_msg = Jointsol()
-        joint_sol_msg.q_msg = self.q_sol
-        self.q_sol_pub.publish(joint_sol_msg)
         
         self.joint_msg = JointState()
         self.joint_msg.name = ['joint_1', 'joint_2', 'joint_3']

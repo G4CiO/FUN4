@@ -95,15 +95,15 @@ namespace srv
 namespace builder
 {
 
-class Init_ChangeMode_Response_success
+class Init_ChangeMode_Response_config_check_mode1
 {
 public:
-  explicit Init_ChangeMode_Response_success(::fun4_interfaces::srv::ChangeMode_Response & msg)
+  explicit Init_ChangeMode_Response_config_check_mode1(::fun4_interfaces::srv::ChangeMode_Response & msg)
   : msg_(msg)
   {}
-  ::fun4_interfaces::srv::ChangeMode_Response success(::fun4_interfaces::srv::ChangeMode_Response::_success_type arg)
+  ::fun4_interfaces::srv::ChangeMode_Response config_check_mode1(::fun4_interfaces::srv::ChangeMode_Response::_config_check_mode1_type arg)
   {
-    msg_.success = std::move(arg);
+    msg_.config_check_mode1 = std::move(arg);
     return std::move(msg_);
   }
 
@@ -111,16 +111,32 @@ private:
   ::fun4_interfaces::srv::ChangeMode_Response msg_;
 };
 
-class Init_ChangeMode_Response_config
+class Init_ChangeMode_Response_change_mode_success
 {
 public:
-  Init_ChangeMode_Response_config()
+  explicit Init_ChangeMode_Response_change_mode_success(::fun4_interfaces::srv::ChangeMode_Response & msg)
+  : msg_(msg)
+  {}
+  Init_ChangeMode_Response_config_check_mode1 change_mode_success(::fun4_interfaces::srv::ChangeMode_Response::_change_mode_success_type arg)
+  {
+    msg_.change_mode_success = std::move(arg);
+    return Init_ChangeMode_Response_config_check_mode1(msg_);
+  }
+
+private:
+  ::fun4_interfaces::srv::ChangeMode_Response msg_;
+};
+
+class Init_ChangeMode_Response_config_mode1
+{
+public:
+  Init_ChangeMode_Response_config_mode1()
   : msg_(::rosidl_runtime_cpp::MessageInitialization::SKIP)
   {}
-  Init_ChangeMode_Response_success config(::fun4_interfaces::srv::ChangeMode_Response::_config_type arg)
+  Init_ChangeMode_Response_change_mode_success config_mode1(::fun4_interfaces::srv::ChangeMode_Response::_config_mode1_type arg)
   {
-    msg_.config = std::move(arg);
-    return Init_ChangeMode_Response_success(msg_);
+    msg_.config_mode1 = std::move(arg);
+    return Init_ChangeMode_Response_change_mode_success(msg_);
   }
 
 private:
@@ -138,7 +154,7 @@ template<>
 inline
 auto build<::fun4_interfaces::srv::ChangeMode_Response>()
 {
-  return fun4_interfaces::srv::builder::Init_ChangeMode_Response_config();
+  return fun4_interfaces::srv::builder::Init_ChangeMode_Response_config_mode1();
 }
 
 }  // namespace fun4_interfaces

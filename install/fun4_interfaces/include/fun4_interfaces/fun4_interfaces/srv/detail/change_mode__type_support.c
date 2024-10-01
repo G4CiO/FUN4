@@ -143,7 +143,7 @@ ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(rosidl_typesupport_introspecti
 
 
 // Include directives for member types
-// Member `config`
+// Member `config_mode1`
 #include "rosidl_runtime_c/primitives_sequence_functions.h"
 
 #ifdef __cplusplus
@@ -165,7 +165,7 @@ void fun4_interfaces__srv__ChangeMode_Response__rosidl_typesupport_introspection
   fun4_interfaces__srv__ChangeMode_Response__fini(message_memory);
 }
 
-size_t fun4_interfaces__srv__ChangeMode_Response__rosidl_typesupport_introspection_c__size_function__ChangeMode_Response__config(
+size_t fun4_interfaces__srv__ChangeMode_Response__rosidl_typesupport_introspection_c__size_function__ChangeMode_Response__config_mode1(
   const void * untyped_member)
 {
   const rosidl_runtime_c__double__Sequence * member =
@@ -173,7 +173,7 @@ size_t fun4_interfaces__srv__ChangeMode_Response__rosidl_typesupport_introspecti
   return member->size;
 }
 
-const void * fun4_interfaces__srv__ChangeMode_Response__rosidl_typesupport_introspection_c__get_const_function__ChangeMode_Response__config(
+const void * fun4_interfaces__srv__ChangeMode_Response__rosidl_typesupport_introspection_c__get_const_function__ChangeMode_Response__config_mode1(
   const void * untyped_member, size_t index)
 {
   const rosidl_runtime_c__double__Sequence * member =
@@ -181,7 +181,7 @@ const void * fun4_interfaces__srv__ChangeMode_Response__rosidl_typesupport_intro
   return &member->data[index];
 }
 
-void * fun4_interfaces__srv__ChangeMode_Response__rosidl_typesupport_introspection_c__get_function__ChangeMode_Response__config(
+void * fun4_interfaces__srv__ChangeMode_Response__rosidl_typesupport_introspection_c__get_function__ChangeMode_Response__config_mode1(
   void * untyped_member, size_t index)
 {
   rosidl_runtime_c__double__Sequence * member =
@@ -189,29 +189,29 @@ void * fun4_interfaces__srv__ChangeMode_Response__rosidl_typesupport_introspecti
   return &member->data[index];
 }
 
-void fun4_interfaces__srv__ChangeMode_Response__rosidl_typesupport_introspection_c__fetch_function__ChangeMode_Response__config(
+void fun4_interfaces__srv__ChangeMode_Response__rosidl_typesupport_introspection_c__fetch_function__ChangeMode_Response__config_mode1(
   const void * untyped_member, size_t index, void * untyped_value)
 {
   const double * item =
     ((const double *)
-    fun4_interfaces__srv__ChangeMode_Response__rosidl_typesupport_introspection_c__get_const_function__ChangeMode_Response__config(untyped_member, index));
+    fun4_interfaces__srv__ChangeMode_Response__rosidl_typesupport_introspection_c__get_const_function__ChangeMode_Response__config_mode1(untyped_member, index));
   double * value =
     (double *)(untyped_value);
   *value = *item;
 }
 
-void fun4_interfaces__srv__ChangeMode_Response__rosidl_typesupport_introspection_c__assign_function__ChangeMode_Response__config(
+void fun4_interfaces__srv__ChangeMode_Response__rosidl_typesupport_introspection_c__assign_function__ChangeMode_Response__config_mode1(
   void * untyped_member, size_t index, const void * untyped_value)
 {
   double * item =
     ((double *)
-    fun4_interfaces__srv__ChangeMode_Response__rosidl_typesupport_introspection_c__get_function__ChangeMode_Response__config(untyped_member, index));
+    fun4_interfaces__srv__ChangeMode_Response__rosidl_typesupport_introspection_c__get_function__ChangeMode_Response__config_mode1(untyped_member, index));
   const double * value =
     (const double *)(untyped_value);
   *item = *value;
 }
 
-bool fun4_interfaces__srv__ChangeMode_Response__rosidl_typesupport_introspection_c__resize_function__ChangeMode_Response__config(
+bool fun4_interfaces__srv__ChangeMode_Response__rosidl_typesupport_introspection_c__resize_function__ChangeMode_Response__config_mode1(
   void * untyped_member, size_t size)
 {
   rosidl_runtime_c__double__Sequence * member =
@@ -220,33 +220,50 @@ bool fun4_interfaces__srv__ChangeMode_Response__rosidl_typesupport_introspection
   return rosidl_runtime_c__double__Sequence__init(member, size);
 }
 
-static rosidl_typesupport_introspection_c__MessageMember fun4_interfaces__srv__ChangeMode_Response__rosidl_typesupport_introspection_c__ChangeMode_Response_message_member_array[2] = {
+static rosidl_typesupport_introspection_c__MessageMember fun4_interfaces__srv__ChangeMode_Response__rosidl_typesupport_introspection_c__ChangeMode_Response_message_member_array[3] = {
   {
-    "config",  // name
+    "config_mode1",  // name
     rosidl_typesupport_introspection_c__ROS_TYPE_DOUBLE,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
     true,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(fun4_interfaces__srv__ChangeMode_Response, config),  // bytes offset in struct
+    offsetof(fun4_interfaces__srv__ChangeMode_Response, config_mode1),  // bytes offset in struct
     NULL,  // default value
-    fun4_interfaces__srv__ChangeMode_Response__rosidl_typesupport_introspection_c__size_function__ChangeMode_Response__config,  // size() function pointer
-    fun4_interfaces__srv__ChangeMode_Response__rosidl_typesupport_introspection_c__get_const_function__ChangeMode_Response__config,  // get_const(index) function pointer
-    fun4_interfaces__srv__ChangeMode_Response__rosidl_typesupport_introspection_c__get_function__ChangeMode_Response__config,  // get(index) function pointer
-    fun4_interfaces__srv__ChangeMode_Response__rosidl_typesupport_introspection_c__fetch_function__ChangeMode_Response__config,  // fetch(index, &value) function pointer
-    fun4_interfaces__srv__ChangeMode_Response__rosidl_typesupport_introspection_c__assign_function__ChangeMode_Response__config,  // assign(index, value) function pointer
-    fun4_interfaces__srv__ChangeMode_Response__rosidl_typesupport_introspection_c__resize_function__ChangeMode_Response__config  // resize(index) function pointer
+    fun4_interfaces__srv__ChangeMode_Response__rosidl_typesupport_introspection_c__size_function__ChangeMode_Response__config_mode1,  // size() function pointer
+    fun4_interfaces__srv__ChangeMode_Response__rosidl_typesupport_introspection_c__get_const_function__ChangeMode_Response__config_mode1,  // get_const(index) function pointer
+    fun4_interfaces__srv__ChangeMode_Response__rosidl_typesupport_introspection_c__get_function__ChangeMode_Response__config_mode1,  // get(index) function pointer
+    fun4_interfaces__srv__ChangeMode_Response__rosidl_typesupport_introspection_c__fetch_function__ChangeMode_Response__config_mode1,  // fetch(index, &value) function pointer
+    fun4_interfaces__srv__ChangeMode_Response__rosidl_typesupport_introspection_c__assign_function__ChangeMode_Response__config_mode1,  // assign(index, value) function pointer
+    fun4_interfaces__srv__ChangeMode_Response__rosidl_typesupport_introspection_c__resize_function__ChangeMode_Response__config_mode1  // resize(index) function pointer
   },
   {
-    "success",  // name
+    "change_mode_success",  // name
     rosidl_typesupport_introspection_c__ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
     false,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(fun4_interfaces__srv__ChangeMode_Response, success),  // bytes offset in struct
+    offsetof(fun4_interfaces__srv__ChangeMode_Response, change_mode_success),  // bytes offset in struct
+    NULL,  // default value
+    NULL,  // size() function pointer
+    NULL,  // get_const(index) function pointer
+    NULL,  // get(index) function pointer
+    NULL,  // fetch(index, &value) function pointer
+    NULL,  // assign(index, value) function pointer
+    NULL  // resize(index) function pointer
+  },
+  {
+    "config_check_mode1",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_BOOLEAN,  // type
+    0,  // upper bound of string
+    NULL,  // members of sub message
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(fun4_interfaces__srv__ChangeMode_Response, config_check_mode1),  // bytes offset in struct
     NULL,  // default value
     NULL,  // size() function pointer
     NULL,  // get_const(index) function pointer
@@ -260,7 +277,7 @@ static rosidl_typesupport_introspection_c__MessageMember fun4_interfaces__srv__C
 static const rosidl_typesupport_introspection_c__MessageMembers fun4_interfaces__srv__ChangeMode_Response__rosidl_typesupport_introspection_c__ChangeMode_Response_message_members = {
   "fun4_interfaces__srv",  // message namespace
   "ChangeMode_Response",  // message name
-  2,  // number of fields
+  3,  // number of fields
   sizeof(fun4_interfaces__srv__ChangeMode_Response),
   fun4_interfaces__srv__ChangeMode_Response__rosidl_typesupport_introspection_c__ChangeMode_Response_message_member_array,  // message members
   fun4_interfaces__srv__ChangeMode_Response__rosidl_typesupport_introspection_c__ChangeMode_Response_init_function,  // function to initialize message memory (memory has to be allocated)

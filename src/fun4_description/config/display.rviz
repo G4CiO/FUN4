@@ -7,8 +7,6 @@ Panels:
         - /Global Options1
         - /Status1
         - /RobotModel1
-        - /Pose1
-        - /Pose2
       Splitter Ratio: 0.5
     Tree Height: 407
   - Class: rviz_common/Selection
@@ -131,7 +129,7 @@ Visualization Manager:
       Update Interval: 0
       Value: true
     - Alpha: 1
-      Axes Length: 0.5
+      Axes Length: 0.10000000149011612
       Axes Radius: 0.05000000074505806
       Class: rviz_default_plugins/Pose
       Color: 255; 25; 0
@@ -151,7 +149,7 @@ Visualization Manager:
         Value: /end_effector
       Value: true
     - Alpha: 1
-      Axes Length: 0.5
+      Axes Length: 0.10000000149011612
       Axes Radius: 0.05000000074505806
       Class: rviz_default_plugins/Pose
       Color: 255; 25; 0
@@ -216,7 +214,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 2.843780755996704
+      Distance: 1.98960280418396
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -231,10 +229,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.4403974413871765
+      Pitch: 0.13039766252040863
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 2.8553881645202637
+      Yaw: 4.265390396118164
     Saved: ~
 Window Geometry:
   Displays:

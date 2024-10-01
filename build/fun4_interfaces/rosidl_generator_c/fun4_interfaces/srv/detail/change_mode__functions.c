@@ -267,7 +267,7 @@ fun4_interfaces__srv__ChangeMode_Request__Sequence__copy(
 
 
 // Include directives for member types
-// Member `config`
+// Member `config_mode1`
 #include "rosidl_runtime_c/primitives_sequence_functions.h"
 
 bool
@@ -276,12 +276,13 @@ fun4_interfaces__srv__ChangeMode_Response__init(fun4_interfaces__srv__ChangeMode
   if (!msg) {
     return false;
   }
-  // config
-  if (!rosidl_runtime_c__double__Sequence__init(&msg->config, 0)) {
+  // config_mode1
+  if (!rosidl_runtime_c__double__Sequence__init(&msg->config_mode1, 0)) {
     fun4_interfaces__srv__ChangeMode_Response__fini(msg);
     return false;
   }
-  // success
+  // change_mode_success
+  // config_check_mode1
   return true;
 }
 
@@ -291,9 +292,10 @@ fun4_interfaces__srv__ChangeMode_Response__fini(fun4_interfaces__srv__ChangeMode
   if (!msg) {
     return;
   }
-  // config
-  rosidl_runtime_c__double__Sequence__fini(&msg->config);
-  // success
+  // config_mode1
+  rosidl_runtime_c__double__Sequence__fini(&msg->config_mode1);
+  // change_mode_success
+  // config_check_mode1
 }
 
 bool
@@ -302,14 +304,18 @@ fun4_interfaces__srv__ChangeMode_Response__are_equal(const fun4_interfaces__srv_
   if (!lhs || !rhs) {
     return false;
   }
-  // config
+  // config_mode1
   if (!rosidl_runtime_c__double__Sequence__are_equal(
-      &(lhs->config), &(rhs->config)))
+      &(lhs->config_mode1), &(rhs->config_mode1)))
   {
     return false;
   }
-  // success
-  if (lhs->success != rhs->success) {
+  // change_mode_success
+  if (lhs->change_mode_success != rhs->change_mode_success) {
+    return false;
+  }
+  // config_check_mode1
+  if (lhs->config_check_mode1 != rhs->config_check_mode1) {
     return false;
   }
   return true;
@@ -323,14 +329,16 @@ fun4_interfaces__srv__ChangeMode_Response__copy(
   if (!input || !output) {
     return false;
   }
-  // config
+  // config_mode1
   if (!rosidl_runtime_c__double__Sequence__copy(
-      &(input->config), &(output->config)))
+      &(input->config_mode1), &(output->config_mode1)))
   {
     return false;
   }
-  // success
-  output->success = input->success;
+  // change_mode_success
+  output->change_mode_success = input->change_mode_success;
+  // config_check_mode1
+  output->config_check_mode1 = input->config_check_mode1;
   return true;
 }
 

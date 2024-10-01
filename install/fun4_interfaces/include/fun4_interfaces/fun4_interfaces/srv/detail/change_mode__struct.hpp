@@ -183,7 +183,8 @@ struct ChangeMode_Response_
     if (rosidl_runtime_cpp::MessageInitialization::ALL == _init ||
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
-      this->success = false;
+      this->change_mode_success = false;
+      this->config_check_mode1 = false;
     }
   }
 
@@ -193,29 +194,39 @@ struct ChangeMode_Response_
     if (rosidl_runtime_cpp::MessageInitialization::ALL == _init ||
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
-      this->success = false;
+      this->change_mode_success = false;
+      this->config_check_mode1 = false;
     }
   }
 
   // field types and members
-  using _config_type =
+  using _config_mode1_type =
     std::vector<double, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<double>>;
-  _config_type config;
-  using _success_type =
+  _config_mode1_type config_mode1;
+  using _change_mode_success_type =
     bool;
-  _success_type success;
+  _change_mode_success_type change_mode_success;
+  using _config_check_mode1_type =
+    bool;
+  _config_check_mode1_type config_check_mode1;
 
   // setters for named parameter idiom
-  Type & set__config(
+  Type & set__config_mode1(
     const std::vector<double, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<double>> & _arg)
   {
-    this->config = _arg;
+    this->config_mode1 = _arg;
     return *this;
   }
-  Type & set__success(
+  Type & set__change_mode_success(
     const bool & _arg)
   {
-    this->success = _arg;
+    this->change_mode_success = _arg;
+    return *this;
+  }
+  Type & set__config_check_mode1(
+    const bool & _arg)
+  {
+    this->config_check_mode1 = _arg;
     return *this;
   }
 
@@ -261,10 +272,13 @@ struct ChangeMode_Response_
   // comparison operators
   bool operator==(const ChangeMode_Response_ & other) const
   {
-    if (this->config != other.config) {
+    if (this->config_mode1 != other.config_mode1) {
       return false;
     }
-    if (this->success != other.success) {
+    if (this->change_mode_success != other.change_mode_success) {
+      return false;
+    }
+    if (this->config_check_mode1 != other.config_check_mode1) {
       return false;
     }
     return true;

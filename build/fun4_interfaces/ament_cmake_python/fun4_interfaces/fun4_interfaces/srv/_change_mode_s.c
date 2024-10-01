@@ -197,8 +197,8 @@ bool fun4_interfaces__srv__change_mode__response__convert_from_py(PyObject * _py
     assert(strncmp("fun4_interfaces.srv._change_mode.ChangeMode_Response", full_classname_dest, 52) == 0);
   }
   fun4_interfaces__srv__ChangeMode_Response * ros_message = _ros_message;
-  {  // config
-    PyObject * field = PyObject_GetAttrString(_pymsg, "config");
+  {  // config_mode1
+    PyObject * field = PyObject_GetAttrString(_pymsg, "config_mode1");
     if (!field) {
       return false;
     }
@@ -211,13 +211,13 @@ bool fun4_interfaces__srv__change_mode__response__convert_from_py(PyObject * _py
         return false;
       }
       Py_ssize_t size = view.len / sizeof(double);
-      if (!rosidl_runtime_c__double__Sequence__init(&(ros_message->config), size)) {
+      if (!rosidl_runtime_c__double__Sequence__init(&(ros_message->config_mode1), size)) {
         PyErr_SetString(PyExc_RuntimeError, "unable to create double__Sequence ros_message");
         PyBuffer_Release(&view);
         Py_DECREF(field);
         return false;
       }
-      double * dest = ros_message->config.data;
+      double * dest = ros_message->config_mode1.data;
       rc = PyBuffer_ToContiguous(dest, &view, view.len, 'C');
       if (rc < 0) {
         PyBuffer_Release(&view);
@@ -226,7 +226,7 @@ bool fun4_interfaces__srv__change_mode__response__convert_from_py(PyObject * _py
       }
       PyBuffer_Release(&view);
     } else {
-      PyObject * seq_field = PySequence_Fast(field, "expected a sequence in 'config'");
+      PyObject * seq_field = PySequence_Fast(field, "expected a sequence in 'config_mode1'");
       if (!seq_field) {
         Py_DECREF(field);
         return false;
@@ -237,13 +237,13 @@ bool fun4_interfaces__srv__change_mode__response__convert_from_py(PyObject * _py
         Py_DECREF(field);
         return false;
       }
-      if (!rosidl_runtime_c__double__Sequence__init(&(ros_message->config), size)) {
+      if (!rosidl_runtime_c__double__Sequence__init(&(ros_message->config_mode1), size)) {
         PyErr_SetString(PyExc_RuntimeError, "unable to create double__Sequence ros_message");
         Py_DECREF(seq_field);
         Py_DECREF(field);
         return false;
       }
-      double * dest = ros_message->config.data;
+      double * dest = ros_message->config_mode1.data;
       for (Py_ssize_t i = 0; i < size; ++i) {
         PyObject * item = PySequence_Fast_GET_ITEM(seq_field, i);
         if (!item) {
@@ -259,13 +259,22 @@ bool fun4_interfaces__srv__change_mode__response__convert_from_py(PyObject * _py
     }
     Py_DECREF(field);
   }
-  {  // success
-    PyObject * field = PyObject_GetAttrString(_pymsg, "success");
+  {  // change_mode_success
+    PyObject * field = PyObject_GetAttrString(_pymsg, "change_mode_success");
     if (!field) {
       return false;
     }
     assert(PyBool_Check(field));
-    ros_message->success = (Py_True == field);
+    ros_message->change_mode_success = (Py_True == field);
+    Py_DECREF(field);
+  }
+  {  // config_check_mode1
+    PyObject * field = PyObject_GetAttrString(_pymsg, "config_check_mode1");
+    if (!field) {
+      return false;
+    }
+    assert(PyBool_Check(field));
+    ros_message->config_check_mode1 = (Py_True == field);
     Py_DECREF(field);
   }
 
@@ -290,9 +299,9 @@ PyObject * fun4_interfaces__srv__change_mode__response__convert_to_py(void * raw
     }
   }
   fun4_interfaces__srv__ChangeMode_Response * ros_message = (fun4_interfaces__srv__ChangeMode_Response *)raw_ros_message;
-  {  // config
+  {  // config_mode1
     PyObject * field = NULL;
-    field = PyObject_GetAttrString(_pymessage, "config");
+    field = PyObject_GetAttrString(_pymessage, "config_mode1");
     if (!field) {
       return NULL;
     }
@@ -329,12 +338,12 @@ PyObject * fun4_interfaces__srv__change_mode__response__convert_to_py(void * raw
       }
       Py_DECREF(pop);
     }
-    if (ros_message->config.size > 0) {
+    if (ros_message->config_mode1.size > 0) {
       // populating the array.array using the frombytes method
       PyObject * frombytes = PyObject_GetAttrString(field, "frombytes");
       assert(frombytes != NULL);
-      double * src = &(ros_message->config.data[0]);
-      PyObject * data = PyBytes_FromStringAndSize((const char *)src, ros_message->config.size * sizeof(double));
+      double * src = &(ros_message->config_mode1.data[0]);
+      PyObject * data = PyBytes_FromStringAndSize((const char *)src, ros_message->config_mode1.size * sizeof(double));
       assert(data != NULL);
       PyObject * ret = PyObject_CallFunctionObjArgs(frombytes, data, NULL);
       Py_DECREF(data);
@@ -347,11 +356,22 @@ PyObject * fun4_interfaces__srv__change_mode__response__convert_to_py(void * raw
     }
     Py_DECREF(field);
   }
-  {  // success
+  {  // change_mode_success
     PyObject * field = NULL;
-    field = PyBool_FromLong(ros_message->success ? 1 : 0);
+    field = PyBool_FromLong(ros_message->change_mode_success ? 1 : 0);
     {
-      int rc = PyObject_SetAttrString(_pymessage, "success", field);
+      int rc = PyObject_SetAttrString(_pymessage, "change_mode_success", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // config_check_mode1
+    PyObject * field = NULL;
+    field = PyBool_FromLong(ros_message->config_check_mode1 ? 1 : 0);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "config_check_mode1", field);
       Py_DECREF(field);
       if (rc) {
         return NULL;

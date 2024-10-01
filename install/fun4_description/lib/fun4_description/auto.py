@@ -8,8 +8,6 @@ import rclpy
 from rclpy.node import Node
 from geometry_msgs.msg import PoseStamped
 from fun4_interfaces.srv import RunAuto,ChangeMode
-from fun4_interfaces.msg import Jointsol
-
 
 class PIDController:
     def __init__(self, kp):
@@ -31,7 +29,6 @@ class Auto(Node):
         # Sub
         self.end_pose_sub = self.create_subscription(PoseStamped, '/end_effector', self.callback_end_pose, 10)
         self.joint_state_sub = self.create_subscription(JointState, '/joint_states', self.joint_state_callback, 10)
-        self.q_sol_sub = self.create_subscription(Jointsol, '/q_sol', self.q_sol_callback, 10)
         # timer
         self.dt = 0.01
         self.timer = self.create_timer(self.dt, self.timer_call)
@@ -54,9 +51,6 @@ class Auto(Node):
                                 PIDController(1.5),  # For joint 2
                                 PIDController(1.5)]  # For joint 3
         
-    def q_sol_callback(self, msg:Jointsol):
-        self.q_sol = msg.q_msg
-        
     def joint_state_callback(self, msg: JointState):
         if len(msg.position) >= 3:
             self.current_joint_positions = list(msg.position[:3])  # Update the current positions
@@ -69,16 +63,40 @@ class Auto(Node):
     def callback_user(self,request:ChangeMode.Request, response:ChangeMode.Response): # รับ
         self.mode = request.mode
 
+        x = request.pose.x
+        y = request.pose.y
+        z = request.pose.z
+    
         if self.mode == 1:
-            response.success = True
-            response.config = self.q_sol
+            r_min = 0.03
+            r_max = 0.535
+            distance_squared = x**2 + y**2 + (z-0.2)**2
+            if r_min**2 <= distance_squared <= r_max**2:
+                response.config_check_mode1 = True
+
+            robot = rtb.DHRobot(
+                [
+                    rtb.RevoluteMDH(alpha = 0.0,a = 0.0,d = 0.2,offset = 0.0),
+                    rtb.RevoluteMDH(alpha = pi/2,a = 0.0,d = 0.12,offset = pi/2),
+                    rtb.RevoluteMDH(alpha = 0,a = 0.25,d = -0.1,offset = pi/2),
+
+                ],tool = SE3.Tx(0.28),
+                name = "RRR_Robot"
+            )
+
+            # Desired end effector pose
+            T_Position = SE3(x, y, z)
+            q_sol_ik_LM, *_ = robot.ikine_LM(T_Position,mask=[1,1,1,0,0,0],q0=[0,0,0])
+            response.config_mode1 = [q_sol_ik_LM[0], q_sol_ik_LM[1], q_sol_ik_LM[2]]
+            response.change_mode_success = True
+
         if self.mode == 2:
-            response.success = True
-            response.config = self.q_sol
+            response.change_mode_success = True
+            response.config_mode1 = []
         if self.mode == 3:
             self.get_logger().info(f'Change to mode {self.mode} Auto ')
-            response.success = True
-            response.config = self.q_sol
+            response.change_mode_success = True
+            response.config_mode1 = []
         return response
 
     def callback_target(self,request:RunAuto.Request, response:RunAuto.Response): # รับ
@@ -155,12 +173,8 @@ class Auto(Node):
         # if distance <= self.tolerance:
         if c1<=self.tolerance and c2<=self.tolerance and c3<=self.tolerance:
             finish = True
-            # if self.mode == 3:
-            # self.get_logger().info(f'Target reached.')
         else:
             finish = False
-            # if self.mode == 3:
-            # self.get_logger().info(f'Target not reached yet.')
         return finish
 
     def timer_call(self):
