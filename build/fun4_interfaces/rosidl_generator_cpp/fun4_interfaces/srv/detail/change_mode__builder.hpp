@@ -95,15 +95,15 @@ namespace srv
 namespace builder
 {
 
-class Init_ChangeMode_Response_config
+class Init_ChangeMode_Response_success
 {
 public:
-  explicit Init_ChangeMode_Response_config(::fun4_interfaces::srv::ChangeMode_Response & msg)
+  explicit Init_ChangeMode_Response_success(::fun4_interfaces::srv::ChangeMode_Response & msg)
   : msg_(msg)
   {}
-  ::fun4_interfaces::srv::ChangeMode_Response config(::fun4_interfaces::srv::ChangeMode_Response::_config_type arg)
+  ::fun4_interfaces::srv::ChangeMode_Response success(::fun4_interfaces::srv::ChangeMode_Response::_success_type arg)
   {
-    msg_.config = std::move(arg);
+    msg_.success = std::move(arg);
     return std::move(msg_);
   }
 
@@ -111,16 +111,16 @@ private:
   ::fun4_interfaces::srv::ChangeMode_Response msg_;
 };
 
-class Init_ChangeMode_Response_success
+class Init_ChangeMode_Response_config
 {
 public:
-  Init_ChangeMode_Response_success()
+  Init_ChangeMode_Response_config()
   : msg_(::rosidl_runtime_cpp::MessageInitialization::SKIP)
   {}
-  Init_ChangeMode_Response_config success(::fun4_interfaces::srv::ChangeMode_Response::_success_type arg)
+  Init_ChangeMode_Response_success config(::fun4_interfaces::srv::ChangeMode_Response::_config_type arg)
   {
-    msg_.success = std::move(arg);
-    return Init_ChangeMode_Response_config(msg_);
+    msg_.config = std::move(arg);
+    return Init_ChangeMode_Response_success(msg_);
   }
 
 private:
@@ -138,7 +138,7 @@ template<>
 inline
 auto build<::fun4_interfaces::srv::ChangeMode_Response>()
 {
-  return fun4_interfaces::srv::builder::Init_ChangeMode_Response_success();
+  return fun4_interfaces::srv::builder::Init_ChangeMode_Response_config();
 }
 
 }  // namespace fun4_interfaces

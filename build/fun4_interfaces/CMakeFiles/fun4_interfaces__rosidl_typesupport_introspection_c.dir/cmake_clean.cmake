@@ -1,14 +1,22 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/fun4_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/fun4_interfaces/msg/detail/jointsol__type_support.c.o"
+  "CMakeFiles/fun4_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/fun4_interfaces/msg/detail/jointsol__type_support.c.o.d"
   "CMakeFiles/fun4_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/fun4_interfaces/srv/detail/change_mode__type_support.c.o"
   "CMakeFiles/fun4_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/fun4_interfaces/srv/detail/change_mode__type_support.c.o.d"
   "CMakeFiles/fun4_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/fun4_interfaces/srv/detail/run_auto__type_support.c.o"
   "CMakeFiles/fun4_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/fun4_interfaces/srv/detail/run_auto__type_support.c.o.d"
+  "CMakeFiles/fun4_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/fun4_interfaces/srv/detail/show_config__type_support.c.o"
+  "CMakeFiles/fun4_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/fun4_interfaces/srv/detail/show_config__type_support.c.o.d"
   "libfun4_interfaces__rosidl_typesupport_introspection_c.pdb"
   "libfun4_interfaces__rosidl_typesupport_introspection_c.so"
+  "rosidl_typesupport_introspection_c/fun4_interfaces/msg/detail/jointsol__rosidl_typesupport_introspection_c.h"
+  "rosidl_typesupport_introspection_c/fun4_interfaces/msg/detail/jointsol__type_support.c"
   "rosidl_typesupport_introspection_c/fun4_interfaces/srv/detail/change_mode__rosidl_typesupport_introspection_c.h"
   "rosidl_typesupport_introspection_c/fun4_interfaces/srv/detail/change_mode__type_support.c"
   "rosidl_typesupport_introspection_c/fun4_interfaces/srv/detail/run_auto__rosidl_typesupport_introspection_c.h"
   "rosidl_typesupport_introspection_c/fun4_interfaces/srv/detail/run_auto__type_support.c"
+  "rosidl_typesupport_introspection_c/fun4_interfaces/srv/detail/show_config__rosidl_typesupport_introspection_c.h"
+  "rosidl_typesupport_introspection_c/fun4_interfaces/srv/detail/show_config__type_support.c"
 )
 
 # Per-language clean rules from dependency scanning.

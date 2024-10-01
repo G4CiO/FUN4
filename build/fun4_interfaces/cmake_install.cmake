@@ -364,6 +364,14 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/fun4_interfaces/srv" TYPE FILE FILES "/home/gun/FUN4/build/fun4_interfaces/rosidl_adapter/fun4_interfaces/srv/ShowConfig.idl")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/fun4_interfaces/msg" TYPE FILE FILES "/home/gun/FUN4/build/fun4_interfaces/rosidl_adapter/fun4_interfaces/msg/Jointsol.idl")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/fun4_interfaces/srv" TYPE FILE FILES "/home/gun/FUN4/src/fun4_interfaces/srv/ChangeMode.srv")
 endif()
 
@@ -385,6 +393,22 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/fun4_interfaces/srv" TYPE FILE FILES "/home/gun/FUN4/build/fun4_interfaces/rosidl_cmake/srv/RunAuto_Response.msg")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/fun4_interfaces/srv" TYPE FILE FILES "/home/gun/FUN4/src/fun4_interfaces/srv/ShowConfig.srv")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/fun4_interfaces/srv" TYPE FILE FILES "/home/gun/FUN4/build/fun4_interfaces/rosidl_cmake/srv/ShowConfig_Request.msg")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/fun4_interfaces/srv" TYPE FILE FILES "/home/gun/FUN4/build/fun4_interfaces/rosidl_cmake/srv/ShowConfig_Response.msg")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/fun4_interfaces/msg" TYPE FILE FILES "/home/gun/FUN4/src/fun4_interfaces/msg/Jointsol.msg")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)

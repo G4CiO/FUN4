@@ -1,0 +1,218 @@
+[0.115s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.115s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=8, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x7bec48d5de40>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7bec48d5d1e0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7bec48d5d1e0>>, mixin_verb=('build',))
+[0.156s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.156s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.156s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.156s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.156s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.156s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.156s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/gun/FUN4'
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.156s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.171s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.172s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(src/fun4_description) by extensions ['ignore', 'ignore_ament_install']
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(src/fun4_description) by extension 'ignore'
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(src/fun4_description) by extension 'ignore_ament_install'
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(src/fun4_description) by extensions ['colcon_pkg']
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(src/fun4_description) by extension 'colcon_pkg'
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(src/fun4_description) by extensions ['colcon_meta']
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(src/fun4_description) by extension 'colcon_meta'
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(src/fun4_description) by extensions ['ros']
+[0.173s] Level 1:colcon.colcon_core.package_identification:_identify(src/fun4_description) by extension 'ros'
+[0.176s] DEBUG:colcon.colcon_core.package_identification:Package 'src/fun4_description' with type 'ros.ament_cmake' and name 'fun4_description'
+[0.176s] Level 1:colcon.colcon_core.package_identification:_identify(src/fun4_interfaces) by extensions ['ignore', 'ignore_ament_install']
+[0.176s] Level 1:colcon.colcon_core.package_identification:_identify(src/fun4_interfaces) by extension 'ignore'
+[0.176s] Level 1:colcon.colcon_core.package_identification:_identify(src/fun4_interfaces) by extension 'ignore_ament_install'
+[0.176s] Level 1:colcon.colcon_core.package_identification:_identify(src/fun4_interfaces) by extensions ['colcon_pkg']
+[0.176s] Level 1:colcon.colcon_core.package_identification:_identify(src/fun4_interfaces) by extension 'colcon_pkg'
+[0.176s] Level 1:colcon.colcon_core.package_identification:_identify(src/fun4_interfaces) by extensions ['colcon_meta']
+[0.176s] Level 1:colcon.colcon_core.package_identification:_identify(src/fun4_interfaces) by extension 'colcon_meta'
+[0.176s] Level 1:colcon.colcon_core.package_identification:_identify(src/fun4_interfaces) by extensions ['ros']
+[0.176s] Level 1:colcon.colcon_core.package_identification:_identify(src/fun4_interfaces) by extension 'ros'
+[0.177s] DEBUG:colcon.colcon_core.package_identification:Package 'src/fun4_interfaces' with type 'ros.ament_cmake' and name 'fun4_interfaces'
+[0.177s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.177s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.177s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.177s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.177s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.198s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.198s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.201s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 15 installed packages in /home/gun/ros2_ws/install
+[0.201s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 1 installed packages in /home/gun/MyRos2_ws/install
+[0.201s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 3 installed packages in /home/gun/turtlebot3_ws/install
+[0.202s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 2 installed packages in /home/gun/RoboticsDev2024/install
+[0.202s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 4 installed packages in /home/gun/exam1/install
+[0.203s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 2 installed packages in /home/gun/FUN4/install
+[0.204s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 411 installed packages in /opt/ros/humble
+[0.206s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.253s] Level 5:colcon.colcon_core.verb:set package 'fun4_description' build argument 'cmake_args' from command line to 'None'
+[0.253s] Level 5:colcon.colcon_core.verb:set package 'fun4_description' build argument 'cmake_target' from command line to 'None'
+[0.253s] Level 5:colcon.colcon_core.verb:set package 'fun4_description' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.253s] Level 5:colcon.colcon_core.verb:set package 'fun4_description' build argument 'cmake_clean_cache' from command line to 'False'
+[0.253s] Level 5:colcon.colcon_core.verb:set package 'fun4_description' build argument 'cmake_clean_first' from command line to 'False'
+[0.253s] Level 5:colcon.colcon_core.verb:set package 'fun4_description' build argument 'cmake_force_configure' from command line to 'False'
+[0.254s] Level 5:colcon.colcon_core.verb:set package 'fun4_description' build argument 'ament_cmake_args' from command line to 'None'
+[0.254s] Level 5:colcon.colcon_core.verb:set package 'fun4_description' build argument 'catkin_cmake_args' from command line to 'None'
+[0.254s] Level 5:colcon.colcon_core.verb:set package 'fun4_description' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.254s] DEBUG:colcon.colcon_core.verb:Building package 'fun4_description' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/gun/FUN4/build/fun4_description', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/gun/FUN4/install/fun4_description', 'merge_install': False, 'path': '/home/gun/FUN4/src/fun4_description', 'symlink_install': False, 'test_result_base': None}
+[0.254s] Level 5:colcon.colcon_core.verb:set package 'fun4_interfaces' build argument 'cmake_args' from command line to 'None'
+[0.254s] Level 5:colcon.colcon_core.verb:set package 'fun4_interfaces' build argument 'cmake_target' from command line to 'None'
+[0.254s] Level 5:colcon.colcon_core.verb:set package 'fun4_interfaces' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.254s] Level 5:colcon.colcon_core.verb:set package 'fun4_interfaces' build argument 'cmake_clean_cache' from command line to 'False'
+[0.254s] Level 5:colcon.colcon_core.verb:set package 'fun4_interfaces' build argument 'cmake_clean_first' from command line to 'False'
+[0.254s] Level 5:colcon.colcon_core.verb:set package 'fun4_interfaces' build argument 'cmake_force_configure' from command line to 'False'
+[0.254s] Level 5:colcon.colcon_core.verb:set package 'fun4_interfaces' build argument 'ament_cmake_args' from command line to 'None'
+[0.254s] Level 5:colcon.colcon_core.verb:set package 'fun4_interfaces' build argument 'catkin_cmake_args' from command line to 'None'
+[0.254s] Level 5:colcon.colcon_core.verb:set package 'fun4_interfaces' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.254s] DEBUG:colcon.colcon_core.verb:Building package 'fun4_interfaces' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/gun/FUN4/build/fun4_interfaces', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/gun/FUN4/install/fun4_interfaces', 'merge_install': False, 'path': '/home/gun/FUN4/src/fun4_interfaces', 'symlink_install': False, 'test_result_base': None}
+[0.254s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.255s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.255s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/gun/FUN4/src/fun4_description' with build type 'ament_cmake'
+[0.255s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/gun/FUN4/src/fun4_description'
+[0.257s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.258s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.258s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.263s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/gun/FUN4/src/fun4_interfaces' with build type 'ament_cmake'
+[0.263s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/gun/FUN4/src/fun4_interfaces'
+[0.264s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.264s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.273s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/gun/FUN4/build/fun4_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/gun/ros2_ws/install/turtlesim_catch_them_all:/home/gun/ros2_ws/install/my_py_pkg:/home/gun/ros2_ws/install/actions_py:/opt/ros/humble /usr/bin/cmake --build /home/gun/FUN4/build/fun4_description -- -j8 -l8
+[0.279s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/gun/FUN4/build/fun4_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/gun/ros2_ws/install/turtlesim_catch_them_all:/home/gun/ros2_ws/install/my_py_pkg:/home/gun/ros2_ws/install/actions_py:/opt/ros/humble /usr/bin/cmake --build /home/gun/FUN4/build/fun4_interfaces -- -j8 -l8
+[0.722s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/gun/FUN4/build/fun4_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/gun/ros2_ws/install/turtlesim_catch_them_all:/home/gun/ros2_ws/install/my_py_pkg:/home/gun/ros2_ws/install/actions_py:/opt/ros/humble /usr/bin/cmake --build /home/gun/FUN4/build/fun4_description -- -j8 -l8
+[0.731s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/gun/FUN4/build/fun4_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/gun/ros2_ws/install/turtlesim_catch_them_all:/home/gun/ros2_ws/install/my_py_pkg:/home/gun/ros2_ws/install/actions_py:/opt/ros/humble /usr/bin/cmake --build /home/gun/FUN4/build/fun4_interfaces -- -j8 -l8
+[0.757s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/gun/FUN4/build/fun4_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/gun/ros2_ws/install/turtlesim_catch_them_all:/home/gun/ros2_ws/install/my_py_pkg:/home/gun/ros2_ws/install/actions_py:/opt/ros/humble /usr/bin/cmake --install /home/gun/FUN4/build/fun4_description
+[0.813s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(fun4_description)
+[0.814s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/gun/FUN4/build/fun4_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/gun/ros2_ws/install/turtlesim_catch_them_all:/home/gun/ros2_ws/install/my_py_pkg:/home/gun/ros2_ws/install/actions_py:/opt/ros/humble /usr/bin/cmake --install /home/gun/FUN4/build/fun4_description
+[0.816s] Level 1:colcon.colcon_core.environment:checking '/home/gun/FUN4/install/fun4_description' for CMake module files
+[0.816s] Level 1:colcon.colcon_core.environment:checking '/home/gun/FUN4/install/fun4_description' for CMake config files
+[0.816s] Level 1:colcon.colcon_core.shell:create_environment_hook('fun4_description', 'cmake_prefix_path')
+[0.817s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/gun/FUN4/install/fun4_description/share/fun4_description/hook/cmake_prefix_path.ps1'
+[0.817s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/gun/FUN4/install/fun4_description/share/fun4_description/hook/cmake_prefix_path.dsv'
+[0.818s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/gun/FUN4/install/fun4_description/share/fun4_description/hook/cmake_prefix_path.sh'
+[0.818s] Level 1:colcon.colcon_core.environment:checking '/home/gun/FUN4/install/fun4_description/lib'
+[0.819s] Level 1:colcon.colcon_core.environment:checking '/home/gun/FUN4/install/fun4_description/bin'
+[0.819s] Level 1:colcon.colcon_core.environment:checking '/home/gun/FUN4/install/fun4_description/lib/pkgconfig/fun4_description.pc'
+[0.819s] Level 1:colcon.colcon_core.environment:checking '/home/gun/FUN4/install/fun4_description/lib/python3.10/site-packages'
+[0.819s] Level 1:colcon.colcon_core.environment:checking '/home/gun/FUN4/install/fun4_description/bin'
+[0.820s] INFO:colcon.colcon_core.shell:Creating package script '/home/gun/FUN4/install/fun4_description/share/fun4_description/package.ps1'
+[0.820s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/gun/FUN4/install/fun4_description/share/fun4_description/package.dsv'
+[0.821s] INFO:colcon.colcon_core.shell:Creating package script '/home/gun/FUN4/install/fun4_description/share/fun4_description/package.sh'
+[0.821s] INFO:colcon.colcon_core.shell:Creating package script '/home/gun/FUN4/install/fun4_description/share/fun4_description/package.bash'
+[0.822s] INFO:colcon.colcon_core.shell:Creating package script '/home/gun/FUN4/install/fun4_description/share/fun4_description/package.zsh'
+[0.823s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/gun/FUN4/install/fun4_description/share/colcon-core/packages/fun4_description)
+[0.849s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/gun/FUN4/build/fun4_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/gun/ros2_ws/install/turtlesim_catch_them_all:/home/gun/ros2_ws/install/my_py_pkg:/home/gun/ros2_ws/install/actions_py:/opt/ros/humble /usr/bin/cmake --install /home/gun/FUN4/build/fun4_interfaces
+[0.858s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(fun4_description)
+[0.858s] Level 1:colcon.colcon_core.environment:checking '/home/gun/FUN4/install/fun4_description' for CMake module files
+[0.864s] Level 1:colcon.colcon_core.environment:checking '/home/gun/FUN4/install/fun4_description' for CMake config files
+[0.868s] Level 1:colcon.colcon_core.shell:create_environment_hook('fun4_description', 'cmake_prefix_path')
+[0.868s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/gun/FUN4/install/fun4_description/share/fun4_description/hook/cmake_prefix_path.ps1'
+[0.871s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/gun/FUN4/install/fun4_description/share/fun4_description/hook/cmake_prefix_path.dsv'
+[0.872s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/gun/FUN4/install/fun4_description/share/fun4_description/hook/cmake_prefix_path.sh'
+[0.872s] Level 1:colcon.colcon_core.environment:checking '/home/gun/FUN4/install/fun4_description/lib'
+[0.872s] Level 1:colcon.colcon_core.environment:checking '/home/gun/FUN4/install/fun4_description/bin'
+[0.872s] Level 1:colcon.colcon_core.environment:checking '/home/gun/FUN4/install/fun4_description/lib/pkgconfig/fun4_description.pc'
+[0.872s] Level 1:colcon.colcon_core.environment:checking '/home/gun/FUN4/install/fun4_description/lib/python3.10/site-packages'
+[0.873s] Level 1:colcon.colcon_core.environment:checking '/home/gun/FUN4/install/fun4_description/bin'
+[0.873s] INFO:colcon.colcon_core.shell:Creating package script '/home/gun/FUN4/install/fun4_description/share/fun4_description/package.ps1'
+[0.873s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/gun/FUN4/install/fun4_description/share/fun4_description/package.dsv'
+[0.874s] INFO:colcon.colcon_core.shell:Creating package script '/home/gun/FUN4/install/fun4_description/share/fun4_description/package.sh'
+[0.874s] INFO:colcon.colcon_core.shell:Creating package script '/home/gun/FUN4/install/fun4_description/share/fun4_description/package.bash'
+[0.874s] INFO:colcon.colcon_core.shell:Creating package script '/home/gun/FUN4/install/fun4_description/share/fun4_description/package.zsh'
+[0.875s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/gun/FUN4/install/fun4_description/share/colcon-core/packages/fun4_description)
+[0.916s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(fun4_interfaces)
+[0.917s] Level 1:colcon.colcon_core.environment:checking '/home/gun/FUN4/install/fun4_interfaces' for CMake module files
+[0.917s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/gun/FUN4/build/fun4_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/gun/ros2_ws/install/turtlesim_catch_them_all:/home/gun/ros2_ws/install/my_py_pkg:/home/gun/ros2_ws/install/actions_py:/opt/ros/humble /usr/bin/cmake --install /home/gun/FUN4/build/fun4_interfaces
+[0.918s] Level 1:colcon.colcon_core.environment:checking '/home/gun/FUN4/install/fun4_interfaces' for CMake config files
+[0.918s] Level 1:colcon.colcon_core.shell:create_environment_hook('fun4_interfaces', 'cmake_prefix_path')
+[0.919s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/hook/cmake_prefix_path.ps1'
+[0.919s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/hook/cmake_prefix_path.dsv'
+[0.919s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/hook/cmake_prefix_path.sh'
+[0.920s] Level 1:colcon.colcon_core.environment:checking '/home/gun/FUN4/install/fun4_interfaces/lib'
+[0.920s] Level 1:colcon.colcon_core.shell:create_environment_hook('fun4_interfaces', 'ld_library_path_lib')
+[0.920s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/hook/ld_library_path_lib.ps1'
+[0.921s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/hook/ld_library_path_lib.dsv'
+[0.921s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/hook/ld_library_path_lib.sh'
+[0.921s] Level 1:colcon.colcon_core.environment:checking '/home/gun/FUN4/install/fun4_interfaces/bin'
+[0.921s] Level 1:colcon.colcon_core.environment:checking '/home/gun/FUN4/install/fun4_interfaces/lib/pkgconfig/fun4_interfaces.pc'
+[0.921s] Level 1:colcon.colcon_core.environment:checking '/home/gun/FUN4/install/fun4_interfaces/lib/python3.10/site-packages'
+[0.922s] Level 1:colcon.colcon_core.environment:checking '/home/gun/FUN4/install/fun4_interfaces/bin'
+[0.922s] INFO:colcon.colcon_core.shell:Creating package script '/home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/package.ps1'
+[0.922s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/package.dsv'
+[0.923s] INFO:colcon.colcon_core.shell:Creating package script '/home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/package.sh'
+[0.923s] INFO:colcon.colcon_core.shell:Creating package script '/home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/package.bash'
+[0.923s] INFO:colcon.colcon_core.shell:Creating package script '/home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/package.zsh'
+[0.924s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/gun/FUN4/install/fun4_interfaces/share/colcon-core/packages/fun4_interfaces)
+[1.029s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(fun4_interfaces)
+[1.029s] Level 1:colcon.colcon_core.environment:checking '/home/gun/FUN4/install/fun4_interfaces' for CMake module files
+[1.029s] Level 1:colcon.colcon_core.environment:checking '/home/gun/FUN4/install/fun4_interfaces' for CMake config files
+[1.030s] Level 1:colcon.colcon_core.shell:create_environment_hook('fun4_interfaces', 'cmake_prefix_path')
+[1.030s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/hook/cmake_prefix_path.ps1'
+[1.030s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/hook/cmake_prefix_path.dsv'
+[1.031s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/hook/cmake_prefix_path.sh'
+[1.031s] Level 1:colcon.colcon_core.environment:checking '/home/gun/FUN4/install/fun4_interfaces/lib'
+[1.031s] Level 1:colcon.colcon_core.shell:create_environment_hook('fun4_interfaces', 'ld_library_path_lib')
+[1.031s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/hook/ld_library_path_lib.ps1'
+[1.032s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/hook/ld_library_path_lib.dsv'
+[1.032s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/hook/ld_library_path_lib.sh'
+[1.032s] Level 1:colcon.colcon_core.environment:checking '/home/gun/FUN4/install/fun4_interfaces/bin'
+[1.032s] Level 1:colcon.colcon_core.environment:checking '/home/gun/FUN4/install/fun4_interfaces/lib/pkgconfig/fun4_interfaces.pc'
+[1.033s] Level 1:colcon.colcon_core.environment:checking '/home/gun/FUN4/install/fun4_interfaces/lib/python3.10/site-packages'
+[1.033s] Level 1:colcon.colcon_core.environment:checking '/home/gun/FUN4/install/fun4_interfaces/bin'
+[1.033s] INFO:colcon.colcon_core.shell:Creating package script '/home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/package.ps1'
+[1.033s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/package.dsv'
+[1.034s] INFO:colcon.colcon_core.shell:Creating package script '/home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/package.sh'
+[1.034s] INFO:colcon.colcon_core.shell:Creating package script '/home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/package.bash'
+[1.035s] INFO:colcon.colcon_core.shell:Creating package script '/home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/package.zsh'
+[1.035s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/gun/FUN4/install/fun4_interfaces/share/colcon-core/packages/fun4_interfaces)
+[1.035s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[1.035s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[1.035s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[1.035s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[1.052s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[1.052s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[1.052s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[1.063s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[1.063s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/gun/FUN4/install/local_setup.ps1'
+[1.064s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/gun/FUN4/install/_local_setup_util_ps1.py'
+[1.065s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/gun/FUN4/install/setup.ps1'
+[1.067s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/gun/FUN4/install/local_setup.sh'
+[1.068s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/gun/FUN4/install/_local_setup_util_sh.py'
+[1.068s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/gun/FUN4/install/setup.sh'
+[1.070s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/gun/FUN4/install/local_setup.bash'
+[1.071s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/gun/FUN4/install/setup.bash'
+[1.073s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/gun/FUN4/install/local_setup.zsh'
+[1.073s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/gun/FUN4/install/setup.zsh'

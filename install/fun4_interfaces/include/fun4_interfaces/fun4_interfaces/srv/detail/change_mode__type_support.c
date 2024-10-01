@@ -222,23 +222,6 @@ bool fun4_interfaces__srv__ChangeMode_Response__rosidl_typesupport_introspection
 
 static rosidl_typesupport_introspection_c__MessageMember fun4_interfaces__srv__ChangeMode_Response__rosidl_typesupport_introspection_c__ChangeMode_Response_message_member_array[2] = {
   {
-    "success",  // name
-    rosidl_typesupport_introspection_c__ROS_TYPE_BOOLEAN,  // type
-    0,  // upper bound of string
-    NULL,  // members of sub message
-    false,  // is array
-    0,  // array size
-    false,  // is upper bound
-    offsetof(fun4_interfaces__srv__ChangeMode_Response, success),  // bytes offset in struct
-    NULL,  // default value
-    NULL,  // size() function pointer
-    NULL,  // get_const(index) function pointer
-    NULL,  // get(index) function pointer
-    NULL,  // fetch(index, &value) function pointer
-    NULL,  // assign(index, value) function pointer
-    NULL  // resize(index) function pointer
-  },
-  {
     "config",  // name
     rosidl_typesupport_introspection_c__ROS_TYPE_DOUBLE,  // type
     0,  // upper bound of string
@@ -254,6 +237,23 @@ static rosidl_typesupport_introspection_c__MessageMember fun4_interfaces__srv__C
     fun4_interfaces__srv__ChangeMode_Response__rosidl_typesupport_introspection_c__fetch_function__ChangeMode_Response__config,  // fetch(index, &value) function pointer
     fun4_interfaces__srv__ChangeMode_Response__rosidl_typesupport_introspection_c__assign_function__ChangeMode_Response__config,  // assign(index, value) function pointer
     fun4_interfaces__srv__ChangeMode_Response__rosidl_typesupport_introspection_c__resize_function__ChangeMode_Response__config  // resize(index) function pointer
+  },
+  {
+    "success",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_BOOLEAN,  // type
+    0,  // upper bound of string
+    NULL,  // members of sub message
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(fun4_interfaces__srv__ChangeMode_Response, success),  // bytes offset in struct
+    NULL,  // default value
+    NULL,  // size() function pointer
+    NULL,  // get_const(index) function pointer
+    NULL,  // get(index) function pointer
+    NULL,  // fetch(index, &value) function pointer
+    NULL,  // assign(index, value) function pointer
+    NULL  // resize(index) function pointer
   }
 };
 

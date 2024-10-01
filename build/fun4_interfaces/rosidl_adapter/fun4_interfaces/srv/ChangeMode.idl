@@ -14,9 +14,9 @@ module fun4_interfaces {
       geometry_msgs::msg::Point pose;
     };
     struct ChangeMode_Response {
-      boolean success;
-
       sequence<double> config;
+
+      boolean success;
     };
   };
 };

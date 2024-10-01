@@ -321,12 +321,12 @@ cdr_serialize(
   const fun4_interfaces::srv::ChangeMode_Response & ros_message,
   eprosima::fastcdr::Cdr & cdr)
 {
-  // Member: success
-  cdr << (ros_message.success ? true : false);
   // Member: config
   {
     cdr << ros_message.config;
   }
+  // Member: success
+  cdr << (ros_message.success ? true : false);
   return true;
 }
 
@@ -336,16 +336,16 @@ cdr_deserialize(
   eprosima::fastcdr::Cdr & cdr,
   fun4_interfaces::srv::ChangeMode_Response & ros_message)
 {
+  // Member: config
+  {
+    cdr >> ros_message.config;
+  }
+
   // Member: success
   {
     uint8_t tmp;
     cdr >> tmp;
     ros_message.success = tmp ? true : false;
-  }
-
-  // Member: config
-  {
-    cdr >> ros_message.config;
   }
 
   return true;
@@ -364,12 +364,6 @@ get_serialized_size(
   (void)padding;
   (void)wchar_size;
 
-  // Member: success
-  {
-    size_t item_size = sizeof(ros_message.success);
-    current_alignment += item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
   // Member: config
   {
     size_t array_size = ros_message.config.size();
@@ -378,6 +372,12 @@ get_serialized_size(
       eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
     size_t item_size = sizeof(ros_message.config[0]);
     current_alignment += array_size * item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // Member: success
+  {
+    size_t item_size = sizeof(ros_message.success);
+    current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
 
@@ -404,14 +404,6 @@ max_serialized_size_ChangeMode_Response(
   is_plain = true;
 
 
-  // Member: success
-  {
-    size_t array_size = 1;
-
-    last_member_size = array_size * sizeof(uint8_t);
-    current_alignment += array_size * sizeof(uint8_t);
-  }
-
   // Member: config
   {
     size_t array_size = 0;
@@ -425,6 +417,14 @@ max_serialized_size_ChangeMode_Response(
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
   }
 
+  // Member: success
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint8_t);
+    current_alignment += array_size * sizeof(uint8_t);
+  }
+
   size_t ret_val = current_alignment - initial_alignment;
   if (is_plain) {
     // All members are plain, and type is not empty.
@@ -433,7 +433,7 @@ max_serialized_size_ChangeMode_Response(
     using DataType = fun4_interfaces::srv::ChangeMode_Response;
     is_plain =
       (
-      offsetof(DataType, config) +
+      offsetof(DataType, success) +
       last_member_size
       ) == ret_val;
   }

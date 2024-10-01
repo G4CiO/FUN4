@@ -276,12 +276,12 @@ fun4_interfaces__srv__ChangeMode_Response__init(fun4_interfaces__srv__ChangeMode
   if (!msg) {
     return false;
   }
-  // success
   // config
   if (!rosidl_runtime_c__double__Sequence__init(&msg->config, 0)) {
     fun4_interfaces__srv__ChangeMode_Response__fini(msg);
     return false;
   }
+  // success
   return true;
 }
 
@@ -291,9 +291,9 @@ fun4_interfaces__srv__ChangeMode_Response__fini(fun4_interfaces__srv__ChangeMode
   if (!msg) {
     return;
   }
-  // success
   // config
   rosidl_runtime_c__double__Sequence__fini(&msg->config);
+  // success
 }
 
 bool
@@ -302,14 +302,14 @@ fun4_interfaces__srv__ChangeMode_Response__are_equal(const fun4_interfaces__srv_
   if (!lhs || !rhs) {
     return false;
   }
-  // success
-  if (lhs->success != rhs->success) {
-    return false;
-  }
   // config
   if (!rosidl_runtime_c__double__Sequence__are_equal(
       &(lhs->config), &(rhs->config)))
   {
+    return false;
+  }
+  // success
+  if (lhs->success != rhs->success) {
     return false;
   }
   return true;
@@ -323,14 +323,14 @@ fun4_interfaces__srv__ChangeMode_Response__copy(
   if (!input || !output) {
     return false;
   }
-  // success
-  output->success = input->success;
   // config
   if (!rosidl_runtime_c__double__Sequence__copy(
       &(input->config), &(output->config)))
   {
     return false;
   }
+  // success
+  output->success = input->success;
   return true;
 }
 

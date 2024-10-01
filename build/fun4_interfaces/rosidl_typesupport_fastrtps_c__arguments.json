@@ -4,7 +4,9 @@
   "template_dir": "/opt/ros/humble/share/rosidl_typesupport_fastrtps_c/resource",
   "idl_tuples": [
     "/home/gun/FUN4/build/fun4_interfaces/rosidl_adapter/fun4_interfaces:srv/ChangeMode.idl",
-    "/home/gun/FUN4/build/fun4_interfaces/rosidl_adapter/fun4_interfaces:srv/RunAuto.idl"
+    "/home/gun/FUN4/build/fun4_interfaces/rosidl_adapter/fun4_interfaces:srv/RunAuto.idl",
+    "/home/gun/FUN4/build/fun4_interfaces/rosidl_adapter/fun4_interfaces:srv/ShowConfig.idl",
+    "/home/gun/FUN4/build/fun4_interfaces/rosidl_adapter/fun4_interfaces:msg/Jointsol.idl"
   ],
   "ros_interface_dependencies": [
     "geometry_msgs:/opt/ros/humble/share/geometry_msgs/msg/Accel.idl",
@@ -79,6 +81,8 @@
     "/opt/ros/humble/share/rosidl_typesupport_fastrtps_c/resource/srv__type_support_c.cpp.em",
     "/home/gun/FUN4/build/fun4_interfaces/rosidl_adapter/fun4_interfaces/srv/ChangeMode.idl",
     "/home/gun/FUN4/build/fun4_interfaces/rosidl_adapter/fun4_interfaces/srv/RunAuto.idl",
+    "/home/gun/FUN4/build/fun4_interfaces/rosidl_adapter/fun4_interfaces/srv/ShowConfig.idl",
+    "/home/gun/FUN4/build/fun4_interfaces/rosidl_adapter/fun4_interfaces/msg/Jointsol.idl",
     "/opt/ros/humble/share/geometry_msgs/msg/Accel.idl",
     "/opt/ros/humble/share/geometry_msgs/msg/AccelStamped.idl",
     "/opt/ros/humble/share/geometry_msgs/msg/AccelWithCovariance.idl",

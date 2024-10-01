@@ -1,0 +1,285 @@
+[0.015s] Invoking command in '/home/gun/FUN4/build/fun4_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/gun/ros2_ws/install/turtlesim_catch_them_all:/home/gun/ros2_ws/install/my_py_pkg:/home/gun/ros2_ws/install/actions_py:/opt/ros/humble /usr/bin/cmake --build /home/gun/FUN4/build/fun4_interfaces -- -j8 -l8
+[0.039s] -- Found ament_cmake: 1.3.10 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.180s] -- Found geometry_msgs: 4.2.4 (/opt/ros/humble/share/geometry_msgs/cmake)
+[0.206s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.208s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.214s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.224s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.237s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.273s] -- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[0.606s] -- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+[1.008s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.163s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.183s] -- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+[1.203s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[1.203s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+[1.203s] -- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so
+[1.248s] -- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[1.256s] -- Added test 'lint_cmake' to check CMake code style
+[1.256s] -- Added test 'xmllint' to check XML markup files
+[1.258s] -- Configuring done
+[1.288s] -- Generating done
+[1.291s] -- Build files have been written to: /home/gun/FUN4/build/fun4_interfaces
+[1.315s] [  2%] [34m[1mGenerating C code for ROS interfaces[0m
+[1.325s] [  4%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[1.334s] [  4%] Built target ament_cmake_python_copy_fun4_interfaces
+[1.578s] running egg_info
+[1.598s] writing fun4_interfaces.egg-info/PKG-INFO
+[1.598s] writing dependency_links to fun4_interfaces.egg-info/dependency_links.txt
+[1.599s] writing top-level names to fun4_interfaces.egg-info/top_level.txt
+[1.652s] reading manifest file 'fun4_interfaces.egg-info/SOURCES.txt'
+[1.653s] writing manifest file 'fun4_interfaces.egg-info/SOURCES.txt'
+[1.684s] [  4%] Built target ament_cmake_python_build_fun4_interfaces_egg
+[1.756s] [  4%] Built target fun4_interfaces__cpp
+[1.769s] [  6%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[1.772s] [ 10%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[1.773s] [ 10%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[1.775s] [35m[1mConsolidate compiler generated dependencies of target fun4_interfaces__rosidl_generator_c[0m
+[1.788s] [ 12%] [32mBuilding C object CMakeFiles/fun4_interfaces__rosidl_generator_c.dir/rosidl_generator_c/fun4_interfaces/srv/detail/change_mode__functions.c.o[0m
+[1.791s] [ 17%] [32mBuilding C object CMakeFiles/fun4_interfaces__rosidl_generator_c.dir/rosidl_generator_c/fun4_interfaces/srv/detail/run_auto__functions.c.o[0m
+[1.791s] [ 17%] [32mBuilding C object CMakeFiles/fun4_interfaces__rosidl_generator_c.dir/rosidl_generator_c/fun4_interfaces/srv/detail/show_config__functions.c.o[0m
+[1.878s] [ 19%] [32m[1mLinking C shared library libfun4_interfaces__rosidl_generator_c.so[0m
+[1.915s] [ 19%] Built target fun4_interfaces__rosidl_generator_c
+[1.927s] [ 21%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[1.930s] [ 25%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[1.930s] [ 25%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[2.230s] [35m[1mConsolidate compiler generated dependencies of target fun4_interfaces__rosidl_typesupport_cpp[0m
+[2.248s] [35m[1mConsolidate compiler generated dependencies of target fun4_interfaces__rosidl_typesupport_fastrtps_cpp[0m
+[2.250s] [ 29%] [32mBuilding CXX object CMakeFiles/fun4_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/fun4_interfaces/srv/run_auto__type_support.cpp.o[0m
+[2.250s] [ 29%] [32mBuilding CXX object CMakeFiles/fun4_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/fun4_interfaces/srv/change_mode__type_support.cpp.o[0m
+[2.250s] [ 31%] [32mBuilding CXX object CMakeFiles/fun4_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/fun4_interfaces/srv/show_config__type_support.cpp.o[0m
+[2.267s] [ 34%] [32mBuilding CXX object CMakeFiles/fun4_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/dds_fastrtps/change_mode__type_support.cpp.o[0m
+[2.378s] [35m[1mConsolidate compiler generated dependencies of target fun4_interfaces__rosidl_typesupport_introspection_cpp[0m
+[2.400s] [ 36%] [32mBuilding CXX object CMakeFiles/fun4_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/fun4_interfaces/srv/detail/change_mode__type_support.cpp.o[0m
+[2.427s] [35m[1mConsolidate compiler generated dependencies of target fun4_interfaces__rosidl_typesupport_introspection_c[0m
+[2.448s] [ 38%] [32mBuilding C object CMakeFiles/fun4_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/fun4_interfaces/srv/detail/change_mode__type_support.c.o[0m
+[2.495s] [35m[1mConsolidate compiler generated dependencies of target fun4_interfaces__rosidl_typesupport_c[0m
+[2.516s] [ 42%] [32mBuilding CXX object CMakeFiles/fun4_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/fun4_interfaces/srv/change_mode__type_support.cpp.o[0m
+[2.517s] [ 42%] [32mBuilding C object CMakeFiles/fun4_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/fun4_interfaces/srv/detail/run_auto__type_support.c.o[0m
+[2.564s] [ 44%] [32mBuilding CXX object CMakeFiles/fun4_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/fun4_interfaces/srv/run_auto__type_support.cpp.o[0m
+[2.571s] [ 46%] [32mBuilding C object CMakeFiles/fun4_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/fun4_interfaces/srv/detail/show_config__type_support.c.o[0m
+[2.614s] [ 48%] [32mBuilding CXX object CMakeFiles/fun4_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/fun4_interfaces/srv/show_config__type_support.cpp.o[0m
+[2.634s] [ 51%] [32m[1mLinking C shared library libfun4_interfaces__rosidl_typesupport_introspection_c.so[0m
+[2.665s] [ 53%] [32m[1mLinking CXX shared library libfun4_interfaces__rosidl_typesupport_c.so[0m
+[2.684s] [ 53%] Built target fun4_interfaces__rosidl_typesupport_introspection_c
+[2.693s] [ 55%] [32mBuilding CXX object CMakeFiles/fun4_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/fun4_interfaces/srv/detail/run_auto__type_support.cpp.o[0m
+[2.702s] [ 57%] [32mBuilding CXX object CMakeFiles/fun4_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/dds_fastrtps/run_auto__type_support.cpp.o[0m
+[2.704s] [ 59%] [32mBuilding CXX object CMakeFiles/fun4_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/dds_fastrtps/show_config__type_support.cpp.o[0m
+[2.709s] [35m[1mConsolidate compiler generated dependencies of target fun4_interfaces__rosidl_typesupport_fastrtps_c[0m
+[2.718s] [ 61%] [32m[1mLinking CXX shared library libfun4_interfaces__rosidl_typesupport_cpp.so[0m
+[2.732s] [ 63%] [32mBuilding CXX object CMakeFiles/fun4_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/fun4_interfaces/srv/detail/change_mode__type_support_c.cpp.o[0m
+[2.735s] [ 63%] Built target fun4_interfaces__rosidl_typesupport_c
+[2.751s] [ 65%] [32mBuilding CXX object CMakeFiles/fun4_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/fun4_interfaces/srv/detail/show_config__type_support.cpp.o[0m
+[2.784s] [ 65%] Built target fun4_interfaces__rosidl_typesupport_cpp
+[2.797s] [ 68%] [32mBuilding CXX object CMakeFiles/fun4_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/fun4_interfaces/srv/detail/run_auto__type_support_c.cpp.o[0m
+[3.037s] [ 70%] [32mBuilding CXX object CMakeFiles/fun4_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/fun4_interfaces/srv/detail/show_config__type_support_c.cpp.o[0m
+[3.411s] [ 72%] [32m[1mLinking CXX shared library libfun4_interfaces__rosidl_typesupport_fastrtps_cpp.so[0m
+[3.430s] [ 74%] [32m[1mLinking CXX shared library libfun4_interfaces__rosidl_typesupport_introspection_cpp.so[0m
+[3.502s] [ 74%] Built target fun4_interfaces__rosidl_typesupport_fastrtps_cpp
+[3.520s] [ 74%] Built target fun4_interfaces__rosidl_typesupport_introspection_cpp
+[3.532s] [ 76%] [32m[1mLinking CXX shared library libfun4_interfaces__rosidl_typesupport_fastrtps_c.so[0m
+[3.610s] [ 76%] Built target fun4_interfaces__rosidl_typesupport_fastrtps_c
+[3.630s] [ 76%] Built target fun4_interfaces
+[3.651s] [ 78%] [34m[1mGenerating Python code for ROS interfaces[0m
+[4.277s] [ 78%] Built target fun4_interfaces__py
+[4.287s] [35m[1mConsolidate compiler generated dependencies of target fun4_interfaces__rosidl_generator_py[0m
+[4.300s] [ 85%] [32mBuilding C object CMakeFiles/fun4_interfaces__rosidl_generator_py.dir/rosidl_generator_py/fun4_interfaces/srv/_show_config_s.c.o[0m
+[4.300s] [ 85%] [32mBuilding C object CMakeFiles/fun4_interfaces__rosidl_generator_py.dir/rosidl_generator_py/fun4_interfaces/srv/_run_auto_s.c.o[0m
+[4.300s] [ 85%] [32mBuilding C object CMakeFiles/fun4_interfaces__rosidl_generator_py.dir/rosidl_generator_py/fun4_interfaces/srv/_change_mode_s.c.o[0m
+[4.410s] [ 87%] [32m[1mLinking C shared library rosidl_generator_py/fun4_interfaces/libfun4_interfaces__rosidl_generator_py.so[0m
+[4.452s] [ 87%] Built target fun4_interfaces__rosidl_generator_py
+[4.462s] [35m[1mConsolidate compiler generated dependencies of target fun4_interfaces__rosidl_typesupport_fastrtps_c__pyext[0m
+[4.462s] [35m[1mConsolidate compiler generated dependencies of target fun4_interfaces__rosidl_typesupport_c__pyext[0m
+[4.462s] [35m[1mConsolidate compiler generated dependencies of target fun4_interfaces__rosidl_typesupport_introspection_c__pyext[0m
+[4.474s] [ 93%] [32mBuilding C object CMakeFiles/fun4_interfaces__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/fun4_interfaces/_fun4_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[4.474s] [ 93%] [32mBuilding C object CMakeFiles/fun4_interfaces__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/fun4_interfaces/_fun4_interfaces_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[4.474s] [ 93%] [32mBuilding C object CMakeFiles/fun4_interfaces__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/fun4_interfaces/_fun4_interfaces_s.ep.rosidl_typesupport_c.c.o[0m
+[4.582s] [100%] [32m[1mLinking C shared library rosidl_generator_py/fun4_interfaces/fun4_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so[0m
+[4.582s] [100%] [32m[1mLinking C shared library rosidl_generator_py/fun4_interfaces/fun4_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so[0m
+[4.582s] [100%] [32m[1mLinking C shared library rosidl_generator_py/fun4_interfaces/fun4_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so[0m
+[4.623s] [100%] Built target fun4_interfaces__rosidl_typesupport_introspection_c__pyext
+[4.624s] [100%] Built target fun4_interfaces__rosidl_typesupport_c__pyext
+[4.625s] [100%] Built target fun4_interfaces__rosidl_typesupport_fastrtps_c__pyext
+[4.637s] Invoked command in '/home/gun/FUN4/build/fun4_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/gun/ros2_ws/install/turtlesim_catch_them_all:/home/gun/ros2_ws/install/my_py_pkg:/home/gun/ros2_ws/install/actions_py:/opt/ros/humble /usr/bin/cmake --build /home/gun/FUN4/build/fun4_interfaces -- -j8 -l8
+[4.726s] Invoking command in '/home/gun/FUN4/build/fun4_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/gun/ros2_ws/install/turtlesim_catch_them_all:/home/gun/ros2_ws/install/my_py_pkg:/home/gun/ros2_ws/install/actions_py:/opt/ros/humble /usr/bin/cmake --install /home/gun/FUN4/build/fun4_interfaces
+[4.733s] -- Install configuration: ""
+[4.733s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/share/ament_index/resource_index/rosidl_interfaces/fun4_interfaces
+[4.733s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces
+[4.733s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/srv
+[4.733s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/srv/show_config.h
+[4.733s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/srv/detail
+[4.733s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/srv/detail/run_auto__functions.c
+[4.733s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/srv/detail/show_config__struct.h
+[4.733s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/srv/detail/change_mode__struct.h
+[4.733s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/srv/detail/change_mode__functions.h
+[4.733s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/srv/detail/change_mode__type_support.h
+[4.733s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/srv/detail/show_config__type_support.h
+[4.733s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/srv/detail/change_mode__functions.c
+[4.733s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/srv/detail/show_config__functions.h
+[4.733s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/srv/detail/show_config__functions.c
+[4.734s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/srv/detail/run_auto__functions.h
+[4.734s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/srv/detail/run_auto__struct.h
+[4.734s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/srv/detail/run_auto__type_support.h
+[4.734s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/srv/run_auto.h
+[4.734s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/srv/change_mode.h
+[4.734s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/msg
+[4.734s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/msg/rosidl_generator_c__visibility_control.h
+[4.734s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/environment/library_path.sh
+[4.734s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/environment/library_path.dsv
+[4.734s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/lib/libfun4_interfaces__rosidl_generator_c.so
+[4.735s] -- Set runtime path of "/home/gun/FUN4/install/fun4_interfaces/lib/libfun4_interfaces__rosidl_generator_c.so" to ""
+[4.735s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces
+[4.735s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/srv
+[4.735s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/srv/detail
+[4.735s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/srv/detail/show_config__rosidl_typesupport_fastrtps_c.h
+[4.735s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/srv/detail/run_auto__rosidl_typesupport_fastrtps_c.h
+[4.735s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/srv/detail/change_mode__rosidl_typesupport_fastrtps_c.h
+[4.735s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/msg
+[4.735s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[4.735s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/lib/libfun4_interfaces__rosidl_typesupport_fastrtps_c.so
+[4.735s] -- Set runtime path of "/home/gun/FUN4/install/fun4_interfaces/lib/libfun4_interfaces__rosidl_typesupport_fastrtps_c.so" to ""
+[4.735s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces
+[4.736s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/srv
+[4.736s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/srv/show_config.hpp
+[4.736s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/srv/run_auto.hpp
+[4.736s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/srv/detail
+[4.736s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/srv/detail/run_auto__builder.hpp
+[4.736s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/srv/detail/change_mode__traits.hpp
+[4.736s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/srv/detail/run_auto__traits.hpp
+[4.736s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/srv/detail/run_auto__struct.hpp
+[4.736s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/srv/detail/show_config__struct.hpp
+[4.736s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/srv/detail/change_mode__struct.hpp
+[4.736s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/srv/detail/show_config__traits.hpp
+[4.736s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/srv/detail/show_config__builder.hpp
+[4.737s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/srv/detail/change_mode__builder.hpp
+[4.737s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/srv/change_mode.hpp
+[4.737s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces
+[4.737s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/srv
+[4.737s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/srv/detail
+[4.737s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/srv/detail/show_config__rosidl_typesupport_fastrtps_cpp.hpp
+[4.737s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/srv/detail/change_mode__rosidl_typesupport_fastrtps_cpp.hpp
+[4.737s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/srv/detail/dds_fastrtps
+[4.737s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/srv/detail/run_auto__rosidl_typesupport_fastrtps_cpp.hpp
+[4.737s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/msg
+[4.737s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[4.737s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/lib/libfun4_interfaces__rosidl_typesupport_fastrtps_cpp.so
+[4.738s] -- Set runtime path of "/home/gun/FUN4/install/fun4_interfaces/lib/libfun4_interfaces__rosidl_typesupport_fastrtps_cpp.so" to ""
+[4.738s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces
+[4.738s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/srv
+[4.738s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/srv/detail
+[4.738s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/srv/detail/run_auto__type_support.c
+[4.738s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/srv/detail/run_auto__rosidl_typesupport_introspection_c.h
+[4.738s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/srv/detail/show_config__type_support.c
+[4.738s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/srv/detail/show_config__rosidl_typesupport_introspection_c.h
+[4.738s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/srv/detail/change_mode__type_support.c
+[4.738s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/srv/detail/change_mode__rosidl_typesupport_introspection_c.h
+[4.738s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/msg
+[4.739s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[4.739s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/lib/libfun4_interfaces__rosidl_typesupport_introspection_c.so
+[4.739s] -- Set runtime path of "/home/gun/FUN4/install/fun4_interfaces/lib/libfun4_interfaces__rosidl_typesupport_introspection_c.so" to ""
+[4.739s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/lib/libfun4_interfaces__rosidl_typesupport_c.so
+[4.739s] -- Set runtime path of "/home/gun/FUN4/install/fun4_interfaces/lib/libfun4_interfaces__rosidl_typesupport_c.so" to ""
+[4.739s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces
+[4.739s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/srv
+[4.739s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/srv/detail
+[4.740s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/srv/detail/show_config__type_support.cpp
+[4.740s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/srv/detail/change_mode__rosidl_typesupport_introspection_cpp.hpp
+[4.740s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/srv/detail/show_config__rosidl_typesupport_introspection_cpp.hpp
+[4.740s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/srv/detail/run_auto__rosidl_typesupport_introspection_cpp.hpp
+[4.740s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/srv/detail/change_mode__type_support.cpp
+[4.740s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/include/fun4_interfaces/fun4_interfaces/srv/detail/run_auto__type_support.cpp
+[4.740s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/lib/libfun4_interfaces__rosidl_typesupport_introspection_cpp.so
+[4.740s] -- Set runtime path of "/home/gun/FUN4/install/fun4_interfaces/lib/libfun4_interfaces__rosidl_typesupport_introspection_cpp.so" to ""
+[4.741s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/lib/libfun4_interfaces__rosidl_typesupport_cpp.so
+[4.741s] -- Set runtime path of "/home/gun/FUN4/install/fun4_interfaces/lib/libfun4_interfaces__rosidl_typesupport_cpp.so" to ""
+[4.741s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/environment/pythonpath.sh
+[4.741s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/environment/pythonpath.dsv
+[4.741s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/local/lib/python3.10/dist-packages/fun4_interfaces-0.0.0-py3.10.egg-info
+[4.741s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/local/lib/python3.10/dist-packages/fun4_interfaces-0.0.0-py3.10.egg-info/top_level.txt
+[4.741s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/local/lib/python3.10/dist-packages/fun4_interfaces-0.0.0-py3.10.egg-info/PKG-INFO
+[4.741s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/local/lib/python3.10/dist-packages/fun4_interfaces-0.0.0-py3.10.egg-info/SOURCES.txt
+[4.741s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/local/lib/python3.10/dist-packages/fun4_interfaces-0.0.0-py3.10.egg-info/dependency_links.txt
+[4.742s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/local/lib/python3.10/dist-packages/fun4_interfaces
+[4.742s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/local/lib/python3.10/dist-packages/fun4_interfaces/_fun4_interfaces_s.ep.rosidl_typesupport_introspection_c.c
+[4.742s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/local/lib/python3.10/dist-packages/fun4_interfaces/libfun4_interfaces__rosidl_generator_py.so
+[4.742s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/local/lib/python3.10/dist-packages/fun4_interfaces/__init__.py
+[4.742s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/local/lib/python3.10/dist-packages/fun4_interfaces/fun4_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[4.742s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/local/lib/python3.10/dist-packages/fun4_interfaces/srv
+[4.742s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/local/lib/python3.10/dist-packages/fun4_interfaces/srv/_run_auto.py
+[4.742s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/local/lib/python3.10/dist-packages/fun4_interfaces/srv/_show_config.py
+[4.742s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/local/lib/python3.10/dist-packages/fun4_interfaces/srv/__init__.py
+[4.742s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/local/lib/python3.10/dist-packages/fun4_interfaces/srv/_run_auto_s.c
+[4.743s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/local/lib/python3.10/dist-packages/fun4_interfaces/srv/_show_config_s.c
+[4.743s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/local/lib/python3.10/dist-packages/fun4_interfaces/srv/_change_mode.py
+[4.743s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/local/lib/python3.10/dist-packages/fun4_interfaces/srv/_change_mode_s.c
+[4.743s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/local/lib/python3.10/dist-packages/fun4_interfaces/fun4_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[4.743s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/local/lib/python3.10/dist-packages/fun4_interfaces/_fun4_interfaces_s.ep.rosidl_typesupport_c.c
+[4.743s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/local/lib/python3.10/dist-packages/fun4_interfaces/_fun4_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
+[4.743s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/local/lib/python3.10/dist-packages/fun4_interfaces/fun4_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[4.786s] Listing '/home/gun/FUN4/install/fun4_interfaces/local/lib/python3.10/dist-packages/fun4_interfaces'...
+[4.786s] Compiling '/home/gun/FUN4/install/fun4_interfaces/local/lib/python3.10/dist-packages/fun4_interfaces/__init__.py'...
+[4.786s] Listing '/home/gun/FUN4/install/fun4_interfaces/local/lib/python3.10/dist-packages/fun4_interfaces/srv'...
+[4.786s] Compiling '/home/gun/FUN4/install/fun4_interfaces/local/lib/python3.10/dist-packages/fun4_interfaces/srv/__init__.py'...
+[4.786s] Compiling '/home/gun/FUN4/install/fun4_interfaces/local/lib/python3.10/dist-packages/fun4_interfaces/srv/_change_mode.py'...
+[4.786s] Compiling '/home/gun/FUN4/install/fun4_interfaces/local/lib/python3.10/dist-packages/fun4_interfaces/srv/_run_auto.py'...
+[4.786s] Compiling '/home/gun/FUN4/install/fun4_interfaces/local/lib/python3.10/dist-packages/fun4_interfaces/srv/_show_config.py'...
+[4.790s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/local/lib/python3.10/dist-packages/fun4_interfaces/fun4_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[4.790s] -- Set runtime path of "/home/gun/FUN4/install/fun4_interfaces/local/lib/python3.10/dist-packages/fun4_interfaces/fun4_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so" to ""
+[4.790s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/local/lib/python3.10/dist-packages/fun4_interfaces/fun4_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[4.791s] -- Set runtime path of "/home/gun/FUN4/install/fun4_interfaces/local/lib/python3.10/dist-packages/fun4_interfaces/fun4_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so" to ""
+[4.791s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/local/lib/python3.10/dist-packages/fun4_interfaces/fun4_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[4.791s] -- Set runtime path of "/home/gun/FUN4/install/fun4_interfaces/local/lib/python3.10/dist-packages/fun4_interfaces/fun4_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so" to ""
+[4.791s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/lib/libfun4_interfaces__rosidl_generator_py.so
+[4.792s] -- Set runtime path of "/home/gun/FUN4/install/fun4_interfaces/lib/libfun4_interfaces__rosidl_generator_py.so" to ""
+[4.792s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/srv/ChangeMode.idl
+[4.792s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/srv/RunAuto.idl
+[4.792s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/srv/ShowConfig.idl
+[4.792s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/srv/ChangeMode.srv
+[4.792s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/srv/ChangeMode_Request.msg
+[4.792s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/srv/ChangeMode_Response.msg
+[4.792s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/srv/RunAuto.srv
+[4.792s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/srv/RunAuto_Request.msg
+[4.793s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/srv/RunAuto_Response.msg
+[4.793s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/srv/ShowConfig.srv
+[4.793s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/srv/ShowConfig_Request.msg
+[4.793s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/srv/ShowConfig_Response.msg
+[4.793s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/share/ament_index/resource_index/package_run_dependencies/fun4_interfaces
+[4.793s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/share/ament_index/resource_index/parent_prefix_path/fun4_interfaces
+[4.793s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/environment/ament_prefix_path.sh
+[4.793s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/environment/ament_prefix_path.dsv
+[4.793s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/environment/path.sh
+[4.793s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/environment/path.dsv
+[4.794s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/local_setup.bash
+[4.794s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/local_setup.sh
+[4.794s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/local_setup.zsh
+[4.794s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/local_setup.dsv
+[4.794s] -- Installing: /home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/package.dsv
+[4.794s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/share/ament_index/resource_index/packages/fun4_interfaces
+[4.794s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/cmake/export_fun4_interfaces__rosidl_generator_cExport.cmake
+[4.794s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/cmake/export_fun4_interfaces__rosidl_generator_cExport-noconfig.cmake
+[4.794s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/cmake/export_fun4_interfaces__rosidl_typesupport_fastrtps_cExport.cmake
+[4.794s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/cmake/export_fun4_interfaces__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[4.795s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/cmake/export_fun4_interfaces__rosidl_generator_cppExport.cmake
+[4.795s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/cmake/export_fun4_interfaces__rosidl_typesupport_fastrtps_cppExport.cmake
+[4.795s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/cmake/export_fun4_interfaces__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[4.795s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/cmake/fun4_interfaces__rosidl_typesupport_introspection_cExport.cmake
+[4.795s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/cmake/fun4_interfaces__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[4.795s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/cmake/fun4_interfaces__rosidl_typesupport_cExport.cmake
+[4.795s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/cmake/fun4_interfaces__rosidl_typesupport_cExport-noconfig.cmake
+[4.795s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/cmake/fun4_interfaces__rosidl_typesupport_introspection_cppExport.cmake
+[4.795s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/cmake/fun4_interfaces__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[4.795s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/cmake/fun4_interfaces__rosidl_typesupport_cppExport.cmake
+[4.795s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/cmake/fun4_interfaces__rosidl_typesupport_cppExport-noconfig.cmake
+[4.795s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/cmake/export_fun4_interfaces__rosidl_generator_pyExport.cmake
+[4.795s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/cmake/export_fun4_interfaces__rosidl_generator_pyExport-noconfig.cmake
+[4.795s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/cmake/rosidl_cmake-extras.cmake
+[4.795s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/cmake/ament_cmake_export_dependencies-extras.cmake
+[4.795s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/cmake/ament_cmake_export_include_directories-extras.cmake
+[4.795s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/cmake/ament_cmake_export_libraries-extras.cmake
+[4.795s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/cmake/ament_cmake_export_targets-extras.cmake
+[4.796s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[4.796s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[4.796s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/cmake/fun4_interfacesConfig.cmake
+[4.796s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/cmake/fun4_interfacesConfig-version.cmake
+[4.796s] -- Up-to-date: /home/gun/FUN4/install/fun4_interfaces/share/fun4_interfaces/package.xml
+[4.797s] Invoked command in '/home/gun/FUN4/build/fun4_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/gun/ros2_ws/install/turtlesim_catch_them_all:/home/gun/ros2_ws/install/my_py_pkg:/home/gun/ros2_ws/install/actions_py:/opt/ros/humble /usr/bin/cmake --install /home/gun/FUN4/build/fun4_interfaces

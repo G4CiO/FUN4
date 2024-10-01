@@ -1,3 +1,3 @@
 
-bool success
 float64[] config
+bool success

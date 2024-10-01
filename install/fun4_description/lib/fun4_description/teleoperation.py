@@ -10,6 +10,7 @@ import rclpy
 from rclpy.node import Node
 from geometry_msgs.msg import PoseStamped, Twist
 from fun4_interfaces.srv import ChangeMode
+from fun4_interfaces.msg import Jointsol
 from scipy.spatial.transform import Rotation as R
 
 class Teleoperation(Node):
@@ -25,6 +26,7 @@ class Teleoperation(Node):
         self.cmd_vel_sub = self.create_subscription(Twist, '/cmd_vel', self.callback_cmd_vel, 10)
         self.end_pose_sub = self.create_subscription(PoseStamped, '/end_effector', self.callback_end_pose, 10)
         self.joint_state_sub = self.create_subscription(JointState, '/joint_states', self.joint_state_callback, 10)
+        self.q_sol_sub = self.create_subscription(Jointsol, '/q_sol', self.q_sol_callback, 10)
         # Service Server (รับ mode เข้ามา)
         self.take_mode = self.create_service(ChangeMode, '/mode_pose', self.callback_user)
 
@@ -33,6 +35,10 @@ class Teleoperation(Node):
         self.mode = 0
         self.teleop_mode = 1
         self.temp = None
+        self.q_sol = []
+    
+    def q_sol_callback(self, msg:Jointsol):
+        self.q_sol = msg.q_msg
 
     def joint_state_callback(self, msg: JointState):
         if len(msg.position) >= 3:
@@ -84,7 +90,7 @@ class Teleoperation(Node):
             # Singularity checking by determinant
             self.det_J = np.linalg.det(self.J_pos)
             # det_threshold = 1e-3
-            self.det_threshold = 1e-3
+            self.det_threshold = 1e-2
 
             self.caljacob()
 
@@ -113,9 +119,48 @@ class Teleoperation(Node):
     def callback_user(self,request:ChangeMode.Request, response:ChangeMode.Response):
         self.mode = request.mode    
         self.teleop_mode = request.teleop_mode    
+        # if self.mode == 2 or self.mode == 3:
+        #     response.config = []
+        # else:
+        #     response.config = self.q_sol
+        # if self.mode == 2:
+        #     self.get_logger().info(f'Change to mode {self.mode} Teleoperation ')
+        #     response.success = True
+        #     response.config = []
+        # if self.mode == 3:
+        #     response.success = True
+        #     response.config = []
+        # else:
+
+        #     response.success = True
+        #     response.config = self.q_sol
+
+        # return response
+    
+        # if self.mode == 1:
+        #     response.success = True
+        #     response.config = self.q_sol
+        #     self.get_logger().info(f'Change to mode {self.mode} IPK ')
+        #     self.get_logger().info(f'Config from Mode1 {response.config} ')
         if self.mode == 2:
             self.get_logger().info(f'Change to mode {self.mode} Teleoperation ')
+            response.success = True
+            response.config = self.q_sol
+        if self.mode == 3:
+            self.get_logger().info(f'Change to mode {self.mode} Auto ')
+            response.success = True
+            response.config = self.q_sol
         return response
+
+    # def callback_user(self,request:ChangeMode.Request, response:ChangeMode.Response):
+    #     self.mode = request.mode    
+    #     self.teleop_mode = request.teleop_mode    
+    #     if self.mode == 2:
+    #         self.get_logger().info(f'Change to mode {self.mode} Teleoperation ')
+    #     if self.mode == 1:
+    #         response.success = True
+    #         response.config = self.q_sol
+    #     return response
 
 def main(args=None):
     rclpy.init(args=args)

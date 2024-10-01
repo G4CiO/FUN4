@@ -201,12 +201,18 @@ CMakeFiles/fun4_interfaces__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_gene
  /opt/ros/humble/include/rosidl_typesupport_interface/rosidl_typesupport_interface/macros.h \
  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/service_type_support_struct.h \
  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/action_type_support_struct.h \
- /home/gun/FUN4/build/fun4_interfaces/rosidl_generator_c/fun4_interfaces/srv/detail/change_mode__type_support.h \
+ /home/gun/FUN4/build/fun4_interfaces/rosidl_generator_c/fun4_interfaces/msg/detail/jointsol__type_support.h \
  /home/gun/FUN4/build/fun4_interfaces/rosidl_generator_c/fun4_interfaces/msg/rosidl_generator_c__visibility_control.h \
+ /home/gun/FUN4/build/fun4_interfaces/rosidl_generator_c/fun4_interfaces/msg/detail/jointsol__struct.h \
+ /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence.h \
+ /home/gun/FUN4/build/fun4_interfaces/rosidl_generator_c/fun4_interfaces/msg/detail/jointsol__functions.h \
+ /home/gun/FUN4/build/fun4_interfaces/rosidl_generator_c/fun4_interfaces/srv/detail/change_mode__type_support.h \
  /home/gun/FUN4/build/fun4_interfaces/rosidl_generator_c/fun4_interfaces/srv/detail/change_mode__struct.h \
  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/point__struct.h \
- /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence.h \
  /home/gun/FUN4/build/fun4_interfaces/rosidl_generator_c/fun4_interfaces/srv/detail/change_mode__functions.h \
  /home/gun/FUN4/build/fun4_interfaces/rosidl_generator_c/fun4_interfaces/srv/detail/run_auto__type_support.h \
  /home/gun/FUN4/build/fun4_interfaces/rosidl_generator_c/fun4_interfaces/srv/detail/run_auto__struct.h \
- /home/gun/FUN4/build/fun4_interfaces/rosidl_generator_c/fun4_interfaces/srv/detail/run_auto__functions.h
+ /home/gun/FUN4/build/fun4_interfaces/rosidl_generator_c/fun4_interfaces/srv/detail/run_auto__functions.h \
+ /home/gun/FUN4/build/fun4_interfaces/rosidl_generator_c/fun4_interfaces/srv/detail/show_config__type_support.h \
+ /home/gun/FUN4/build/fun4_interfaces/rosidl_generator_c/fun4_interfaces/srv/detail/show_config__struct.h \
+ /home/gun/FUN4/build/fun4_interfaces/rosidl_generator_c/fun4_interfaces/srv/detail/show_config__functions.h

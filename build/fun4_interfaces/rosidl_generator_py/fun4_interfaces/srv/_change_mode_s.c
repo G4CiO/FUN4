@@ -197,15 +197,6 @@ bool fun4_interfaces__srv__change_mode__response__convert_from_py(PyObject * _py
     assert(strncmp("fun4_interfaces.srv._change_mode.ChangeMode_Response", full_classname_dest, 52) == 0);
   }
   fun4_interfaces__srv__ChangeMode_Response * ros_message = _ros_message;
-  {  // success
-    PyObject * field = PyObject_GetAttrString(_pymsg, "success");
-    if (!field) {
-      return false;
-    }
-    assert(PyBool_Check(field));
-    ros_message->success = (Py_True == field);
-    Py_DECREF(field);
-  }
   {  // config
     PyObject * field = PyObject_GetAttrString(_pymsg, "config");
     if (!field) {
@@ -268,6 +259,15 @@ bool fun4_interfaces__srv__change_mode__response__convert_from_py(PyObject * _py
     }
     Py_DECREF(field);
   }
+  {  // success
+    PyObject * field = PyObject_GetAttrString(_pymsg, "success");
+    if (!field) {
+      return false;
+    }
+    assert(PyBool_Check(field));
+    ros_message->success = (Py_True == field);
+    Py_DECREF(field);
+  }
 
   return true;
 }
@@ -290,17 +290,6 @@ PyObject * fun4_interfaces__srv__change_mode__response__convert_to_py(void * raw
     }
   }
   fun4_interfaces__srv__ChangeMode_Response * ros_message = (fun4_interfaces__srv__ChangeMode_Response *)raw_ros_message;
-  {  // success
-    PyObject * field = NULL;
-    field = PyBool_FromLong(ros_message->success ? 1 : 0);
-    {
-      int rc = PyObject_SetAttrString(_pymessage, "success", field);
-      Py_DECREF(field);
-      if (rc) {
-        return NULL;
-      }
-    }
-  }
   {  // config
     PyObject * field = NULL;
     field = PyObject_GetAttrString(_pymessage, "config");
@@ -357,6 +346,17 @@ PyObject * fun4_interfaces__srv__change_mode__response__convert_to_py(void * raw
       Py_DECREF(ret);
     }
     Py_DECREF(field);
+  }
+  {  // success
+    PyObject * field = NULL;
+    field = PyBool_FromLong(ros_message->success ? 1 : 0);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "success", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
   }
 
   // ownership of _pymessage is transferred to the caller

@@ -8,6 +8,8 @@ import rclpy
 from rclpy.node import Node
 from geometry_msgs.msg import PoseStamped
 from fun4_interfaces.srv import RunAuto,ChangeMode
+from fun4_interfaces.msg import Jointsol
+
 
 class PIDController:
     def __init__(self, kp):
@@ -29,6 +31,7 @@ class Auto(Node):
         # Sub
         self.end_pose_sub = self.create_subscription(PoseStamped, '/end_effector', self.callback_end_pose, 10)
         self.joint_state_sub = self.create_subscription(JointState, '/joint_states', self.joint_state_callback, 10)
+        self.q_sol_sub = self.create_subscription(Jointsol, '/q_sol', self.q_sol_callback, 10)
         # timer
         self.dt = 0.01
         self.timer = self.create_timer(self.dt, self.timer_call)
@@ -45,10 +48,14 @@ class Auto(Node):
         self.xe, self.ye, self.ze = 0.0, 0.0, 0.0  # Initialize end-effector position
         self.tolerance = 0.01  # Tolerance 
         self.flag = True
+        self.q_sol = []
 
         self.pid_controllers = [PIDController(1.5),  # For joint 1
                                 PIDController(1.5),  # For joint 2
                                 PIDController(1.5)]  # For joint 3
+        
+    def q_sol_callback(self, msg:Jointsol):
+        self.q_sol = msg.q_msg
         
     def joint_state_callback(self, msg: JointState):
         if len(msg.position) >= 3:
@@ -61,7 +68,40 @@ class Auto(Node):
 
     def callback_user(self,request:ChangeMode.Request, response:ChangeMode.Response): # รับ
         self.mode = request.mode
+    
+        # if self.mode == 3:
+        #     self.get_logger().info(f'Change to mode {self.mode} Auto ')
+        #     response.success = True
+        #     response.config = []
+        # if self.mode == 3:
+        #     response.success = True
+        #     response.config = []
+        # else:
+        #     response.success = True
+        #     response.config = self.q_sol
+        # return response
+
+        # if self.mode == 1:
+        #     response.success = True
+        #     response.config = self.q_sol
+        #     self.get_logger().info(f'Change to mode {self.mode} IPK ')
+        #     self.get_logger().info(f'Config from Mode1 {response.config} ')
+        if self.mode == 2:
+            self.get_logger().info(f'Change to mode {self.mode} Teleoperation ')
+            response.success = True
+            response.config = self.q_sol
+        if self.mode == 3:
+            self.get_logger().info(f'Change to mode {self.mode} Auto ')
+            response.success = True
+            response.config = self.q_sol
         return response
+
+    # def callback_user(self,request:ChangeMode.Request, response:ChangeMode.Response): # รับ
+    #     self.mode = request.mode
+    #     if self.mode == 1:
+    #         response.success = True
+    #         response.config = self.q_sol
+    #     return response
 
     def callback_target(self,request:RunAuto.Request, response:RunAuto.Response): # รับ
         if self.mode == 3:

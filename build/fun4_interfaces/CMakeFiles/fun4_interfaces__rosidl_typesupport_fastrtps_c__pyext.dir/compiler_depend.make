@@ -242,22 +242,34 @@ CMakeFiles/fun4_interfaces__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_gene
   /opt/ros/humble/include/rosidl_typesupport_interface/rosidl_typesupport_interface/macros.h \
   /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/service_type_support_struct.h \
   /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/action_type_support_struct.h \
-  rosidl_generator_c/fun4_interfaces/srv/detail/change_mode__type_support.h \
+  rosidl_generator_c/fun4_interfaces/msg/detail/jointsol__type_support.h \
   rosidl_generator_c/fun4_interfaces/msg/rosidl_generator_c__visibility_control.h \
+  rosidl_generator_c/fun4_interfaces/msg/detail/jointsol__struct.h \
+  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence.h \
+  rosidl_generator_c/fun4_interfaces/msg/detail/jointsol__functions.h \
+  rosidl_generator_c/fun4_interfaces/srv/detail/change_mode__type_support.h \
   rosidl_generator_c/fun4_interfaces/srv/detail/change_mode__struct.h \
   /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/point__struct.h \
-  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence.h \
   rosidl_generator_c/fun4_interfaces/srv/detail/change_mode__functions.h \
   rosidl_generator_c/fun4_interfaces/srv/detail/run_auto__type_support.h \
   rosidl_generator_c/fun4_interfaces/srv/detail/run_auto__struct.h \
-  rosidl_generator_c/fun4_interfaces/srv/detail/run_auto__functions.h
+  rosidl_generator_c/fun4_interfaces/srv/detail/run_auto__functions.h \
+  rosidl_generator_c/fun4_interfaces/srv/detail/show_config__type_support.h \
+  rosidl_generator_c/fun4_interfaces/srv/detail/show_config__struct.h \
+  rosidl_generator_c/fun4_interfaces/srv/detail/show_config__functions.h
 
+
+rosidl_generator_c/fun4_interfaces/srv/detail/show_config__functions.h:
+
+rosidl_generator_c/fun4_interfaces/srv/detail/show_config__struct.h:
 
 rosidl_generator_c/fun4_interfaces/srv/detail/run_auto__functions.h:
 
 rosidl_generator_c/fun4_interfaces/srv/detail/run_auto__struct.h:
 
 /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/point__struct.h:
+
+rosidl_generator_c/fun4_interfaces/msg/detail/jointsol__functions.h:
 
 rosidl_generator_c/fun4_interfaces/msg/rosidl_generator_c__visibility_control.h:
 
@@ -333,6 +345,8 @@ rosidl_generator_c/fun4_interfaces/msg/rosidl_generator_c__visibility_control.h:
 
 /usr/include/python3.10/dictobject.h:
 
+rosidl_generator_c/fun4_interfaces/msg/detail/jointsol__struct.h:
+
 /usr/include/python3.10/cpython/listobject.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h:
@@ -342,6 +356,8 @@ rosidl_generator_c/fun4_interfaces/msg/rosidl_generator_c__visibility_control.h:
 /usr/include/python3.10/enumobject.h:
 
 /usr/include/python3.10/memoryobject.h:
+
+rosidl_generator_c/fun4_interfaces/srv/detail/show_config__type_support.h:
 
 /usr/include/python3.10/cpython/pyfpe.h:
 
@@ -376,6 +392,8 @@ rosidl_generator_c/fun4_interfaces/srv/detail/change_mode__struct.h:
 /usr/include/python3.10/pyhash.h:
 
 /usr/include/python3.10/cpython/object.h:
+
+rosidl_generator_c/fun4_interfaces/msg/detail/jointsol__type_support.h:
 
 /usr/include/python3.10/pymath.h:
 

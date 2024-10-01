@@ -198,24 +198,24 @@ struct ChangeMode_Response_
   }
 
   // field types and members
-  using _success_type =
-    bool;
-  _success_type success;
   using _config_type =
     std::vector<double, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<double>>;
   _config_type config;
+  using _success_type =
+    bool;
+  _success_type success;
 
   // setters for named parameter idiom
-  Type & set__success(
-    const bool & _arg)
-  {
-    this->success = _arg;
-    return *this;
-  }
   Type & set__config(
     const std::vector<double, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<double>> & _arg)
   {
     this->config = _arg;
+    return *this;
+  }
+  Type & set__success(
+    const bool & _arg)
+  {
+    this->success = _arg;
     return *this;
   }
 
@@ -261,10 +261,10 @@ struct ChangeMode_Response_
   // comparison operators
   bool operator==(const ChangeMode_Response_ & other) const
   {
-    if (this->success != other.success) {
+    if (this->config != other.config) {
       return false;
     }
-    if (this->config != other.config) {
+    if (this->success != other.success) {
       return false;
     }
     return true;

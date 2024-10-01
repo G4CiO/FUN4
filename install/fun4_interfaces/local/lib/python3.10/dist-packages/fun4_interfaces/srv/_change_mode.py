@@ -231,26 +231,26 @@ class ChangeMode_Response(metaclass=Metaclass_ChangeMode_Response):
     """Message class 'ChangeMode_Response'."""
 
     __slots__ = [
-        '_success',
         '_config',
+        '_success',
     ]
 
     _fields_and_field_types = {
-        'success': 'boolean',
         'config': 'sequence<double>',
+        'success': 'boolean',
     }
 
     SLOT_TYPES = (
-        rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
         rosidl_parser.definition.UnboundedSequence(rosidl_parser.definition.BasicType('double')),  # noqa: E501
+        rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
     )
 
     def __init__(self, **kwargs):
         assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
             'Invalid arguments passed to constructor: %s' % \
             ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
-        self.success = kwargs.get('success', bool())
         self.config = array.array('d', kwargs.get('config', []))
+        self.success = kwargs.get('success', bool())
 
     def __repr__(self):
         typename = self.__class__.__module__.split('.')
@@ -281,9 +281,9 @@ class ChangeMode_Response(metaclass=Metaclass_ChangeMode_Response):
     def __eq__(self, other):
         if not isinstance(other, self.__class__):
             return False
-        if self.success != other.success:
-            return False
         if self.config != other.config:
+            return False
+        if self.success != other.success:
             return False
         return True
 
@@ -291,19 +291,6 @@ class ChangeMode_Response(metaclass=Metaclass_ChangeMode_Response):
     def get_fields_and_field_types(cls):
         from copy import copy
         return copy(cls._fields_and_field_types)
-
-    @builtins.property
-    def success(self):
-        """Message field 'success'."""
-        return self._success
-
-    @success.setter
-    def success(self, value):
-        if __debug__:
-            assert \
-                isinstance(value, bool), \
-                "The 'success' field must be of type 'bool'"
-        self._success = value
 
     @builtins.property
     def config(self):
@@ -332,6 +319,19 @@ class ChangeMode_Response(metaclass=Metaclass_ChangeMode_Response):
                  all(not (val < -1.7976931348623157e+308 or val > 1.7976931348623157e+308) or math.isinf(val) for val in value)), \
                 "The 'config' field must be a set or sequence and each value of type 'float' and each double in [-179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368.000000, 179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368.000000]"
         self._config = array.array('d', value)
+
+    @builtins.property
+    def success(self):
+        """Message field 'success'."""
+        return self._success
+
+    @success.setter
+    def success(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, bool), \
+                "The 'success' field must be of type 'bool'"
+        self._success = value
 
 
 class Metaclass_ChangeMode(type):

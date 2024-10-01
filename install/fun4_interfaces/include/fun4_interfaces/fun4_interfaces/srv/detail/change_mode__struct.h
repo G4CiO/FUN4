@@ -49,8 +49,8 @@ typedef struct fun4_interfaces__srv__ChangeMode_Request__Sequence
 /// Struct defined in srv/ChangeMode in the package fun4_interfaces.
 typedef struct fun4_interfaces__srv__ChangeMode_Response
 {
-  bool success;
   rosidl_runtime_c__double__Sequence config;
+  bool success;
 } fun4_interfaces__srv__ChangeMode_Response;
 
 // Struct for a sequence of fun4_interfaces__srv__ChangeMode_Response.
