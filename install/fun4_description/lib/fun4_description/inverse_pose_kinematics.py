@@ -69,15 +69,7 @@ class InversePoseKinematics(Node):
         z = request.pose.z
 
         self.q_sol = self.inverse_kinematic(x, y, z, self.mode)
-        
         response.success = self.finish
-        # response.config = q_sol
-        # if self.mode == 1:
-        #     self.get_logger().info(f'Change to mode {self.mode} IPK ')
-        #     self.get_logger().info(f'Config from Mode1 {response.config} ')
-        #     response.config = self.q_sol
-    
-        # return response
     
         if self.mode == 1:
             response.success = True
@@ -85,32 +77,12 @@ class InversePoseKinematics(Node):
             self.get_logger().info(f'Change to mode {self.mode} IPK ')
             self.get_logger().info(f'Config from Mode1 {response.config} ')
         if self.mode == 2:
-            self.get_logger().info(f'Change to mode {self.mode} Teleoperation ')
             response.success = True
             response.config = self.q_sol
         if self.mode == 3:
-            self.get_logger().info(f'Change to mode {self.mode} Auto ')
             response.success = True
             response.config = self.q_sol
         return response
-
-    # def callback_user(self,request:ChangeMode.Request, response:ChangeMode.Response): # รับ
-    #     self.mode = request.mode
-    #     x = request.pose.x
-    #     y = request.pose.y
-    #     z = request.pose.z
-
-    #     self.q_sol = self.inverse_kinematic(x, y, z, self.mode)
-        
-    #     response.success = self.finish
-    #     response.config = self.q_sol
-    #     if self.mode == 1:
-    #         self.get_logger().info(f'Change to mode {self.mode} IPK ')
-    #         self.get_logger().info(f'Config from Mode1 {response.config} ')
-    #         response.success = self.finish
-    #         response.config = self.q_sol
-
-    #     return response
 
     def inverse_kinematic(self, x, y, z, mode):
         distance_squared = x**2 + y**2 + (z-0.2)**2
