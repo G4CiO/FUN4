@@ -18,6 +18,8 @@ module fun4_interfaces {
 
       boolean change_mode_success;
 
+      boolean change_teleop_mode_success;
+
       boolean config_check_mode1;
     };
   };

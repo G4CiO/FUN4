@@ -327,6 +327,8 @@ cdr_serialize(
   }
   // Member: change_mode_success
   cdr << (ros_message.change_mode_success ? true : false);
+  // Member: change_teleop_mode_success
+  cdr << (ros_message.change_teleop_mode_success ? true : false);
   // Member: config_check_mode1
   cdr << (ros_message.config_check_mode1 ? true : false);
   return true;
@@ -348,6 +350,13 @@ cdr_deserialize(
     uint8_t tmp;
     cdr >> tmp;
     ros_message.change_mode_success = tmp ? true : false;
+  }
+
+  // Member: change_teleop_mode_success
+  {
+    uint8_t tmp;
+    cdr >> tmp;
+    ros_message.change_teleop_mode_success = tmp ? true : false;
   }
 
   // Member: config_check_mode1
@@ -386,6 +395,12 @@ get_serialized_size(
   // Member: change_mode_success
   {
     size_t item_size = sizeof(ros_message.change_mode_success);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // Member: change_teleop_mode_success
+  {
+    size_t item_size = sizeof(ros_message.change_teleop_mode_success);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -433,6 +448,14 @@ max_serialized_size_ChangeMode_Response(
   }
 
   // Member: change_mode_success
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint8_t);
+    current_alignment += array_size * sizeof(uint8_t);
+  }
+
+  // Member: change_teleop_mode_success
   {
     size_t array_size = 1;
 

@@ -268,6 +268,15 @@ bool fun4_interfaces__srv__change_mode__response__convert_from_py(PyObject * _py
     ros_message->change_mode_success = (Py_True == field);
     Py_DECREF(field);
   }
+  {  // change_teleop_mode_success
+    PyObject * field = PyObject_GetAttrString(_pymsg, "change_teleop_mode_success");
+    if (!field) {
+      return false;
+    }
+    assert(PyBool_Check(field));
+    ros_message->change_teleop_mode_success = (Py_True == field);
+    Py_DECREF(field);
+  }
   {  // config_check_mode1
     PyObject * field = PyObject_GetAttrString(_pymsg, "config_check_mode1");
     if (!field) {
@@ -361,6 +370,17 @@ PyObject * fun4_interfaces__srv__change_mode__response__convert_to_py(void * raw
     field = PyBool_FromLong(ros_message->change_mode_success ? 1 : 0);
     {
       int rc = PyObject_SetAttrString(_pymessage, "change_mode_success", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // change_teleop_mode_success
+    PyObject * field = NULL;
+    field = PyBool_FromLong(ros_message->change_teleop_mode_success ? 1 : 0);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "change_teleop_mode_success", field);
       Py_DECREF(field);
       if (rc) {
         return NULL;

@@ -74,14 +74,6 @@ CMakeFiles/fun4_interfaces__cpp: rosidl_generator_cpp/fun4_interfaces/srv/run_au
 CMakeFiles/fun4_interfaces__cpp: rosidl_generator_cpp/fun4_interfaces/srv/detail/run_auto__builder.hpp
 CMakeFiles/fun4_interfaces__cpp: rosidl_generator_cpp/fun4_interfaces/srv/detail/run_auto__struct.hpp
 CMakeFiles/fun4_interfaces__cpp: rosidl_generator_cpp/fun4_interfaces/srv/detail/run_auto__traits.hpp
-CMakeFiles/fun4_interfaces__cpp: rosidl_generator_cpp/fun4_interfaces/srv/show_config.hpp
-CMakeFiles/fun4_interfaces__cpp: rosidl_generator_cpp/fun4_interfaces/srv/detail/show_config__builder.hpp
-CMakeFiles/fun4_interfaces__cpp: rosidl_generator_cpp/fun4_interfaces/srv/detail/show_config__struct.hpp
-CMakeFiles/fun4_interfaces__cpp: rosidl_generator_cpp/fun4_interfaces/srv/detail/show_config__traits.hpp
-CMakeFiles/fun4_interfaces__cpp: rosidl_generator_cpp/fun4_interfaces/msg/jointsol.hpp
-CMakeFiles/fun4_interfaces__cpp: rosidl_generator_cpp/fun4_interfaces/msg/detail/jointsol__builder.hpp
-CMakeFiles/fun4_interfaces__cpp: rosidl_generator_cpp/fun4_interfaces/msg/detail/jointsol__struct.hpp
-CMakeFiles/fun4_interfaces__cpp: rosidl_generator_cpp/fun4_interfaces/msg/detail/jointsol__traits.hpp
 
 rosidl_generator_cpp/fun4_interfaces/srv/change_mode.hpp: /opt/ros/humble/lib/rosidl_generator_cpp/rosidl_generator_cpp
 rosidl_generator_cpp/fun4_interfaces/srv/change_mode.hpp: /opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_generator_cpp/__init__.py
@@ -100,8 +92,6 @@ rosidl_generator_cpp/fun4_interfaces/srv/change_mode.hpp: /opt/ros/humble/share/
 rosidl_generator_cpp/fun4_interfaces/srv/change_mode.hpp: /opt/ros/humble/share/rosidl_generator_cpp/resource/srv__traits.hpp.em
 rosidl_generator_cpp/fun4_interfaces/srv/change_mode.hpp: rosidl_adapter/fun4_interfaces/srv/ChangeMode.idl
 rosidl_generator_cpp/fun4_interfaces/srv/change_mode.hpp: rosidl_adapter/fun4_interfaces/srv/RunAuto.idl
-rosidl_generator_cpp/fun4_interfaces/srv/change_mode.hpp: rosidl_adapter/fun4_interfaces/srv/ShowConfig.idl
-rosidl_generator_cpp/fun4_interfaces/srv/change_mode.hpp: rosidl_adapter/fun4_interfaces/msg/Jointsol.idl
 rosidl_generator_cpp/fun4_interfaces/srv/change_mode.hpp: /opt/ros/humble/share/geometry_msgs/msg/Accel.idl
 rosidl_generator_cpp/fun4_interfaces/srv/change_mode.hpp: /opt/ros/humble/share/geometry_msgs/msg/AccelStamped.idl
 rosidl_generator_cpp/fun4_interfaces/srv/change_mode.hpp: /opt/ros/humble/share/geometry_msgs/msg/AccelWithCovariance.idl
@@ -186,35 +176,7 @@ rosidl_generator_cpp/fun4_interfaces/srv/detail/run_auto__struct.hpp: rosidl_gen
 rosidl_generator_cpp/fun4_interfaces/srv/detail/run_auto__traits.hpp: rosidl_generator_cpp/fun4_interfaces/srv/change_mode.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/fun4_interfaces/srv/detail/run_auto__traits.hpp
 
-rosidl_generator_cpp/fun4_interfaces/srv/show_config.hpp: rosidl_generator_cpp/fun4_interfaces/srv/change_mode.hpp
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/fun4_interfaces/srv/show_config.hpp
-
-rosidl_generator_cpp/fun4_interfaces/srv/detail/show_config__builder.hpp: rosidl_generator_cpp/fun4_interfaces/srv/change_mode.hpp
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/fun4_interfaces/srv/detail/show_config__builder.hpp
-
-rosidl_generator_cpp/fun4_interfaces/srv/detail/show_config__struct.hpp: rosidl_generator_cpp/fun4_interfaces/srv/change_mode.hpp
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/fun4_interfaces/srv/detail/show_config__struct.hpp
-
-rosidl_generator_cpp/fun4_interfaces/srv/detail/show_config__traits.hpp: rosidl_generator_cpp/fun4_interfaces/srv/change_mode.hpp
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/fun4_interfaces/srv/detail/show_config__traits.hpp
-
-rosidl_generator_cpp/fun4_interfaces/msg/jointsol.hpp: rosidl_generator_cpp/fun4_interfaces/srv/change_mode.hpp
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/fun4_interfaces/msg/jointsol.hpp
-
-rosidl_generator_cpp/fun4_interfaces/msg/detail/jointsol__builder.hpp: rosidl_generator_cpp/fun4_interfaces/srv/change_mode.hpp
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/fun4_interfaces/msg/detail/jointsol__builder.hpp
-
-rosidl_generator_cpp/fun4_interfaces/msg/detail/jointsol__struct.hpp: rosidl_generator_cpp/fun4_interfaces/srv/change_mode.hpp
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/fun4_interfaces/msg/detail/jointsol__struct.hpp
-
-rosidl_generator_cpp/fun4_interfaces/msg/detail/jointsol__traits.hpp: rosidl_generator_cpp/fun4_interfaces/srv/change_mode.hpp
-	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/fun4_interfaces/msg/detail/jointsol__traits.hpp
-
 fun4_interfaces__cpp: CMakeFiles/fun4_interfaces__cpp
-fun4_interfaces__cpp: rosidl_generator_cpp/fun4_interfaces/msg/detail/jointsol__builder.hpp
-fun4_interfaces__cpp: rosidl_generator_cpp/fun4_interfaces/msg/detail/jointsol__struct.hpp
-fun4_interfaces__cpp: rosidl_generator_cpp/fun4_interfaces/msg/detail/jointsol__traits.hpp
-fun4_interfaces__cpp: rosidl_generator_cpp/fun4_interfaces/msg/jointsol.hpp
 fun4_interfaces__cpp: rosidl_generator_cpp/fun4_interfaces/srv/change_mode.hpp
 fun4_interfaces__cpp: rosidl_generator_cpp/fun4_interfaces/srv/detail/change_mode__builder.hpp
 fun4_interfaces__cpp: rosidl_generator_cpp/fun4_interfaces/srv/detail/change_mode__struct.hpp
@@ -222,11 +184,7 @@ fun4_interfaces__cpp: rosidl_generator_cpp/fun4_interfaces/srv/detail/change_mod
 fun4_interfaces__cpp: rosidl_generator_cpp/fun4_interfaces/srv/detail/run_auto__builder.hpp
 fun4_interfaces__cpp: rosidl_generator_cpp/fun4_interfaces/srv/detail/run_auto__struct.hpp
 fun4_interfaces__cpp: rosidl_generator_cpp/fun4_interfaces/srv/detail/run_auto__traits.hpp
-fun4_interfaces__cpp: rosidl_generator_cpp/fun4_interfaces/srv/detail/show_config__builder.hpp
-fun4_interfaces__cpp: rosidl_generator_cpp/fun4_interfaces/srv/detail/show_config__struct.hpp
-fun4_interfaces__cpp: rosidl_generator_cpp/fun4_interfaces/srv/detail/show_config__traits.hpp
 fun4_interfaces__cpp: rosidl_generator_cpp/fun4_interfaces/srv/run_auto.hpp
-fun4_interfaces__cpp: rosidl_generator_cpp/fun4_interfaces/srv/show_config.hpp
 fun4_interfaces__cpp: CMakeFiles/fun4_interfaces__cpp.dir/build.make
 .PHONY : fun4_interfaces__cpp
 

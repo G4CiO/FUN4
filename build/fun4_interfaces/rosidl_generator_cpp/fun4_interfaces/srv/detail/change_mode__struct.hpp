@@ -184,6 +184,7 @@ struct ChangeMode_Response_
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
       this->change_mode_success = false;
+      this->change_teleop_mode_success = false;
       this->config_check_mode1 = false;
     }
   }
@@ -195,6 +196,7 @@ struct ChangeMode_Response_
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
       this->change_mode_success = false;
+      this->change_teleop_mode_success = false;
       this->config_check_mode1 = false;
     }
   }
@@ -206,6 +208,9 @@ struct ChangeMode_Response_
   using _change_mode_success_type =
     bool;
   _change_mode_success_type change_mode_success;
+  using _change_teleop_mode_success_type =
+    bool;
+  _change_teleop_mode_success_type change_teleop_mode_success;
   using _config_check_mode1_type =
     bool;
   _config_check_mode1_type config_check_mode1;
@@ -221,6 +226,12 @@ struct ChangeMode_Response_
     const bool & _arg)
   {
     this->change_mode_success = _arg;
+    return *this;
+  }
+  Type & set__change_teleop_mode_success(
+    const bool & _arg)
+  {
+    this->change_teleop_mode_success = _arg;
     return *this;
   }
   Type & set__config_check_mode1(
@@ -276,6 +287,9 @@ struct ChangeMode_Response_
       return false;
     }
     if (this->change_mode_success != other.change_mode_success) {
+      return false;
+    }
+    if (this->change_teleop_mode_success != other.change_teleop_mode_success) {
       return false;
     }
     if (this->config_check_mode1 != other.config_check_mode1) {

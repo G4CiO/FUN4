@@ -2,8 +2,6 @@
   "package_name": "fun4_interfaces",
   "non_idl_tuples": [
     "/home/gun/FUN4/src/fun4_interfaces:srv/ChangeMode.srv",
-    "/home/gun/FUN4/src/fun4_interfaces:srv/RunAuto.srv",
-    "/home/gun/FUN4/src/fun4_interfaces:srv/ShowConfig.srv",
-    "/home/gun/FUN4/src/fun4_interfaces:msg/Jointsol.msg"
+    "/home/gun/FUN4/src/fun4_interfaces:srv/RunAuto.srv"
   ]
 }

@@ -220,7 +220,7 @@ bool fun4_interfaces__srv__ChangeMode_Response__rosidl_typesupport_introspection
   return rosidl_runtime_c__double__Sequence__init(member, size);
 }
 
-static rosidl_typesupport_introspection_c__MessageMember fun4_interfaces__srv__ChangeMode_Response__rosidl_typesupport_introspection_c__ChangeMode_Response_message_member_array[3] = {
+static rosidl_typesupport_introspection_c__MessageMember fun4_interfaces__srv__ChangeMode_Response__rosidl_typesupport_introspection_c__ChangeMode_Response_message_member_array[4] = {
   {
     "config_mode1",  // name
     rosidl_typesupport_introspection_c__ROS_TYPE_DOUBLE,  // type
@@ -256,6 +256,23 @@ static rosidl_typesupport_introspection_c__MessageMember fun4_interfaces__srv__C
     NULL  // resize(index) function pointer
   },
   {
+    "change_teleop_mode_success",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_BOOLEAN,  // type
+    0,  // upper bound of string
+    NULL,  // members of sub message
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(fun4_interfaces__srv__ChangeMode_Response, change_teleop_mode_success),  // bytes offset in struct
+    NULL,  // default value
+    NULL,  // size() function pointer
+    NULL,  // get_const(index) function pointer
+    NULL,  // get(index) function pointer
+    NULL,  // fetch(index, &value) function pointer
+    NULL,  // assign(index, value) function pointer
+    NULL  // resize(index) function pointer
+  },
+  {
     "config_check_mode1",  // name
     rosidl_typesupport_introspection_c__ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
@@ -277,7 +294,7 @@ static rosidl_typesupport_introspection_c__MessageMember fun4_interfaces__srv__C
 static const rosidl_typesupport_introspection_c__MessageMembers fun4_interfaces__srv__ChangeMode_Response__rosidl_typesupport_introspection_c__ChangeMode_Response_message_members = {
   "fun4_interfaces__srv",  // message namespace
   "ChangeMode_Response",  // message name
-  3,  // number of fields
+  4,  // number of fields
   sizeof(fun4_interfaces__srv__ChangeMode_Response),
   fun4_interfaces__srv__ChangeMode_Response__rosidl_typesupport_introspection_c__ChangeMode_Response_message_member_array,  // message members
   fun4_interfaces__srv__ChangeMode_Response__rosidl_typesupport_introspection_c__ChangeMode_Response_init_function,  // function to initialize message memory (memory has to be allocated)

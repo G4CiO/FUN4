@@ -16,8 +16,6 @@ find_package(rosidl_default_generators REQUIRED)
 rosidl_generate_interfaces(${PROJECT_NAME}
   "srv/ChangeMode.srv"
   "srv/RunAuto.srv"
-  "srv/ShowConfig.srv"
-  "msg/Jointsol.msg"
   DEPENDENCIES geometry_msgs # Add packages that above messages depend on, in this case geometry_msgs for Sphere.msg
 )
 

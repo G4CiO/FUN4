@@ -233,17 +233,20 @@ class ChangeMode_Response(metaclass=Metaclass_ChangeMode_Response):
     __slots__ = [
         '_config_mode1',
         '_change_mode_success',
+        '_change_teleop_mode_success',
         '_config_check_mode1',
     ]
 
     _fields_and_field_types = {
         'config_mode1': 'sequence<double>',
         'change_mode_success': 'boolean',
+        'change_teleop_mode_success': 'boolean',
         'config_check_mode1': 'boolean',
     }
 
     SLOT_TYPES = (
         rosidl_parser.definition.UnboundedSequence(rosidl_parser.definition.BasicType('double')),  # noqa: E501
+        rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
     )
@@ -254,6 +257,7 @@ class ChangeMode_Response(metaclass=Metaclass_ChangeMode_Response):
             ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.config_mode1 = array.array('d', kwargs.get('config_mode1', []))
         self.change_mode_success = kwargs.get('change_mode_success', bool())
+        self.change_teleop_mode_success = kwargs.get('change_teleop_mode_success', bool())
         self.config_check_mode1 = kwargs.get('config_check_mode1', bool())
 
     def __repr__(self):
@@ -288,6 +292,8 @@ class ChangeMode_Response(metaclass=Metaclass_ChangeMode_Response):
         if self.config_mode1 != other.config_mode1:
             return False
         if self.change_mode_success != other.change_mode_success:
+            return False
+        if self.change_teleop_mode_success != other.change_teleop_mode_success:
             return False
         if self.config_check_mode1 != other.config_check_mode1:
             return False
@@ -338,6 +344,19 @@ class ChangeMode_Response(metaclass=Metaclass_ChangeMode_Response):
                 isinstance(value, bool), \
                 "The 'change_mode_success' field must be of type 'bool'"
         self._change_mode_success = value
+
+    @builtins.property
+    def change_teleop_mode_success(self):
+        """Message field 'change_teleop_mode_success'."""
+        return self._change_teleop_mode_success
+
+    @change_teleop_mode_success.setter
+    def change_teleop_mode_success(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, bool), \
+                "The 'change_teleop_mode_success' field must be of type 'bool'"
+        self._change_teleop_mode_success = value
 
     @builtins.property
     def config_check_mode1(self):

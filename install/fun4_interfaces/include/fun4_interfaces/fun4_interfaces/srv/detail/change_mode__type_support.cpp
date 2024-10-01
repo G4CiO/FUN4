@@ -235,7 +235,7 @@ void resize_function__ChangeMode_Response__config_mode1(void * untyped_member, s
   member->resize(size);
 }
 
-static const ::rosidl_typesupport_introspection_cpp::MessageMember ChangeMode_Response_message_member_array[3] = {
+static const ::rosidl_typesupport_introspection_cpp::MessageMember ChangeMode_Response_message_member_array[4] = {
   {
     "config_mode1",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_DOUBLE,  // type
@@ -271,6 +271,23 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember ChangeMode_Re
     nullptr  // resize(index) function pointer
   },
   {
+    "change_teleop_mode_success",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_BOOLEAN,  // type
+    0,  // upper bound of string
+    nullptr,  // members of sub message
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(fun4_interfaces::srv::ChangeMode_Response, change_teleop_mode_success),  // bytes offset in struct
+    nullptr,  // default value
+    nullptr,  // size() function pointer
+    nullptr,  // get_const(index) function pointer
+    nullptr,  // get(index) function pointer
+    nullptr,  // fetch(index, &value) function pointer
+    nullptr,  // assign(index, value) function pointer
+    nullptr  // resize(index) function pointer
+  },
+  {
     "config_check_mode1",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
@@ -292,7 +309,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember ChangeMode_Re
 static const ::rosidl_typesupport_introspection_cpp::MessageMembers ChangeMode_Response_message_members = {
   "fun4_interfaces::srv",  // message namespace
   "ChangeMode_Response",  // message name
-  3,  // number of fields
+  4,  // number of fields
   sizeof(fun4_interfaces::srv::ChangeMode_Response),
   ChangeMode_Response_message_member_array,  // message members
   ChangeMode_Response_init_function,  // function to initialize message memory (memory has to be allocated)

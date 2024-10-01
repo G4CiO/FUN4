@@ -51,6 +51,7 @@ typedef struct fun4_interfaces__srv__ChangeMode_Response
 {
   rosidl_runtime_c__double__Sequence config_mode1;
   bool change_mode_success;
+  bool change_teleop_mode_success;
   bool config_check_mode1;
 } fun4_interfaces__srv__ChangeMode_Response;
 

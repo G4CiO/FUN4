@@ -1,22 +1,14 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/fun4_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/fun4_interfaces/msg/detail/dds_fastrtps/jointsol__type_support.cpp.o"
-  "CMakeFiles/fun4_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/fun4_interfaces/msg/detail/dds_fastrtps/jointsol__type_support.cpp.o.d"
   "CMakeFiles/fun4_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/dds_fastrtps/change_mode__type_support.cpp.o"
   "CMakeFiles/fun4_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/dds_fastrtps/change_mode__type_support.cpp.o.d"
   "CMakeFiles/fun4_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/dds_fastrtps/run_auto__type_support.cpp.o"
   "CMakeFiles/fun4_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/dds_fastrtps/run_auto__type_support.cpp.o.d"
-  "CMakeFiles/fun4_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/dds_fastrtps/show_config__type_support.cpp.o"
-  "CMakeFiles/fun4_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/dds_fastrtps/show_config__type_support.cpp.o.d"
   "libfun4_interfaces__rosidl_typesupport_fastrtps_cpp.pdb"
   "libfun4_interfaces__rosidl_typesupport_fastrtps_cpp.so"
-  "rosidl_typesupport_fastrtps_cpp/fun4_interfaces/msg/detail/dds_fastrtps/jointsol__type_support.cpp"
-  "rosidl_typesupport_fastrtps_cpp/fun4_interfaces/msg/detail/jointsol__rosidl_typesupport_fastrtps_cpp.hpp"
   "rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/change_mode__rosidl_typesupport_fastrtps_cpp.hpp"
   "rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/dds_fastrtps/change_mode__type_support.cpp"
   "rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/dds_fastrtps/run_auto__type_support.cpp"
-  "rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/dds_fastrtps/show_config__type_support.cpp"
   "rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/run_auto__rosidl_typesupport_fastrtps_cpp.hpp"
-  "rosidl_typesupport_fastrtps_cpp/fun4_interfaces/srv/detail/show_config__rosidl_typesupport_fastrtps_cpp.hpp"
 )
 
 # Per-language clean rules from dependency scanning.

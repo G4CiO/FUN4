@@ -1,5 +1,3 @@
-msg/Jointsol.idl
-msg/Jointsol.msg
 srv/ChangeMode.idl
 srv/ChangeMode.srv
 srv/ChangeMode_Request.msg
@@ -8,7 +6,3 @@ srv/RunAuto.idl
 srv/RunAuto.srv
 srv/RunAuto_Request.msg
 srv/RunAuto_Response.msg
-srv/ShowConfig.idl
-srv/ShowConfig.srv
-srv/ShowConfig_Request.msg
-srv/ShowConfig_Response.msg

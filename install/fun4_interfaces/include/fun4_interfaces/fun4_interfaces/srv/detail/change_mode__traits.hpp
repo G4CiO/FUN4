@@ -179,6 +179,13 @@ inline void to_flow_style_yaml(
     out << ", ";
   }
 
+  // member: change_teleop_mode_success
+  {
+    out << "change_teleop_mode_success: ";
+    rosidl_generator_traits::value_to_yaml(msg.change_teleop_mode_success, out);
+    out << ", ";
+  }
+
   // member: config_check_mode1
   {
     out << "config_check_mode1: ";
@@ -218,6 +225,16 @@ inline void to_block_style_yaml(
     }
     out << "change_mode_success: ";
     rosidl_generator_traits::value_to_yaml(msg.change_mode_success, out);
+    out << "\n";
+  }
+
+  // member: change_teleop_mode_success
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "change_teleop_mode_success: ";
+    rosidl_generator_traits::value_to_yaml(msg.change_teleop_mode_success, out);
     out << "\n";
   }
 

@@ -43,13 +43,13 @@ class Auto(Node):
         self.r_max = 0.535
         self.current_joint_positions = [0.0, 0.0, 0.0]
         self.xe, self.ye, self.ze = 0.0, 0.0, 0.0  # Initialize end-effector position
-        self.tolerance = 0.01  # Tolerance 
+        self.tolerance = 0.001  # Tolerance 
         self.flag = True
         self.q_sol = []
 
-        self.pid_controllers = [PIDController(1.5),  # For joint 1
-                                PIDController(1.5),  # For joint 2
-                                PIDController(1.5)]  # For joint 3
+        self.pid_controllers = [PIDController(3.0),  # For joint 1
+                                PIDController(3.0),  # For joint 2
+                                PIDController(3.0)]  # For joint 3
         
     def joint_state_callback(self, msg: JointState):
         if len(msg.position) >= 3:
@@ -62,6 +62,7 @@ class Auto(Node):
 
     def callback_user(self,request:ChangeMode.Request, response:ChangeMode.Response): # รับ
         self.mode = request.mode
+        teleop_mode = request.teleop_mode
 
         x = request.pose.x
         y = request.pose.y
@@ -91,6 +92,8 @@ class Auto(Node):
             response.change_mode_success = True
 
         if self.mode == 2:
+            if teleop_mode  == 1 or teleop_mode == 2:
+                response.change_teleop_mode_success = True
             response.change_mode_success = True
             response.config_mode1 = []
         if self.mode == 3:

@@ -282,6 +282,7 @@ fun4_interfaces__srv__ChangeMode_Response__init(fun4_interfaces__srv__ChangeMode
     return false;
   }
   // change_mode_success
+  // change_teleop_mode_success
   // config_check_mode1
   return true;
 }
@@ -295,6 +296,7 @@ fun4_interfaces__srv__ChangeMode_Response__fini(fun4_interfaces__srv__ChangeMode
   // config_mode1
   rosidl_runtime_c__double__Sequence__fini(&msg->config_mode1);
   // change_mode_success
+  // change_teleop_mode_success
   // config_check_mode1
 }
 
@@ -312,6 +314,10 @@ fun4_interfaces__srv__ChangeMode_Response__are_equal(const fun4_interfaces__srv_
   }
   // change_mode_success
   if (lhs->change_mode_success != rhs->change_mode_success) {
+    return false;
+  }
+  // change_teleop_mode_success
+  if (lhs->change_teleop_mode_success != rhs->change_teleop_mode_success) {
     return false;
   }
   // config_check_mode1
@@ -337,6 +343,8 @@ fun4_interfaces__srv__ChangeMode_Response__copy(
   }
   // change_mode_success
   output->change_mode_success = input->change_mode_success;
+  // change_teleop_mode_success
+  output->change_teleop_mode_success = input->change_teleop_mode_success;
   // config_check_mode1
   output->config_check_mode1 = input->config_check_mode1;
   return true;

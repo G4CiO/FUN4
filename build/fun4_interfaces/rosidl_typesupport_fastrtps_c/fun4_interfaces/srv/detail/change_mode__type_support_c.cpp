@@ -348,6 +348,11 @@ static bool _ChangeMode_Response__cdr_serialize(
     cdr << (ros_message->change_mode_success ? true : false);
   }
 
+  // Field name: change_teleop_mode_success
+  {
+    cdr << (ros_message->change_teleop_mode_success ? true : false);
+  }
+
   // Field name: config_check_mode1
   {
     cdr << (ros_message->config_check_mode1 ? true : false);
@@ -388,6 +393,13 @@ static bool _ChangeMode_Response__cdr_deserialize(
     ros_message->change_mode_success = tmp ? true : false;
   }
 
+  // Field name: change_teleop_mode_success
+  {
+    uint8_t tmp;
+    cdr >> tmp;
+    ros_message->change_teleop_mode_success = tmp ? true : false;
+  }
+
   // Field name: config_check_mode1
   {
     uint8_t tmp;
@@ -426,6 +438,12 @@ size_t get_serialized_size_fun4_interfaces__srv__ChangeMode_Response(
   // field.name change_mode_success
   {
     size_t item_size = sizeof(ros_message->change_mode_success);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name change_teleop_mode_success
+  {
+    size_t item_size = sizeof(ros_message->change_teleop_mode_success);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -477,6 +495,13 @@ size_t max_serialized_size_fun4_interfaces__srv__ChangeMode_Response(
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
   }
   // member: change_mode_success
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint8_t);
+    current_alignment += array_size * sizeof(uint8_t);
+  }
+  // member: change_teleop_mode_success
   {
     size_t array_size = 1;
 

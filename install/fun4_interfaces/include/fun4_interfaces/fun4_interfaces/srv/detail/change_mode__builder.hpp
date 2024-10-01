@@ -111,16 +111,32 @@ private:
   ::fun4_interfaces::srv::ChangeMode_Response msg_;
 };
 
+class Init_ChangeMode_Response_change_teleop_mode_success
+{
+public:
+  explicit Init_ChangeMode_Response_change_teleop_mode_success(::fun4_interfaces::srv::ChangeMode_Response & msg)
+  : msg_(msg)
+  {}
+  Init_ChangeMode_Response_config_check_mode1 change_teleop_mode_success(::fun4_interfaces::srv::ChangeMode_Response::_change_teleop_mode_success_type arg)
+  {
+    msg_.change_teleop_mode_success = std::move(arg);
+    return Init_ChangeMode_Response_config_check_mode1(msg_);
+  }
+
+private:
+  ::fun4_interfaces::srv::ChangeMode_Response msg_;
+};
+
 class Init_ChangeMode_Response_change_mode_success
 {
 public:
   explicit Init_ChangeMode_Response_change_mode_success(::fun4_interfaces::srv::ChangeMode_Response & msg)
   : msg_(msg)
   {}
-  Init_ChangeMode_Response_config_check_mode1 change_mode_success(::fun4_interfaces::srv::ChangeMode_Response::_change_mode_success_type arg)
+  Init_ChangeMode_Response_change_teleop_mode_success change_mode_success(::fun4_interfaces::srv::ChangeMode_Response::_change_mode_success_type arg)
   {
     msg_.change_mode_success = std::move(arg);
-    return Init_ChangeMode_Response_config_check_mode1(msg_);
+    return Init_ChangeMode_Response_change_teleop_mode_success(msg_);
   }
 
 private:

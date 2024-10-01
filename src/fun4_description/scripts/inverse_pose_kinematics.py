@@ -54,6 +54,7 @@ class InversePoseKinematics(Node):
 
     def callback_user(self,request:ChangeMode.Request, response:ChangeMode.Response): # รับ
         self.mode = request.mode
+        teleop_mode = request.teleop_mode
         x = request.pose.x
         y = request.pose.y
         z = request.pose.z
@@ -67,6 +68,8 @@ class InversePoseKinematics(Node):
             self.get_logger().info(f'Change to mode {self.mode} IPK ')
             self.get_logger().info(f'Config from Mode1 {response.config_mode1} ')
         if self.mode == 2:
+            if teleop_mode  == 1 or teleop_mode == 2:
+                response.change_teleop_mode_success = True
             response.change_mode_success = True
             response.config_mode1 = []
         if self.mode == 3:

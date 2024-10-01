@@ -91,18 +91,19 @@ class Teleoperation(Node):
 
     def caljacob(self):
         if abs(self.det_J) < self.det_threshold:
-            self.get_logger().warning("Singularity detected. Stopping movement. Please use Mode 1 (IPK).")
+            self.get_logger().warning("Singularity detected. Stopping movement. Please change to Mode 1 or 3 to change manipurator to another pose.")
             return 
         
         if self.teleop_mode == 1:
-
             # Compute joint velocities (q_dot)
             q_dot = np.linalg.pinv(self.J_pos) @ self.linear_vel
-
         elif self.teleop_mode == 2:
-            
             # Use the rotation matrix to modify the linear velocity
             q_dot = np.linalg.pinv(self.J_pos) @ (self.rotation_matrix @ self.linear_vel)
+        else:
+            self.get_logger().warn(f'No Teleop mode {self.teleop_mode}. Please change only Teleop mode "1" or "2" ')
+            return
+
 
         # Update joint angles
         self.q = self.q + q_dot * self.dt
@@ -143,6 +144,8 @@ class Teleoperation(Node):
 
             response.change_mode_success = True
         if self.mode == 2:
+            if self.teleop_mode  == 1 or self.teleop_mode == 2:
+                response.change_teleop_mode_success = True
             self.get_logger().info(f'Change to mode {self.mode} Teleoperation ')
             response.change_mode_success = True
             response.config_mode1 = []
