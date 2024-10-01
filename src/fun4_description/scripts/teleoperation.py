@@ -123,14 +123,11 @@ class Teleoperation(Node):
         if self.mode == 1:
             response.success = True
             response.config = self.q_sol
-            self.get_logger().info(f'Change to mode {self.mode} IPK ')
-            self.get_logger().info(f'Config from Mode1 {response.config} ')
         if self.mode == 2:
             self.get_logger().info(f'Change to mode {self.mode} Teleoperation ')
             response.success = True
             response.config = self.q_sol
         if self.mode == 3:
-            self.get_logger().info(f'Change to mode {self.mode} Auto ')
             response.success = True
             response.config = self.q_sol
         return response
