@@ -32,6 +32,7 @@ and onother part You can follow the link I provided.
     ```
     It should work.
 -   **install my project**
+
     Go to home directory.
     ```bash
     cd
