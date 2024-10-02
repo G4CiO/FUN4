@@ -64,7 +64,7 @@ class InversePoseKinematics(Node):
         if len(msg.position) >= 3:
             self.current_joint_positions = list(msg.position[:3])  # Update the current positions
 
-    def callback_user(self,request:ChangeMode.Request, response:ChangeMode.Response): # รับ
+    def callback_user(self,request:ChangeMode.Request, response:ChangeMode.Response):
         self.mode = request.mode
         teleop_mode = request.teleop_mode
         x = request.pose.x
@@ -140,9 +140,6 @@ class InversePoseKinematics(Node):
         # Publish joint state
         self.joint_state_pub.publish(self.joint_msg)
         
-    
-
-
 def main(args=None):
     rclpy.init(args=args)
     node = InversePoseKinematics()

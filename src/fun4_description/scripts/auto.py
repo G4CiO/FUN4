@@ -34,7 +34,6 @@ class Auto(Node):
         self.dt = 0.01
         self.timer = self.create_timer(self.dt, self.timer_call)
         # Service Server
-        # self.take_target = self.create_service(RunAuto, '/target_', self.callback_target)
         self.random_target_client = self.create_client(RunAuto,'/target_server')
         self.take_mode = self.create_service(ChangeMode, '/mode_pose', self.callback_user)
 
@@ -192,7 +191,7 @@ class Auto(Node):
                     self.timer_count += 1  # Increment the timer count
                     if self.timer_count >= 100:  # 10 seconds have passed (100 iterations with dt = 0.01)
                         self.call_random_target(True)
-                        self.timer_count = 0  # Reset the timer after forcing a new target
+                        self.timer_count = 0  # Reset the timer
                 self.call_random_target(self.finish)
             self.flag = False
     

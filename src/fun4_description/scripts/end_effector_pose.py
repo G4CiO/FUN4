@@ -1,8 +1,5 @@
 #!/usr/bin/python3
-from spatialmath import SE3
 import math
-from math import pi
-from math import radians
 import rclpy
 from rclpy.node import Node
 from tf2_ros import TransformException

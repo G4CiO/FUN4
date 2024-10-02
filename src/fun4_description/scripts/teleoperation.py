@@ -25,15 +25,13 @@ class Teleoperation(Node):
         self.cmd_vel_sub = self.create_subscription(Twist, '/cmd_vel', self.callback_cmd_vel, 10)
         self.end_pose_sub = self.create_subscription(PoseStamped, '/end_effector', self.callback_end_pose, 10)
         self.joint_state_sub = self.create_subscription(JointState, '/joint_states', self.joint_state_callback, 10)
-        # Service Server (รับ mode เข้ามา)
+        # Service Server
         self.take_mode = self.create_service(ChangeMode, '/mode_pose', self.callback_user)
 
         self.q = np.array([0.0, 0.0, 0.0])
         self.linear_vel = np.array([0.0, 0.0, 0.0])
         self.mode = 0
         self.teleop_mode = 1
-        self.temp = None
-        self.q_sol = []
 
     def joint_state_callback(self, msg: JointState):
         if len(msg.position) >= 3:
@@ -44,8 +42,7 @@ class Teleoperation(Node):
         joint_msg.name = ['joint_1', 'joint_2', 'joint_3']
         joint_msg.header.stamp = self.get_clock().now().to_msg()
 
-        # Ensure q contains valid float values
-        if np.all(np.isfinite(q)) and np.all(np.abs(q) < 1e6):  # Adding a reasonable range check
+        if np.all(np.isfinite(q)) and np.all(np.abs(q) < 1e6):  # range check
             joint_msg.position = q.tolist()  # Convert NumPy array to list of floats
             self.joint_state_pub.publish(joint_msg)
         else:
@@ -82,9 +79,8 @@ class Teleoperation(Node):
             J = robot.jacob0(self.q)
             self.J_pos = J[0:3, :]  # Position part of the Jacobian
 
-            # Singularity checking by determinant
+            # Singularity checking
             self.det_J = np.linalg.det(self.J_pos)
-            # det_threshold = 1e-3
             self.det_threshold = 1e-2
 
             self.caljacob()
