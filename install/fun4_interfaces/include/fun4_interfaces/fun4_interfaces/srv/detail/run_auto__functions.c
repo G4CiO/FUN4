@@ -10,21 +10,13 @@
 
 #include "rcutils/allocator.h"
 
-// Include directives for member types
-// Member `target`
-#include "geometry_msgs/msg/detail/point__functions.h"
-
 bool
 fun4_interfaces__srv__RunAuto_Request__init(fun4_interfaces__srv__RunAuto_Request * msg)
 {
   if (!msg) {
     return false;
   }
-  // target
-  if (!geometry_msgs__msg__Point__init(&msg->target)) {
-    fun4_interfaces__srv__RunAuto_Request__fini(msg);
-    return false;
-  }
+  // reach_target
   return true;
 }
 
@@ -34,8 +26,7 @@ fun4_interfaces__srv__RunAuto_Request__fini(fun4_interfaces__srv__RunAuto_Reques
   if (!msg) {
     return;
   }
-  // target
-  geometry_msgs__msg__Point__fini(&msg->target);
+  // reach_target
 }
 
 bool
@@ -44,10 +35,8 @@ fun4_interfaces__srv__RunAuto_Request__are_equal(const fun4_interfaces__srv__Run
   if (!lhs || !rhs) {
     return false;
   }
-  // target
-  if (!geometry_msgs__msg__Point__are_equal(
-      &(lhs->target), &(rhs->target)))
-  {
+  // reach_target
+  if (lhs->reach_target != rhs->reach_target) {
     return false;
   }
   return true;
@@ -61,12 +50,8 @@ fun4_interfaces__srv__RunAuto_Request__copy(
   if (!input || !output) {
     return false;
   }
-  // target
-  if (!geometry_msgs__msg__Point__copy(
-      &(input->target), &(output->target)))
-  {
-    return false;
-  }
+  // reach_target
+  output->reach_target = input->reach_target;
   return true;
 }
 
@@ -250,13 +235,21 @@ fun4_interfaces__srv__RunAuto_Request__Sequence__copy(
 }
 
 
+// Include directives for member types
+// Member `target`
+#include "geometry_msgs/msg/detail/point__functions.h"
+
 bool
 fun4_interfaces__srv__RunAuto_Response__init(fun4_interfaces__srv__RunAuto_Response * msg)
 {
   if (!msg) {
     return false;
   }
-  // reach_target
+  // target
+  if (!geometry_msgs__msg__Point__init(&msg->target)) {
+    fun4_interfaces__srv__RunAuto_Response__fini(msg);
+    return false;
+  }
   return true;
 }
 
@@ -266,7 +259,8 @@ fun4_interfaces__srv__RunAuto_Response__fini(fun4_interfaces__srv__RunAuto_Respo
   if (!msg) {
     return;
   }
-  // reach_target
+  // target
+  geometry_msgs__msg__Point__fini(&msg->target);
 }
 
 bool
@@ -275,8 +269,10 @@ fun4_interfaces__srv__RunAuto_Response__are_equal(const fun4_interfaces__srv__Ru
   if (!lhs || !rhs) {
     return false;
   }
-  // reach_target
-  if (lhs->reach_target != rhs->reach_target) {
+  // target
+  if (!geometry_msgs__msg__Point__are_equal(
+      &(lhs->target), &(rhs->target)))
+  {
     return false;
   }
   return true;
@@ -290,8 +286,12 @@ fun4_interfaces__srv__RunAuto_Response__copy(
   if (!input || !output) {
     return false;
   }
-  // reach_target
-  output->reach_target = input->reach_target;
+  // target
+  if (!geometry_msgs__msg__Point__copy(
+      &(input->target), &(output->target)))
+  {
+    return false;
+  }
   return true;
 }
 

@@ -16,10 +16,6 @@
 #include "fun4_interfaces/srv/detail/run_auto__struct.h"
 #include "fun4_interfaces/srv/detail/run_auto__functions.h"
 
-ROSIDL_GENERATOR_C_IMPORT
-bool geometry_msgs__msg__point__convert_from_py(PyObject * _pymsg, void * _ros_message);
-ROSIDL_GENERATOR_C_IMPORT
-PyObject * geometry_msgs__msg__point__convert_to_py(void * raw_ros_message);
 
 ROSIDL_GENERATOR_C_EXPORT
 bool fun4_interfaces__srv__run_auto__request__convert_from_py(PyObject * _pymsg, void * _ros_message)
@@ -54,15 +50,13 @@ bool fun4_interfaces__srv__run_auto__request__convert_from_py(PyObject * _pymsg,
     assert(strncmp("fun4_interfaces.srv._run_auto.RunAuto_Request", full_classname_dest, 45) == 0);
   }
   fun4_interfaces__srv__RunAuto_Request * ros_message = _ros_message;
-  {  // target
-    PyObject * field = PyObject_GetAttrString(_pymsg, "target");
+  {  // reach_target
+    PyObject * field = PyObject_GetAttrString(_pymsg, "reach_target");
     if (!field) {
       return false;
     }
-    if (!geometry_msgs__msg__point__convert_from_py(field, &ros_message->target)) {
-      Py_DECREF(field);
-      return false;
-    }
+    assert(PyBool_Check(field));
+    ros_message->reach_target = (Py_True == field);
     Py_DECREF(field);
   }
 
@@ -87,14 +81,11 @@ PyObject * fun4_interfaces__srv__run_auto__request__convert_to_py(void * raw_ros
     }
   }
   fun4_interfaces__srv__RunAuto_Request * ros_message = (fun4_interfaces__srv__RunAuto_Request *)raw_ros_message;
-  {  // target
+  {  // reach_target
     PyObject * field = NULL;
-    field = geometry_msgs__msg__point__convert_to_py(&ros_message->target);
-    if (!field) {
-      return NULL;
-    }
+    field = PyBool_FromLong(ros_message->reach_target ? 1 : 0);
     {
-      int rc = PyObject_SetAttrString(_pymessage, "target", field);
+      int rc = PyObject_SetAttrString(_pymessage, "reach_target", field);
       Py_DECREF(field);
       if (rc) {
         return NULL;
@@ -120,6 +111,10 @@ PyObject * fun4_interfaces__srv__run_auto__request__convert_to_py(void * raw_ros
 // already included above
 // #include "fun4_interfaces/srv/detail/run_auto__functions.h"
 
+ROSIDL_GENERATOR_C_IMPORT
+bool geometry_msgs__msg__point__convert_from_py(PyObject * _pymsg, void * _ros_message);
+ROSIDL_GENERATOR_C_IMPORT
+PyObject * geometry_msgs__msg__point__convert_to_py(void * raw_ros_message);
 
 ROSIDL_GENERATOR_C_EXPORT
 bool fun4_interfaces__srv__run_auto__response__convert_from_py(PyObject * _pymsg, void * _ros_message)
@@ -154,13 +149,15 @@ bool fun4_interfaces__srv__run_auto__response__convert_from_py(PyObject * _pymsg
     assert(strncmp("fun4_interfaces.srv._run_auto.RunAuto_Response", full_classname_dest, 46) == 0);
   }
   fun4_interfaces__srv__RunAuto_Response * ros_message = _ros_message;
-  {  // reach_target
-    PyObject * field = PyObject_GetAttrString(_pymsg, "reach_target");
+  {  // target
+    PyObject * field = PyObject_GetAttrString(_pymsg, "target");
     if (!field) {
       return false;
     }
-    assert(PyBool_Check(field));
-    ros_message->reach_target = (Py_True == field);
+    if (!geometry_msgs__msg__point__convert_from_py(field, &ros_message->target)) {
+      Py_DECREF(field);
+      return false;
+    }
     Py_DECREF(field);
   }
 
@@ -185,11 +182,14 @@ PyObject * fun4_interfaces__srv__run_auto__response__convert_to_py(void * raw_ro
     }
   }
   fun4_interfaces__srv__RunAuto_Response * ros_message = (fun4_interfaces__srv__RunAuto_Response *)raw_ros_message;
-  {  // reach_target
+  {  // target
     PyObject * field = NULL;
-    field = PyBool_FromLong(ros_message->reach_target ? 1 : 0);
+    field = geometry_msgs__msg__point__convert_to_py(&ros_message->target);
+    if (!field) {
+      return NULL;
+    }
     {
-      int rc = PyObject_SetAttrString(_pymessage, "reach_target", field);
+      int rc = PyObject_SetAttrString(_pymessage, "target", field);
       Py_DECREF(field);
       if (rc) {
         return NULL;

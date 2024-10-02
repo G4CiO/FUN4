@@ -12,12 +12,6 @@
 #include "fun4_interfaces/srv/detail/run_auto__struct.h"
 
 
-// Include directives for member types
-// Member `target`
-#include "geometry_msgs/msg/point.h"
-// Member `target`
-#include "geometry_msgs/msg/detail/point__rosidl_typesupport_introspection_c.h"
-
 #ifdef __cplusplus
 extern "C"
 {
@@ -39,14 +33,14 @@ void fun4_interfaces__srv__RunAuto_Request__rosidl_typesupport_introspection_c__
 
 static rosidl_typesupport_introspection_c__MessageMember fun4_interfaces__srv__RunAuto_Request__rosidl_typesupport_introspection_c__RunAuto_Request_message_member_array[1] = {
   {
-    "target",  // name
-    rosidl_typesupport_introspection_c__ROS_TYPE_MESSAGE,  // type
+    "reach_target",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
-    NULL,  // members of sub message (initialized later)
+    NULL,  // members of sub message
     false,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(fun4_interfaces__srv__RunAuto_Request, target),  // bytes offset in struct
+    offsetof(fun4_interfaces__srv__RunAuto_Request, reach_target),  // bytes offset in struct
     NULL,  // default value
     NULL,  // size() function pointer
     NULL,  // get_const(index) function pointer
@@ -78,8 +72,6 @@ static rosidl_message_type_support_t fun4_interfaces__srv__RunAuto_Request__rosi
 ROSIDL_TYPESUPPORT_INTROSPECTION_C_EXPORT_fun4_interfaces
 const rosidl_message_type_support_t *
 ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(rosidl_typesupport_introspection_c, fun4_interfaces, srv, RunAuto_Request)() {
-  fun4_interfaces__srv__RunAuto_Request__rosidl_typesupport_introspection_c__RunAuto_Request_message_member_array[0].members_ =
-    ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(rosidl_typesupport_introspection_c, geometry_msgs, msg, Point)();
   if (!fun4_interfaces__srv__RunAuto_Request__rosidl_typesupport_introspection_c__RunAuto_Request_message_type_support_handle.typesupport_identifier) {
     fun4_interfaces__srv__RunAuto_Request__rosidl_typesupport_introspection_c__RunAuto_Request_message_type_support_handle.typesupport_identifier =
       rosidl_typesupport_introspection_c__identifier;
@@ -108,6 +100,12 @@ ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(rosidl_typesupport_introspecti
 // #include "fun4_interfaces/srv/detail/run_auto__struct.h"
 
 
+// Include directives for member types
+// Member `target`
+#include "geometry_msgs/msg/point.h"
+// Member `target`
+#include "geometry_msgs/msg/detail/point__rosidl_typesupport_introspection_c.h"
+
 #ifdef __cplusplus
 extern "C"
 {
@@ -129,14 +127,14 @@ void fun4_interfaces__srv__RunAuto_Response__rosidl_typesupport_introspection_c_
 
 static rosidl_typesupport_introspection_c__MessageMember fun4_interfaces__srv__RunAuto_Response__rosidl_typesupport_introspection_c__RunAuto_Response_message_member_array[1] = {
   {
-    "reach_target",  // name
-    rosidl_typesupport_introspection_c__ROS_TYPE_BOOLEAN,  // type
+    "target",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_MESSAGE,  // type
     0,  // upper bound of string
-    NULL,  // members of sub message
+    NULL,  // members of sub message (initialized later)
     false,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(fun4_interfaces__srv__RunAuto_Response, reach_target),  // bytes offset in struct
+    offsetof(fun4_interfaces__srv__RunAuto_Response, target),  // bytes offset in struct
     NULL,  // default value
     NULL,  // size() function pointer
     NULL,  // get_const(index) function pointer
@@ -168,6 +166,8 @@ static rosidl_message_type_support_t fun4_interfaces__srv__RunAuto_Response__ros
 ROSIDL_TYPESUPPORT_INTROSPECTION_C_EXPORT_fun4_interfaces
 const rosidl_message_type_support_t *
 ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(rosidl_typesupport_introspection_c, fun4_interfaces, srv, RunAuto_Response)() {
+  fun4_interfaces__srv__RunAuto_Response__rosidl_typesupport_introspection_c__RunAuto_Response_message_member_array[0].members_ =
+    ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(rosidl_typesupport_introspection_c, geometry_msgs, msg, Point)();
   if (!fun4_interfaces__srv__RunAuto_Response__rosidl_typesupport_introspection_c__RunAuto_Response_message_type_support_handle.typesupport_identifier) {
     fun4_interfaces__srv__RunAuto_Response__rosidl_typesupport_introspection_c__RunAuto_Response_message_type_support_handle.typesupport_identifier =
       rosidl_typesupport_introspection_c__identifier;

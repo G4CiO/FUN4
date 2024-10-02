@@ -34,23 +34,8 @@ extern "C"
 {
 #endif
 
-#include "geometry_msgs/msg/detail/point__functions.h"  // target
 
 // forward declare type support functions
-ROSIDL_TYPESUPPORT_FASTRTPS_C_IMPORT_fun4_interfaces
-size_t get_serialized_size_geometry_msgs__msg__Point(
-  const void * untyped_ros_message,
-  size_t current_alignment);
-
-ROSIDL_TYPESUPPORT_FASTRTPS_C_IMPORT_fun4_interfaces
-size_t max_serialized_size_geometry_msgs__msg__Point(
-  bool & full_bounded,
-  bool & is_plain,
-  size_t current_alignment);
-
-ROSIDL_TYPESUPPORT_FASTRTPS_C_IMPORT_fun4_interfaces
-const rosidl_message_type_support_t *
-  ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(rosidl_typesupport_fastrtps_c, geometry_msgs, msg, Point)();
 
 
 using _RunAuto_Request__ros_msg_type = fun4_interfaces__srv__RunAuto_Request;
@@ -64,18 +49,9 @@ static bool _RunAuto_Request__cdr_serialize(
     return false;
   }
   const _RunAuto_Request__ros_msg_type * ros_message = static_cast<const _RunAuto_Request__ros_msg_type *>(untyped_ros_message);
-  // Field name: target
+  // Field name: reach_target
   {
-    const message_type_support_callbacks_t * callbacks =
-      static_cast<const message_type_support_callbacks_t *>(
-      ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(
-        rosidl_typesupport_fastrtps_c, geometry_msgs, msg, Point
-      )()->data);
-    if (!callbacks->cdr_serialize(
-        &ros_message->target, cdr))
-    {
-      return false;
-    }
+    cdr << (ros_message->reach_target ? true : false);
   }
 
   return true;
@@ -90,18 +66,11 @@ static bool _RunAuto_Request__cdr_deserialize(
     return false;
   }
   _RunAuto_Request__ros_msg_type * ros_message = static_cast<_RunAuto_Request__ros_msg_type *>(untyped_ros_message);
-  // Field name: target
+  // Field name: reach_target
   {
-    const message_type_support_callbacks_t * callbacks =
-      static_cast<const message_type_support_callbacks_t *>(
-      ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(
-        rosidl_typesupport_fastrtps_c, geometry_msgs, msg, Point
-      )()->data);
-    if (!callbacks->cdr_deserialize(
-        cdr, &ros_message->target))
-    {
-      return false;
-    }
+    uint8_t tmp;
+    cdr >> tmp;
+    ros_message->reach_target = tmp ? true : false;
   }
 
   return true;
@@ -121,10 +90,12 @@ size_t get_serialized_size_fun4_interfaces__srv__RunAuto_Request(
   (void)padding;
   (void)wchar_size;
 
-  // field.name target
-
-  current_alignment += get_serialized_size_geometry_msgs__msg__Point(
-    &(ros_message->target), current_alignment);
+  // field.name reach_target
+  {
+    size_t item_size = sizeof(ros_message->reach_target);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
 
   return current_alignment - initial_alignment;
 }
@@ -154,24 +125,12 @@ size_t max_serialized_size_fun4_interfaces__srv__RunAuto_Request(
   full_bounded = true;
   is_plain = true;
 
-  // member: target
+  // member: reach_target
   {
     size_t array_size = 1;
 
-
-    last_member_size = 0;
-    for (size_t index = 0; index < array_size; ++index) {
-      bool inner_full_bounded;
-      bool inner_is_plain;
-      size_t inner_size;
-      inner_size =
-        max_serialized_size_geometry_msgs__msg__Point(
-        inner_full_bounded, inner_is_plain, current_alignment);
-      last_member_size += inner_size;
-      current_alignment += inner_size;
-      full_bounded &= inner_full_bounded;
-      is_plain &= inner_is_plain;
-    }
+    last_member_size = array_size * sizeof(uint8_t);
+    current_alignment += array_size * sizeof(uint8_t);
   }
 
   size_t ret_val = current_alignment - initial_alignment;
@@ -182,7 +141,7 @@ size_t max_serialized_size_fun4_interfaces__srv__RunAuto_Request(
     using DataType = fun4_interfaces__srv__RunAuto_Request;
     is_plain =
       (
-      offsetof(DataType, target) +
+      offsetof(DataType, reach_target) +
       last_member_size
       ) == ret_val;
   }
@@ -270,8 +229,23 @@ extern "C"
 {
 #endif
 
+#include "geometry_msgs/msg/detail/point__functions.h"  // target
 
 // forward declare type support functions
+ROSIDL_TYPESUPPORT_FASTRTPS_C_IMPORT_fun4_interfaces
+size_t get_serialized_size_geometry_msgs__msg__Point(
+  const void * untyped_ros_message,
+  size_t current_alignment);
+
+ROSIDL_TYPESUPPORT_FASTRTPS_C_IMPORT_fun4_interfaces
+size_t max_serialized_size_geometry_msgs__msg__Point(
+  bool & full_bounded,
+  bool & is_plain,
+  size_t current_alignment);
+
+ROSIDL_TYPESUPPORT_FASTRTPS_C_IMPORT_fun4_interfaces
+const rosidl_message_type_support_t *
+  ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(rosidl_typesupport_fastrtps_c, geometry_msgs, msg, Point)();
 
 
 using _RunAuto_Response__ros_msg_type = fun4_interfaces__srv__RunAuto_Response;
@@ -285,9 +259,18 @@ static bool _RunAuto_Response__cdr_serialize(
     return false;
   }
   const _RunAuto_Response__ros_msg_type * ros_message = static_cast<const _RunAuto_Response__ros_msg_type *>(untyped_ros_message);
-  // Field name: reach_target
+  // Field name: target
   {
-    cdr << (ros_message->reach_target ? true : false);
+    const message_type_support_callbacks_t * callbacks =
+      static_cast<const message_type_support_callbacks_t *>(
+      ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(
+        rosidl_typesupport_fastrtps_c, geometry_msgs, msg, Point
+      )()->data);
+    if (!callbacks->cdr_serialize(
+        &ros_message->target, cdr))
+    {
+      return false;
+    }
   }
 
   return true;
@@ -302,11 +285,18 @@ static bool _RunAuto_Response__cdr_deserialize(
     return false;
   }
   _RunAuto_Response__ros_msg_type * ros_message = static_cast<_RunAuto_Response__ros_msg_type *>(untyped_ros_message);
-  // Field name: reach_target
+  // Field name: target
   {
-    uint8_t tmp;
-    cdr >> tmp;
-    ros_message->reach_target = tmp ? true : false;
+    const message_type_support_callbacks_t * callbacks =
+      static_cast<const message_type_support_callbacks_t *>(
+      ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(
+        rosidl_typesupport_fastrtps_c, geometry_msgs, msg, Point
+      )()->data);
+    if (!callbacks->cdr_deserialize(
+        cdr, &ros_message->target))
+    {
+      return false;
+    }
   }
 
   return true;
@@ -326,12 +316,10 @@ size_t get_serialized_size_fun4_interfaces__srv__RunAuto_Response(
   (void)padding;
   (void)wchar_size;
 
-  // field.name reach_target
-  {
-    size_t item_size = sizeof(ros_message->reach_target);
-    current_alignment += item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
+  // field.name target
+
+  current_alignment += get_serialized_size_geometry_msgs__msg__Point(
+    &(ros_message->target), current_alignment);
 
   return current_alignment - initial_alignment;
 }
@@ -361,12 +349,24 @@ size_t max_serialized_size_fun4_interfaces__srv__RunAuto_Response(
   full_bounded = true;
   is_plain = true;
 
-  // member: reach_target
+  // member: target
   {
     size_t array_size = 1;
 
-    last_member_size = array_size * sizeof(uint8_t);
-    current_alignment += array_size * sizeof(uint8_t);
+
+    last_member_size = 0;
+    for (size_t index = 0; index < array_size; ++index) {
+      bool inner_full_bounded;
+      bool inner_is_plain;
+      size_t inner_size;
+      inner_size =
+        max_serialized_size_geometry_msgs__msg__Point(
+        inner_full_bounded, inner_is_plain, current_alignment);
+      last_member_size += inner_size;
+      current_alignment += inner_size;
+      full_bounded &= inner_full_bounded;
+      is_plain &= inner_is_plain;
+    }
   }
 
   size_t ret_val = current_alignment - initial_alignment;
@@ -377,7 +377,7 @@ size_t max_serialized_size_fun4_interfaces__srv__RunAuto_Response(
     using DataType = fun4_interfaces__srv__RunAuto_Response;
     is_plain =
       (
-      offsetof(DataType, reach_target) +
+      offsetof(DataType, target) +
       last_member_size
       ) == ret_val;
   }

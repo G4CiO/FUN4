@@ -17,14 +17,10 @@ extern "C"
 
 // Constants defined in the message
 
-// Include directives for member types
-// Member 'target'
-#include "geometry_msgs/msg/detail/point__struct.h"
-
 /// Struct defined in srv/RunAuto in the package fun4_interfaces.
 typedef struct fun4_interfaces__srv__RunAuto_Request
 {
-  geometry_msgs__msg__Point target;
+  bool reach_target;
 } fun4_interfaces__srv__RunAuto_Request;
 
 // Struct for a sequence of fun4_interfaces__srv__RunAuto_Request.
@@ -40,10 +36,14 @@ typedef struct fun4_interfaces__srv__RunAuto_Request__Sequence
 
 // Constants defined in the message
 
+// Include directives for member types
+// Member 'target'
+#include "geometry_msgs/msg/detail/point__struct.h"
+
 /// Struct defined in srv/RunAuto in the package fun4_interfaces.
 typedef struct fun4_interfaces__srv__RunAuto_Response
 {
-  bool reach_target;
+  geometry_msgs__msg__Point target;
 } fun4_interfaces__srv__RunAuto_Response;
 
 // Struct for a sequence of fun4_interfaces__srv__RunAuto_Response.

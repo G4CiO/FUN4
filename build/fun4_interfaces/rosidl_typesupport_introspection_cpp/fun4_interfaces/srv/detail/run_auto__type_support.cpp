@@ -39,14 +39,14 @@ void RunAuto_Request_fini_function(void * message_memory)
 
 static const ::rosidl_typesupport_introspection_cpp::MessageMember RunAuto_Request_message_member_array[1] = {
   {
-    "target",  // name
-    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_MESSAGE,  // type
+    "reach_target",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
-    ::rosidl_typesupport_introspection_cpp::get_message_type_support_handle<geometry_msgs::msg::Point>(),  // members of sub message
+    nullptr,  // members of sub message
     false,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(fun4_interfaces::srv::RunAuto_Request, target),  // bytes offset in struct
+    offsetof(fun4_interfaces::srv::RunAuto_Request, reach_target),  // bytes offset in struct
     nullptr,  // default value
     nullptr,  // size() function pointer
     nullptr,  // get_const(index) function pointer
@@ -158,14 +158,14 @@ void RunAuto_Response_fini_function(void * message_memory)
 
 static const ::rosidl_typesupport_introspection_cpp::MessageMember RunAuto_Response_message_member_array[1] = {
   {
-    "reach_target",  // name
-    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_BOOLEAN,  // type
+    "target",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_MESSAGE,  // type
     0,  // upper bound of string
-    nullptr,  // members of sub message
+    ::rosidl_typesupport_introspection_cpp::get_message_type_support_handle<geometry_msgs::msg::Point>(),  // members of sub message
     false,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(fun4_interfaces::srv::RunAuto_Response, reach_target),  // bytes offset in struct
+    offsetof(fun4_interfaces::srv::RunAuto_Response, target),  // bytes offset in struct
     nullptr,  // default value
     nullptr,  // size() function pointer
     nullptr,  // get_const(index) function pointer

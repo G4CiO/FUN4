@@ -1,1 +1,1 @@
-geometry_msgs/Point target
+bool reach_target

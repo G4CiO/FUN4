@@ -9,6 +9,8 @@ from math import pi
 import rclpy
 from rclpy.node import Node
 from fun4_interfaces.srv import ChangeMode
+from geometry_msgs.msg import PoseStamped
+
 
 class PIDController:
     def __init__(self, kp):
@@ -27,6 +29,7 @@ class InversePoseKinematics(Node):
         self.get_logger().info('inverse pose kinematics node has start')
         # Pub
         self.joint_state_pub = self.create_publisher(JointState, '/joint_states', 10)
+        self.pose_end_pub = self.create_publisher(PoseStamped, "/target", 10)
         # Sub
         self.joint_state_sub = self.create_subscription(JointState, '/joint_states', self.joint_state_callback, 10)
         # timer
@@ -47,6 +50,15 @@ class InversePoseKinematics(Node):
         self.pid_controllers = [PIDController(1.0),  # For joint 1
                                 PIDController(1.0),  # For joint 2
                                 PIDController(1.0)]  # For joint 3
+
+    def pub_random_target(self,x,y,z):
+        msg = PoseStamped()
+        msg.header.stamp = self.get_clock().now().to_msg()
+        msg.header.frame_id = "link_0"
+        msg.pose.position.x = x
+        msg.pose.position.y = y
+        msg.pose.position.z = z
+        self.pose_end_pub.publish(msg)
         
     def joint_state_callback(self, msg: JointState):
         if len(msg.position) >= 3:
@@ -58,6 +70,8 @@ class InversePoseKinematics(Node):
         x = request.pose.x
         y = request.pose.y
         z = request.pose.z
+
+        self.pub_random_target(x,y,z)
 
         self.q_sol = self.inverse_kinematic(x, y, z, self.mode)
         response.config_check_mode1 = self.finish
@@ -101,12 +115,12 @@ class InversePoseKinematics(Node):
         else:
             self.finish = False
             # self.get_logger().warn("Taskspace isn't in workspace. Please key again.")
-            return self.target_joint_positions
+            return []
         
     def update_joint_states(self):
         if self.mode != 1:
             return  # Do not publish anything if the mode is not 1"
-        
+
         self.joint_msg = JointState()
         self.joint_msg.name = ['joint_1', 'joint_2', 'joint_3']
         self.joint_msg.header.stamp = self.get_clock().now().to_msg()

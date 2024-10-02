@@ -15,10 +15,6 @@
 #include "rosidl_runtime_cpp/message_initialization.hpp"
 
 
-// Include directives for member types
-// Member 'target'
-#include "geometry_msgs/msg/detail/point__struct.hpp"
-
 #ifndef _WIN32
 # define DEPRECATED__fun4_interfaces__srv__RunAuto_Request __attribute__((deprecated))
 #else
@@ -38,27 +34,34 @@ struct RunAuto_Request_
   using Type = RunAuto_Request_<ContainerAllocator>;
 
   explicit RunAuto_Request_(rosidl_runtime_cpp::MessageInitialization _init = rosidl_runtime_cpp::MessageInitialization::ALL)
-  : target(_init)
   {
-    (void)_init;
+    if (rosidl_runtime_cpp::MessageInitialization::ALL == _init ||
+      rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
+    {
+      this->reach_target = false;
+    }
   }
 
   explicit RunAuto_Request_(const ContainerAllocator & _alloc, rosidl_runtime_cpp::MessageInitialization _init = rosidl_runtime_cpp::MessageInitialization::ALL)
-  : target(_alloc, _init)
   {
-    (void)_init;
+    (void)_alloc;
+    if (rosidl_runtime_cpp::MessageInitialization::ALL == _init ||
+      rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
+    {
+      this->reach_target = false;
+    }
   }
 
   // field types and members
-  using _target_type =
-    geometry_msgs::msg::Point_<ContainerAllocator>;
-  _target_type target;
+  using _reach_target_type =
+    bool;
+  _reach_target_type reach_target;
 
   // setters for named parameter idiom
-  Type & set__target(
-    const geometry_msgs::msg::Point_<ContainerAllocator> & _arg)
+  Type & set__reach_target(
+    const bool & _arg)
   {
-    this->target = _arg;
+    this->reach_target = _arg;
     return *this;
   }
 
@@ -104,7 +107,7 @@ struct RunAuto_Request_
   // comparison operators
   bool operator==(const RunAuto_Request_ & other) const
   {
-    if (this->target != other.target) {
+    if (this->reach_target != other.reach_target) {
       return false;
     }
     return true;
@@ -126,6 +129,10 @@ using RunAuto_Request =
 }  // namespace fun4_interfaces
 
 
+// Include directives for member types
+// Member 'target'
+#include "geometry_msgs/msg/detail/point__struct.hpp"
+
 #ifndef _WIN32
 # define DEPRECATED__fun4_interfaces__srv__RunAuto_Response __attribute__((deprecated))
 #else
@@ -145,34 +152,27 @@ struct RunAuto_Response_
   using Type = RunAuto_Response_<ContainerAllocator>;
 
   explicit RunAuto_Response_(rosidl_runtime_cpp::MessageInitialization _init = rosidl_runtime_cpp::MessageInitialization::ALL)
+  : target(_init)
   {
-    if (rosidl_runtime_cpp::MessageInitialization::ALL == _init ||
-      rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
-    {
-      this->reach_target = false;
-    }
+    (void)_init;
   }
 
   explicit RunAuto_Response_(const ContainerAllocator & _alloc, rosidl_runtime_cpp::MessageInitialization _init = rosidl_runtime_cpp::MessageInitialization::ALL)
+  : target(_alloc, _init)
   {
-    (void)_alloc;
-    if (rosidl_runtime_cpp::MessageInitialization::ALL == _init ||
-      rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
-    {
-      this->reach_target = false;
-    }
+    (void)_init;
   }
 
   // field types and members
-  using _reach_target_type =
-    bool;
-  _reach_target_type reach_target;
+  using _target_type =
+    geometry_msgs::msg::Point_<ContainerAllocator>;
+  _target_type target;
 
   // setters for named parameter idiom
-  Type & set__reach_target(
-    const bool & _arg)
+  Type & set__target(
+    const geometry_msgs::msg::Point_<ContainerAllocator> & _arg)
   {
-    this->reach_target = _arg;
+    this->target = _arg;
     return *this;
   }
 
@@ -218,7 +218,7 @@ struct RunAuto_Response_
   // comparison operators
   bool operator==(const RunAuto_Response_ & other) const
   {
-    if (this->reach_target != other.reach_target) {
+    if (this->target != other.target) {
       return false;
     }
     return true;

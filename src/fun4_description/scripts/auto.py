@@ -29,11 +29,13 @@ class Auto(Node):
         # Sub
         self.end_pose_sub = self.create_subscription(PoseStamped, '/end_effector', self.callback_end_pose, 10)
         self.joint_state_sub = self.create_subscription(JointState, '/joint_states', self.joint_state_callback, 10)
+        self.pose_end_sub = self.create_subscription(PoseStamped, "/target",self.random_target_callback,10)
         # timer
         self.dt = 0.01
         self.timer = self.create_timer(self.dt, self.timer_call)
-        # Service Server (รับ mode เข้ามา)
-        self.take_target = self.create_service(RunAuto, '/target_', self.callback_target)
+        # Service Server
+        # self.take_target = self.create_service(RunAuto, '/target_', self.callback_target)
+        self.random_target_client = self.create_client(RunAuto,'/target_server')
         self.take_mode = self.create_service(ChangeMode, '/mode_pose', self.callback_user)
 
         # Innitial
@@ -42,25 +44,33 @@ class Auto(Node):
         self.r_min = 0.03
         self.r_max = 0.535
         self.current_joint_positions = [0.0, 0.0, 0.0]
-        self.xe, self.ye, self.ze = 0.0, 0.0, 0.0  # Initialize end-effector position
-        self.tolerance = 0.001  # Tolerance 
+        self.xe, self.ye, self.ze = 0.0, 0.0, 0.0
+        self.xt, self.yt, self.zt = 0.0, 0.0, 0.0
+        self.tolerance = 0.001
         self.flag = True
         self.q_sol = []
-
-        self.pid_controllers = [PIDController(3.0),  # For joint 1
-                                PIDController(3.0),  # For joint 2
-                                PIDController(3.0)]  # For joint 3
+        self.i = 0
+        self.pid_controllers = [PIDController(8.0),  # For joint 1
+                                PIDController(8.0),  # For joint 2
+                                PIDController(8.0)]  # For joint 3
+        self.timer_count = 0
+        
+        
+    def random_target_callback(self,msg:PoseStamped):
+        self.xt = msg.pose.position.x
+        self.yt = msg.pose.position.y
+        self.zt = msg.pose.position.z
         
     def joint_state_callback(self, msg: JointState):
         if len(msg.position) >= 3:
-            self.current_joint_positions = list(msg.position[:3])  # Update the current positions
+            self.current_joint_positions = list(msg.position[:3])
         
     def callback_end_pose(self, msg:PoseStamped):
         self.xe = msg.pose.position.x
         self.ye = msg.pose.position.y
         self.ze = msg.pose.position.z
 
-    def callback_user(self,request:ChangeMode.Request, response:ChangeMode.Response): # รับ
+    def callback_user(self,request:ChangeMode.Request, response:ChangeMode.Response):
         self.mode = request.mode
         teleop_mode = request.teleop_mode
 
@@ -102,29 +112,16 @@ class Auto(Node):
             response.config_mode1 = []
         return response
 
-    def callback_target(self,request:RunAuto.Request, response:RunAuto.Response): # รับ
-        if self.mode == 3:
-            if self.flag:
-                response.reach_target = True
-            else:    
-                xt = request.target.x
-                yt = request.target.y
-                zt = request.target.z
-
-                q_target = self.inverse_kinematic(xt, yt, zt, self.mode)
-                self.update_joint_states(q_target)
-                
-                self.finish = self.check_if_reached(xt,yt,zt)
-
-                response.reach_target = self.finish
-                # self.get_logger().info(f'finish in auto: {response.reach_target}')
-            self.flag = False
-        return response
+    def call_random_target(self,flag):
+        while not self.random_target_client.wait_for_service(1.0):
+            self.get_logger().warn("Waiting for Server Random target Node...")   
+        request_random_target = RunAuto.Request()
+        request_random_target.reach_target = flag
+        self.random_target_client.call_async(request_random_target)
 
     def inverse_kinematic(self, x, y, z, mode):
         distance_squared = x**2 + y**2 + (z-0.2)**2
         if mode == 3 and self.r_min**2 <= distance_squared <= self.r_max**2:
-            # self.get_logger().info(f'Target x = {x},Target y = {y},Target z = {z}')
             robot = rtb.DHRobot(
                 [
                     rtb.RevoluteMDH(alpha = 0.0,a = 0.0,d = 0.2,offset = 0.0),
@@ -157,6 +154,7 @@ class Auto(Node):
             smoothed_pos = self.pid_controllers[i].compute(target_pos, current_pos)
             new_position = current_pos + smoothed_pos * self.dt
             smoothed_positions.append(new_position)
+            
 
         # Update positions
         self.current_joint_positions = smoothed_positions
@@ -168,24 +166,36 @@ class Auto(Node):
 
         self.joint_state_pub.publish(self.joint_msg)
     
-    def check_if_reached(self,xt,yt,zt):
-        c1 = xt - self.xe
-        c2 = yt - self.ye
-        c3 = zt - self.ze
-        
-        # if distance <= self.tolerance:
-        if c1<=self.tolerance and c2<=self.tolerance and c3<=self.tolerance:
-            finish = True
+    def check_if_reached(self):
+        c1 = self.xt - self.xe
+        c2 = self.yt - self.ye
+        c3 = self.zt - self.ze
+        if np.abs(c1)<=self.tolerance and np.abs(c2)<=self.tolerance and np.abs(c3)<=self.tolerance:
+            self.finish = True
+            self.timer_count = 0
+            # self.get_logger().info('Target reach')
         else:
-            finish = False
-        return finish
+            self.finish = False
+            # self.get_logger().info('Target not reach')
+        # return finish
 
     def timer_call(self):
-        pass
-        
+        if self.mode  == 3:
+            if self.flag:
+                self.call_random_target(True)
+            else:
+                q_target = self.inverse_kinematic(self.xt, self.yt, self.zt, self.mode)
+                self.update_joint_states(q_target)
+                self.check_if_reached()
+                # Check if self.finish is still False after 10 seconds
+                if not self.finish:
+                    self.timer_count += 1  # Increment the timer count
+                    if self.timer_count >= 100:  # 10 seconds have passed (100 iterations with dt = 0.01)
+                        self.call_random_target(True)
+                        self.timer_count = 0  # Reset the timer after forcing a new target
+                self.call_random_target(self.finish)
+            self.flag = False
     
-
-
 def main(args=None):
     rclpy.init(args=args)
     node = Auto()

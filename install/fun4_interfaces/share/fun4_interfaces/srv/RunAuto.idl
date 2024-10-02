@@ -7,10 +7,10 @@
 module fun4_interfaces {
   module srv {
     struct RunAuto_Request {
-      geometry_msgs::msg::Point target;
+      boolean reach_target;
     };
     struct RunAuto_Response {
-      boolean reach_target;
+      geometry_msgs::msg::Point target;
     };
   };
 };

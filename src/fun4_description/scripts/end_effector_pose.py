@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-from sensor_msgs.msg import JointState
 from spatialmath import SE3
 import math
 from math import pi

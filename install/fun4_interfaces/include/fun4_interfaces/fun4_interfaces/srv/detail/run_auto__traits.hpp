@@ -14,10 +14,6 @@
 #include "fun4_interfaces/srv/detail/run_auto__struct.hpp"
 #include "rosidl_runtime_cpp/traits.hpp"
 
-// Include directives for member types
-// Member 'target'
-#include "geometry_msgs/msg/detail/point__traits.hpp"
-
 namespace fun4_interfaces
 {
 
@@ -29,10 +25,10 @@ inline void to_flow_style_yaml(
   std::ostream & out)
 {
   out << "{";
-  // member: target
+  // member: reach_target
   {
-    out << "target: ";
-    to_flow_style_yaml(msg.target, out);
+    out << "reach_target: ";
+    rosidl_generator_traits::value_to_yaml(msg.reach_target, out);
   }
   out << "}";
 }  // NOLINT(readability/fn_size)
@@ -41,13 +37,14 @@ inline void to_block_style_yaml(
   const RunAuto_Request & msg,
   std::ostream & out, size_t indentation = 0)
 {
-  // member: target
+  // member: reach_target
   {
     if (indentation > 0) {
       out << std::string(indentation, ' ');
     }
-    out << "target:\n";
-    to_block_style_yaml(msg.target, out, indentation + 2);
+    out << "reach_target: ";
+    rosidl_generator_traits::value_to_yaml(msg.reach_target, out);
+    out << "\n";
   }
 }  // NOLINT(readability/fn_size)
 
@@ -97,17 +94,21 @@ inline const char * name<fun4_interfaces::srv::RunAuto_Request>()
 
 template<>
 struct has_fixed_size<fun4_interfaces::srv::RunAuto_Request>
-  : std::integral_constant<bool, has_fixed_size<geometry_msgs::msg::Point>::value> {};
+  : std::integral_constant<bool, true> {};
 
 template<>
 struct has_bounded_size<fun4_interfaces::srv::RunAuto_Request>
-  : std::integral_constant<bool, has_bounded_size<geometry_msgs::msg::Point>::value> {};
+  : std::integral_constant<bool, true> {};
 
 template<>
 struct is_message<fun4_interfaces::srv::RunAuto_Request>
   : std::true_type {};
 
 }  // namespace rosidl_generator_traits
+
+// Include directives for member types
+// Member 'target'
+#include "geometry_msgs/msg/detail/point__traits.hpp"
 
 namespace fun4_interfaces
 {
@@ -120,10 +121,10 @@ inline void to_flow_style_yaml(
   std::ostream & out)
 {
   out << "{";
-  // member: reach_target
+  // member: target
   {
-    out << "reach_target: ";
-    rosidl_generator_traits::value_to_yaml(msg.reach_target, out);
+    out << "target: ";
+    to_flow_style_yaml(msg.target, out);
   }
   out << "}";
 }  // NOLINT(readability/fn_size)
@@ -132,14 +133,13 @@ inline void to_block_style_yaml(
   const RunAuto_Response & msg,
   std::ostream & out, size_t indentation = 0)
 {
-  // member: reach_target
+  // member: target
   {
     if (indentation > 0) {
       out << std::string(indentation, ' ');
     }
-    out << "reach_target: ";
-    rosidl_generator_traits::value_to_yaml(msg.reach_target, out);
-    out << "\n";
+    out << "target:\n";
+    to_block_style_yaml(msg.target, out, indentation + 2);
   }
 }  // NOLINT(readability/fn_size)
 
@@ -189,11 +189,11 @@ inline const char * name<fun4_interfaces::srv::RunAuto_Response>()
 
 template<>
 struct has_fixed_size<fun4_interfaces::srv::RunAuto_Response>
-  : std::integral_constant<bool, true> {};
+  : std::integral_constant<bool, has_fixed_size<geometry_msgs::msg::Point>::value> {};
 
 template<>
 struct has_bounded_size<fun4_interfaces::srv::RunAuto_Response>
-  : std::integral_constant<bool, true> {};
+  : std::integral_constant<bool, has_bounded_size<geometry_msgs::msg::Point>::value> {};
 
 template<>
 struct is_message<fun4_interfaces::srv::RunAuto_Response>
