@@ -12,7 +12,6 @@ class EndEffectorPose(Node):
 
     def __init__(self):
         super().__init__('end_effector_pose')
-
         # Create a buffer and listener for transforms
         self.tf_buffer = Buffer()
         self.tf_listener = TransformListener(self.tf_buffer, self)
@@ -118,12 +117,6 @@ class EndEffectorPose(Node):
 def main(args=None):
     rclpy.init(args=args)
     node = EndEffectorPose()
-    # Publish joint message one time during initialization
-    joint_msg = JointState()
-    joint_msg.name = ['joint_1', 'joint_2', 'joint_3']
-    joint_msg.header.stamp = node.get_clock().now().to_msg()
-    joint_msg.position = [0.0, 0.0, 0.0]
-    node.joint_state_pub.publish(joint_msg)
     rclpy.spin(node)
     node.destroy_node()
     rclpy.shutdown()

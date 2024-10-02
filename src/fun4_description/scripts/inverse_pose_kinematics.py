@@ -30,6 +30,14 @@ class InversePoseKinematics(Node):
         # Pub
         self.joint_state_pub = self.create_publisher(JointState, '/joint_states', 10)
         self.pose_end_pub = self.create_publisher(PoseStamped, "/target", 10)
+
+        # Publish joint message one time during initialization
+        joint_msg = JointState()
+        joint_msg.name = ['joint_1', 'joint_2', 'joint_3']
+        joint_msg.header.stamp = self.get_clock().now().to_msg()
+        joint_msg.position = [0.0, 0.0, 0.0]
+        self.joint_state_pub.publish(joint_msg)
+
         # Sub
         self.joint_state_sub = self.create_subscription(JointState, '/joint_states', self.joint_state_callback, 10)
         # timer
