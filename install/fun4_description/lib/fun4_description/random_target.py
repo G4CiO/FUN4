@@ -10,12 +10,14 @@ class RandomTarget(Node):
     def __init__(self):
         super().__init__('random_target')
         self.get_logger().info('random target node has been started')
+        # Pub
         self.pose_end_pub = self.create_publisher(PoseStamped, "/target", 10)
+        # timer
         self.dt = 0.01
-        # self.create_timer(self.dt, self.random_target)
         self.create_timer(self.dt,self.random_target_pub)
-        # self.send_target = self.create_client(RunAuto, '/target_')
+        # Service server
         self.random_target_server = self.create_service(RunAuto, '/target_server', self.callback_random_target)
+        # Innitial
         self.finish_target = True
         self.xt,self.yt,self.zt = 0.0,0.0,0.0
         self.xr,self.yr,self.zr = 0.0,0.0,0.0
@@ -26,7 +28,6 @@ class RandomTarget(Node):
         self.gen_random_ws()
     
     def gen_random_ws(self):
-        # while True:
         x = np.random.uniform(-self.r_max, self.r_max)
         y = np.random.uniform(-self.r_max, self.r_max)
         z = np.random.uniform(-self.r_max, self.r_max)
@@ -35,7 +36,6 @@ class RandomTarget(Node):
             self.xr = x
             self.yr = y
             self.zr = z
-                # break
 
     def pub_random_target(self):
         msg = PoseStamped()
