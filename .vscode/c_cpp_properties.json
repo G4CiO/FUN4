@@ -1,0 +1,32 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/gun/FUN4_6509/install/robot_action/include/**",
+        "/home/gun/FUN4/install/fun4_interfaces/include/**",
+        "/home/gun/ros2_ws/install/turtlesim_plus_interfaces/include/**",
+        "/home/gun/ros2_ws/install/my_robot_interfaces/include/**",
+        "/home/gun/ros2_ws/install/controller_interfaces/include/**",
+        "/home/gun/turtlebot3_ws/install/turtlebot3_gazebo/include/**",
+        "/home/gun/turtlebot3_ws/install/turtlebot3_fake_node/include/**",
+        "/home/gun/RoboticsDev2024/install/motorsim_interfaces/include/**",
+        "/home/gun/exam1/install/turtlesim_plus_interfaces/include/**",
+        "/home/gun/exam1/install/custom_interface/include/**",
+        "/opt/ros/humble/include/**",
+        "/home/gun/FUN4/src/fun4_description/include/**",
+        "/home/gun/FUN4/src/fun4_interfaces/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

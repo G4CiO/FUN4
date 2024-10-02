@@ -1,7 +1,0 @@
-setup.py
-fun4_description/__init__.py
-fun4_description/dummy_module.py
-fun4_description.egg-info/PKG-INFO
-fun4_description.egg-info/SOURCES.txt
-fun4_description.egg-info/dependency_links.txt
-fun4_description.egg-info/top_level.txt
