@@ -1,4 +1,4 @@
-# FUN4_6503 
+# FUN4_6523 
 - # Design a system for controlling a 3 DOF robotic arm :mechanical_arm:
 
 # Part -1: Install and setup environment in your computer.
