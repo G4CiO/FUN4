@@ -210,4 +210,4 @@ and onother part You can follow the link I provided.
         ```
         Now robot will move auto to random target.
         ![Auto mode display](./image/Auto.png)
-        #### Note: If you see robot arm ***shake*** don't wory. If you wait 10 second after this situation robot will recieve new random target and can continue working.
+        # Note: If you see robot arm ***shake*** don't wory. If you wait 10 second after this situation robot will recieve new random target and can continue working.
