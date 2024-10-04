@@ -62,9 +62,9 @@ and onother part You can follow the link I provided.
     ros2 service call /mode_pose fun4_interfaces/srv/ChangeMode "mode: 0
     teleop_mode: 0
     pose:
-    x: 0.0
-    y: 0.0
-    z: 0.0"
+      x: 0.0
+      y: 0.0
+      z: 0.0"
     ```
     ### Description my variable in request.
     -   **mode**
@@ -119,9 +119,9 @@ and onother part You can follow the link I provided.
         ros2 service call /mode_pose fun4_interfaces/srv/ChangeMode "mode: 1
         teleop_mode: 0
         pose:
-        x: 0.4
-        y: -0.02
-        z: 0.5"
+          x: 0.4
+          y: -0.02
+          z: 0.5"
         ```
         Robot will move to target and you will recieved response like this.
         ```bash
@@ -133,9 +133,9 @@ and onother part You can follow the link I provided.
         ros2 service call /mode_pose fun4_interfaces/srv/ChangeMode "mode: 1
         teleop_mode: 0
         pose:
-        x: 1.0
-        y: 1.0  
-        z: 1.0"
+          x: 1.0
+          y: 1.0  
+          z: 1.0"
         ```
         Robot will not move and you will recieved response like this.
         ```bash
@@ -147,14 +147,14 @@ and onother part You can follow the link I provided.
     control robot arm with topic /cmd_vel type Twist from teleop_twist_keyboard from terminal.
     -   **Teleop Mode 1: Reference with Robot Base**
         -   change **mode = 2** and **teleop_mode = 1** in **Terminals 2**.
-            ```bash
-            ros2 service call /mode_pose fun4_interfaces/srv/ChangeMode "mode: 2
-            teleop_mode: 1
-            pose:
-            x: 0.0
-            y: 0.0
-            z: 0.0"
-            ```
+        ```bash
+        ros2 service call /mode_pose fun4_interfaces/srv/ChangeMode "mode: 2
+        teleop_mode: 1
+        pose:
+          x: 0.0
+          y: 0.0
+          z: 0.0"
+        ```
         -   run teleop_twist_keyboard in **Terminal 3** and push button from my description to control.
             ```bash
             ros2 run teleop_twist_keyboard teleop_twist_keyboard
@@ -169,14 +169,14 @@ and onother part You can follow the link I provided.
 
     -   **Teleop Mode 2: Reference with End-Effector**
         -   change **mode = 2** and **teleop_mode = 2** in **Terminals 2**.
-            ```bash
-            ros2 service call /mode_pose fun4_interfaces/srv/ChangeMode "mode: 2
-            teleop_mode: 2
-            pose:
-            x: 0.0
-            y: 0.0
-            z: 0.0"
-            ```
+        ```bash
+        ros2 service call /mode_pose fun4_interfaces/srv/ChangeMode "mode: 2
+        teleop_mode: 2
+        pose:
+          x: 0.0
+          y: 0.0
+          z: 0.0"
+        ```
         -   run teleop_twist_keyboard in **Terminal 3** and push button from my description to control.
             ```bash
             ros2 run teleop_twist_keyboard teleop_twist_keyboard
@@ -204,9 +204,9 @@ and onother part You can follow the link I provided.
         ros2 service call /mode_pose fun4_interfaces/srv/ChangeMode "mode: 3
         teleop_mode: 0
         pose:
-        x: 0.0
-        y: 0.0
-        z: 0.0"
+          x: 0.0
+          y: 0.0
+          z: 0.0"
         ```
         Now robot will move auto to random target.
         ![Auto mode display](./image/Auto.png)
