@@ -1,7 +1,7 @@
 # FUN4_6523 
 - # Design a system for controlling a 3 DOF robotic arm :mechanical_arm:
 
-# Part -1: Install and setup environment in your computer.
+# Install and setup environment in your computer.
 ## Install ROS2 Humble
 [Install ROS 2 packages](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debs.html)
 **Note:** in *Desktop Install* you must install follow me.
@@ -191,11 +191,20 @@ and onother part You can follow the link I provided.
     -   While control robot arm and found that robot near **Singularity**, robot will stop move and show warning on **Terminal 1**.
     **Example warning in teleop mode 2:**
     ![Singularity display](./image/singularity.png)
-    From picture it show warning in **Terminal 1** that say.
+    From picture it show **warning** in **Terminal 1** that say.
         ```bash
         [teleoperation.py-6] [WARN] [1727885765.382720999] [teleoperation]: Singularity detected. Stopping movement. Please change to Mode 1 or 3 to change manipurator to another pose.
         ```
-        From warning you should **change to mode 1 or 3** to move robot arm to another pose.
+        From warning you should **change to mode 1 or 3** to move robot arm to another pose. You can copy code below to change mode to 1 and set pose.
+        ```bash
+        ros2 service call /mode_pose fun4_interfaces/srv/ChangeMode "mode: 1
+        teleop_mode: 0
+        pose:
+          x: 0.4
+          y: -0.02
+          z: 0.5"
+        ```
+
 
 -   ## Mode 3: Auto
     send request for random target in workspace to control robot arm move to target in 10 second. If robot arm reach to target or not move to target in 10 second robot will send request for new random target.
