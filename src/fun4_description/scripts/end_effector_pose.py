@@ -18,7 +18,6 @@ class EndEffectorPose(Node):
 
         # Create a publisher for the PoseStamped message
         self.pose_pub = self.create_publisher(PoseStamped, '/end_effector', 10)
-        self.joint_state_pub = self.create_publisher(JointState, '/joint_states', 10)
 
         self.source_frame = 'link_0'
         self.target_frame = 'end_effector'
@@ -27,7 +26,7 @@ class EndEffectorPose(Node):
         self.tf_listener = TransformListener(self.tf_buffer, self)
 
         # Call on_timer function on a set interval
-        timer_period = 0.1
+        timer_period = 0.01
         self.timer = self.create_timer(timer_period, self.on_timer)
         
         # Current position and orientation of the target frame with respect to the 

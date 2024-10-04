@@ -38,6 +38,7 @@ class RandomTarget(Node):
             self.zr = z
 
     def pub_random_target(self):
+        
         msg = PoseStamped()
         msg.header.stamp = self.get_clock().now().to_msg()
         msg.header.frame_id = "link_0"

@@ -60,13 +60,14 @@ class InversePoseKinematics(Node):
                                 PIDController(1.0)]  # For joint 3
 
     def pub_random_target(self,x,y,z):
-        msg = PoseStamped()
-        msg.header.stamp = self.get_clock().now().to_msg()
-        msg.header.frame_id = "link_0"
-        msg.pose.position.x = x
-        msg.pose.position.y = y
-        msg.pose.position.z = z
-        self.pose_end_pub.publish(msg)
+        if self.mode == 1:
+            msg = PoseStamped()
+            msg.header.stamp = self.get_clock().now().to_msg()
+            msg.header.frame_id = "link_0"
+            msg.pose.position.x = x
+            msg.pose.position.y = y
+            msg.pose.position.z = z
+            self.pose_end_pub.publish(msg)
         
     def joint_state_callback(self, msg: JointState):
         if len(msg.position) >= 3:

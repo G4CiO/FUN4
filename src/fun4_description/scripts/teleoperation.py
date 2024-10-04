@@ -45,7 +45,7 @@ class Teleoperation(Node):
         joint_msg.header.stamp = self.get_clock().now().to_msg()
 
         # Ensure q contains valid float values
-        if np.all(np.isfinite(q)) and np.all(np.abs(q) < 1e6):  # Adding a reasonable range check
+        if np.all(np.isfinite(q)) and np.all(np.abs(q) < 1e6) and self.mode == 2:  # Adding a reasonable range check
             joint_msg.position = q.tolist()  # Convert NumPy array to list of floats
             self.joint_state_pub.publish(joint_msg)
         else:

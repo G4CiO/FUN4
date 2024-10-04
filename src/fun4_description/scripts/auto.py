@@ -36,7 +36,7 @@ class Auto(Node):
         # Service Server
         self.random_target_client = self.create_client(RunAuto,'/target_server')
         self.take_mode = self.create_service(ChangeMode, '/mode_pose', self.callback_user)
-
+        
         # Innitial
         self.mode = 0
         self.finish = True
